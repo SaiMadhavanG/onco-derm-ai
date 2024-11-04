@@ -149,3 +149,6 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# virtualenv
+.od_env/

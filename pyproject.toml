@@ -21,8 +21,8 @@ source_dir = "src"
 [tool.ruff]
 line-length = 88
 show-fixes = true
-select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
-ignore = [ "E501",]
+lint.select = [ "F", "W", "E", "I", "UP", "PL", "T201",]
+lint.ignore = [ "E501",]
 
 [project.entry-points."kedro.hooks"]
 
@@ -46,3 +46,10 @@ attr = "onco_derm_ai.__version__"
 [tool.setuptools.packages.find]
 where = [ "src",]
 namespaces = false
+
+[project.optional-dependencies]
+dev = ["ruff",
+    "pytest-cov",
+    "pytest-mock",
+    "pytest",
+    ]
