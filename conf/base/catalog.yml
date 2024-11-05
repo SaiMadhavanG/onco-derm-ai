@@ -1,105 +1,14 @@
-derma_mnist_data_train_batch_1:
+train_raw:
   type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_1.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-  # versioned: true
-derma_mnist_data_train_batch_2:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_2.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
+  filepath: data/01_raw/train.pkl
+  versioned: true
 
-    
-derma_mnist_data_train_batch_3:
+val_raw:
   type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_3.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
+  filepath: data/01_raw/val.pkl
+  versioned: true
 
-derma_mnist_data_train_batch_4:
+test_raw:
   type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_4.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-
-
-derma_mnist_data_train_batch_5:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_5.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-
-derma_mnist_data_train_batch_6:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_6.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-
-derma_mnist_data_train_batch_7:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_7.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-derma_mnist_data_train_batch_8:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_8.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-derma_mnist_data_train_batch_9:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_9.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-
-derma_mnist_data_train_batch_10:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_train_10.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-
-
-derma_mnist_data_val_batch_1:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_val_1.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-  # versioned: true
-
-derma_mnist_data_val_batch_2:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_val_2.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-
-derma_mnist_data_test_batch_1:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_test_1.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-  # versioned: true
-derma_mnist_data_test_batch_2:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_test_2.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
-derma_mnist_data_test_batch_3:
-  type: pickle.PickleDataset
-  filepath: data/01_raw/derma_mnist_data_test_3.pkl
-  backend: pickle
-  save_args:
-    protocol: 4
+  filepath: data/01_raw/test.pkl
+  versioned: true
