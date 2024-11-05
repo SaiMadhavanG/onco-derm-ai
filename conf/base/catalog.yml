@@ -12,3 +12,8 @@ test_raw:
   type: pickle.PickleDataset
   filepath: data/01_raw/test.pkl
   versioned: true
+
+pre-processed_train_data:
+  type:piclke.PickleDataset
+  filepath: data/02_intermediate/pre-processed_train_data.pkl
+  versioned: true
