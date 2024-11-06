@@ -53,3 +53,6 @@ dev = ["ruff",
     "pytest-mock",
     "pytest",
     ]
+
+[tool.kedro_telemetry]
+project_id = "7ecba36bc2e142b995445bace16e3b7f"

@@ -1,0 +1,19 @@
+train_raw:
+  type: pickle.PickleDataset
+  filepath: data/01_raw/train.pkl
+  versioned: true
+
+val_raw:
+  type: pickle.PickleDataset
+  filepath: data/01_raw/val.pkl
+  versioned: true
+
+test_raw:
+  type: pickle.PickleDataset
+  filepath: data/01_raw/test.pkl
+  versioned: true
+
+pre-processed_train_data:
+  type: pickle.PickleDataset
+  filepath: data/02_intermediate/pre-processed_train_data.pkl
+  versioned: true

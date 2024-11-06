@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "todo.html",
+    "href": "todo.html",
+    "title": "Initialization",
+    "section": "",
+    "text": "Initialization\n\ncome up with a name\nkedro init\npre commit hooks\n\nlinting\ntesting\nquartodoc\n\ntesting - pytest, git pre commit hook\nauto documentation - quartodoc\n\n\n\nDocumentation\n\nproject card - sai\ndata card\nmodel card\nmlops card\n\n\n\nData Prep\n\nLoad data - kedro\nData versioning - kedro\nImage preprocessing - normalizing, tensorizing and resizing - torchvision - srini\nData augmentation - torchvision\n\nData quality - ?, greater expectation\nright to erasure, forgetting - kedro pipeline\n\n\n\n\nTraining\n\nModel training - Resnet - PyTorch\nModel versioning - mlflow\nModel eval - Sk classification report, k cross val\nhyperparameter tuning - optuna/sklearn search\nautomatic reports - quarto and plotting libs\nModel pruning - pytorch\nadversarial robustness - auto_lirpa\nright to erasure, model retraining - kedro pipeline\n\n\n\nInference\n\nexplainability - deel\nconfidence calibration - deel, ?\nOOD detection - ?\nConformal predictions - deel\n\n\n\nDeployment\n\nmodel containerization - mlflow, docker\nauto model deployment - github actions/cloud provider\ndeployment side eval\ndata drift\nauto retraining triggers\n\n\n\nLLM\n\nllm set up\nllm prompt config\nllm deployment\n\n\n\nFront End\n\nFrontend dashboard - react, bootstrap\nChatbot window"
+  },
+  {
     "objectID": "docs/index.html",
     "href": "docs/index.html",
     "title": "OncoDerm AI",
@@ -9,15 +16,64 @@
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
-    "title": "Function reference",
+    "title": "API Reference",
     "section": "",
-    "text": "The API reference for the OncoDerm AI package."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
   },
   {
-    "objectID": "reference/index.html#api-reference",
-    "href": "reference/index.html#api-reference",
-    "title": "Function reference",
+    "objectID": "reference/index.html#data_preprocessing",
+    "href": "reference/index.html#data_preprocessing",
+    "title": "API Reference",
     "section": "",
-    "text": "The API reference for the OncoDerm AI package."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html",
+    "href": "reference/tensoring_resizing.html",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "tensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html#parameters",
+    "href": "reference/tensoring_resizing.html#parameters",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired"
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html#returns",
+    "href": "reference/tensoring_resizing.html#returns",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+  },
+  {
+    "objectID": "reference/normalizing_images.html",
+    "href": "reference/normalizing_images.html",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "normalizing_images(data)\nNormalize the pixel values of images in the given DataFrame.\nThis function takes a DataFrame containing image data and normalizes the pixel values by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
+  },
+  {
+    "objectID": "reference/normalizing_images.html#parameters",
+    "href": "reference/normalizing_images.html#parameters",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired"
+  },
+  {
+    "objectID": "reference/normalizing_images.html#returns",
+    "href": "reference/normalizing_images.html#returns",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
+  },
+  {
+    "objectID": "notebooks/DermaMnist.html",
+    "href": "notebooks/DermaMnist.html",
+    "title": "Importing data from medmnist",
+    "section": "",
+    "text": "To configure the data catalog, run the below cells. These cells will download the data from the medmnist dataset and save it in the data directory as a dataframe encapsuled in a pickle file.\n\n# !pip install medmnist\n\n\nfrom medmnist import DermaMNIST\n\n\ndata_train = DermaMNIST(split=\"train\", download=True, root=\"../data/01_raw/\")\n\nDownloading https://zenodo.org/records/10519652/files/dermamnist.npz?download=1 to ../data/01_raw/dermamnist.npz\n\n\n100%|██████████| 19.7M/19.7M [00:52&lt;00:00, 379kB/s] \n\n\n\nimport numpy as np\n\nds = np.load(\"../data/01_raw/dermamnist.npz\")\n\n\ntrain_images = ds[\"train_images\"]\ntrain_labels = ds[\"train_labels\"]\nval_images = ds[\"val_images\"]\nval_labels = ds[\"val_labels\"]\ntest_images = ds[\"test_images\"]\ntest_labels = ds[\"test_labels\"]\n\n\ntrain_len = len(train_images)\nval_len = len(val_images)\ntest_len = len(test_images)\n\n\n# generate ids array\ntrain_ids = [f\"train_{i}\" for i in range(train_len)]\nval_ids = [f\"val_{i}\" for i in range(val_len)]\ntest_ids = [f\"test_{i}\" for i in range(test_len)]\n\n\ntrain_images = list(train_images)\nval_images = list(val_images)\ntest_images = list(test_images)\n\n\ntrain_labels = list(train_labels)\nval_labels = list(val_labels)\ntest_labels = list(test_labels)\n\n\n# construct a df for each of the splits\nimport pandas as pd\n\ntrain_df = pd.DataFrame(\n    {\n        \"id\": train_ids,\n        \"image\": train_images,\n        \"label\": train_labels,\n    }\n)\ntest_df = pd.DataFrame(\n    {\n        \"id\": test_ids,\n        \"image\": test_images,\n        \"label\": test_labels,\n    }\n)\nval_df = pd.DataFrame(\n    {\n        \"id\": val_ids,\n        \"image\": val_images,\n        \"label\": val_labels,\n    }\n)\n\n\ntrain_df.to_pickle(\"../data/01_raw/train.pkl\")\ntest_df.to_pickle(\"../data/01_raw/test.pkl\")\nval_df.to_pickle(\"../data/01_raw/val.pkl\")\n\n\ntrain_df_loaded = pd.read_pickle(\"../data/01_raw/train.pkl\")\n\n\ntrain_df_loaded[\"image\"].iloc[0].shape\n\n(28, 28, 3)\n\n\n\ndef normalizing_images(data: pd.DataFrame) -&gt; pd.DataFrame:\n    data[\"image\"] = data[\"image\"].apply(lambda x: x / 255.0)\n    return data\n\n\ntrain_df_loaded_new = normalizing_images(train_df_loaded)\ntrain_df_loaded_new\n\n\n\n\n\n\n\n\nid\nimage\nlabel\n\n\n\n\n0\ntrain_0\n[[[0.002429834678969627, 0.001707035755478662,...\n[0]\n\n\n1\ntrain_1\n[[[0.003537101114955786, 0.001707035755478662,...\n[5]\n\n\n2\ntrain_2\n[[[0.003521722414455979, 0.002399077277970012,...\n[5]\n\n\n3\ntrain_3\n[[[0.003506343713956171, 0.0019530949634755863...\n[5]\n\n\n4\ntrain_4\n[[[0.0033217993079584776, 0.002891195693963860...\n[4]\n\n\n...\n...\n...\n...\n\n\n7002\ntrain_7002\n[[[0.0030911188004613607, 0.001953094963475586...\n[5]\n\n\n7003\ntrain_7003\n[[[0.003506343713956171, 0.0018762014609765476...\n[5]\n\n\n7004\ntrain_7004\n[[[0.00030757400999615535, 0.00027681660899653...\n[2]\n\n\n7005\ntrain_7005\n[[[0.002629757785467128, 0.002168396770472895,...\n[5]\n\n\n7006\ntrain_7006\n[[[0.003675509419454056, 0.002399077277970012,...\n[5]\n\n\n\n\n7007 rows × 3 columns\n\n\n\n\nfrom torchvision import transforms\n\n\ndef tensoring_resizing(data: pd.DataFrame) -&gt; pd.DataFrame:\n    transform = transforms.Compose(\n        [transforms.ToPILImage(), transforms.Resize((28, 28)), transforms.ToTensor()]\n    )\n\n    data[\"image\"] = data[\"image\"].apply(lambda x: transform(x).permute(1, 2, 0).numpy())\n    return data\n\n\ntrain_df_loaded_new = tensoring_resizing(train_df_loaded_new)\ntrain_df_loaded_new[\"image\"].iloc[0].shape\n\n(28, 28, 3)\n\n\n\n%load_ext kedro.ipython\n\n[11/05/24 23:08:04] INFO     Registered line magic '%reload_kedro'                                   __init__.py:61\n\n\n\n                    INFO     Registered line magic '%load_node'                                      __init__.py:63\n\n\n\n                    INFO     Resolved project path as: /home/saimadhavang/sem7/mlpe/onco-derm-ai.   __init__.py:178\n                             To set a different path, run '%reload_kedro &lt;project_root&gt;'                           \n\n\n\n                    INFO     Kedro is sending anonymous usage data with the sole purpose of improving plugin.py:233\n                             the product. No personal data or IP addresses are stored on our side. If              \n                             you want to opt out, set the `KEDRO_DISABLE_TELEMETRY` or `DO_NOT_TRACK`              \n                             environment variables, or create a `.telemetry` file in the current                   \n                             working directory with the contents `consent: false`. Read more at                    \n                             https://docs.kedro.org/en/stable/configuration/telemetry.html                         \n\n\n\n[11/05/24 23:08:05] INFO     Kedro project onco-derm-ai                                             __init__.py:144\n\n\n\n                    INFO     Defined global variable 'context', 'session', 'catalog' and            __init__.py:145\n                             'pipelines'                                                                           \n\n\n\n[11/05/24 23:08:07] INFO     Registered line magic 'run_viz'                                        __init__.py:151\n\n\n\n\nfrom kedro.io.data_catalog import DataCatalog\n\ncatalog = DataCatalog.from_config(\"../conf/base/catalog.yml\")\n\n\ncatalog.save(\"train_raw\", train_df)\ncatalog.save(\"test_raw\", test_df)\ncatalog.save(\"val_raw\", val_df)\n\n[11/05/24 23:13:11] INFO     Saving data to train_raw (PickleDataset)...                        data_catalog.py:431\n\n\n\n                    INFO     Saving data to test_raw (PickleDataset)...                         data_catalog.py:431\n\n\n\n                    INFO     Saving data to val_raw (PickleDataset)...                          data_catalog.py:431\n\n\n\n\ndf = catalog.load(\"train_raw\")\n\n[11/05/24 23:13:47] INFO     Loading data from train_raw (PickleDataset)...                     data_catalog.py:389\n\n\n\n\ndf[\"image\"][0].shape\n\n\n\n\n\n(28, 28, 3)"
   }
 ]

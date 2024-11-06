@@ -14,9 +14,13 @@ quartodoc:
   style: pkgdown
   dir: reference
   package: onco_derm_ai
+  title: API Reference
   sections:
-    - title: API Reference
-      desc: The API reference for the OncoDerm AI package.
+    - title: data_preprocessing
+      desc: Functions in the data_preprocessing pipeline
+      contents:
+        - normalizing_images
+        - tensoring_resizing
   
 
 format:

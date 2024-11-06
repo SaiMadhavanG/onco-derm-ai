@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index – OncoDerm AI</title>
+<title>todo – OncoDerm AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +68,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../docs/styles.css">
+<link rel="stylesheet" href="docs/styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">OncoDerm AI</span>
     </a>
   </div>
@@ -89,11 +89,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../docs/index.html"> 
+    <a class="nav-link" href="./docs/index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
+    <a class="nav-link" href="./reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -112,10 +112,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#api-reference" id="toc-api-reference" class="nav-link active" data-scroll-target="#api-reference">API Reference</a>
-  <ul class="collapse">
-  <li><a href="#data_preprocessing" id="toc-data_preprocessing" class="nav-link" data-scroll-target="#data_preprocessing">data_preprocessing</a></li>
-  </ul></li>
+  <li><a href="#initialization" id="toc-initialization" class="nav-link active" data-scroll-target="#initialization">Initialization</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#data-prep" id="toc-data-prep" class="nav-link" data-scroll-target="#data-prep">Data Prep</a></li>
+  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">Training</a></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">Inference</a></li>
+  <li><a href="#deployment" id="toc-deployment" class="nav-link" data-scroll-target="#deployment">Deployment</a></li>
+  <li><a href="#llm" id="toc-llm" class="nav-link" data-scroll-target="#llm">LLM</a></li>
+  <li><a href="#front-end" id="toc-front-end" class="nav-link" data-scroll-target="#front-end">Front End</a></li>
   </ul>
 </nav>
     </div>
@@ -125,26 +129,91 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="api-reference" class="level1 doc doc-index">
-<h1 class="doc doc-index">API Reference</h1>
-<section id="data_preprocessing" class="level2">
-<h2 class="anchored" data-anchor-id="data_preprocessing">data_preprocessing</h2>
-<p>Functions in the data_preprocessing pipeline</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/normalizing_images.html#onco_derm_ai.normalizing_images">normalizing_images</a></td>
-<td>Normalize the pixel values of images in the given DataFrame.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/tensoring_resizing.html#onco_derm_ai.tensoring_resizing">tensoring_resizing</a></td>
-<td>Applies a series of transformations to the ‘image’ column of a pandas DataFrame.</td>
-</tr>
-</tbody>
-</table>
-
-
+<section id="initialization" class="level1">
+<h1>Initialization</h1>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">come up with a name</label></li>
+<li><label><input type="checkbox" checked="">kedro init</label></li>
+<li><label><input type="checkbox" checked="">pre commit hooks</label>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">linting</label></li>
+<li><label><input type="checkbox" checked="">testing</label></li>
+<li><label><input type="checkbox" checked="">quartodoc</label></li>
+</ul></li>
+<li><label><input type="checkbox" checked="">testing - <em>pytest, git pre commit hook</em></label></li>
+<li><label><input type="checkbox" checked="">auto documentation - <em>quartodoc</em></label></li>
+</ul>
 </section>
+<section id="documentation" class="level1">
+<h1>Documentation</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">project card - <strong>sai</strong></label></li>
+<li><label><input type="checkbox">data card</label></li>
+<li><label><input type="checkbox">model card</label></li>
+<li><label><input type="checkbox">mlops card</label></li>
+</ul>
+</section>
+<section id="data-prep" class="level1">
+<h1>Data Prep</h1>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="">Load data - <em>kedro</em></label></li>
+<li><label><input type="checkbox" checked="">Data versioning - <em>kedro</em></label></li>
+<li><label><input type="checkbox" checked="">Image preprocessing - normalizing, tensorizing and resizing - <em>torchvision</em> - <strong>srini</strong></label></li>
+<li><label><input type="checkbox">Data augmentation - <em>torchvision</em></label>
+<ul class="task-list">
+<li><label><input type="checkbox">Data quality - <strong>?</strong>, <em>greater expectation</em></label></li>
+<li><label><input type="checkbox">right to erasure, forgetting - <em>kedro pipeline</em></label></li>
+</ul></li>
+</ul>
+</section>
+<section id="training" class="level1">
+<h1>Training</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">Model training - Resnet - <em>PyTorch</em></label></li>
+<li><label><input type="checkbox">Model versioning - <em>mlflow</em></label></li>
+<li><label><input type="checkbox">Model eval - <em>Sk classification report, k cross val</em></label></li>
+<li><label><input type="checkbox">hyperparameter tuning - <em>optuna/sklearn search</em></label></li>
+<li><label><input type="checkbox">automatic reports - <em>quarto and plotting libs</em></label></li>
+<li><label><input type="checkbox">Model pruning - <em>pytorch</em></label></li>
+<li><label><input type="checkbox">adversarial robustness - <em>auto_lirpa</em></label></li>
+<li><label><input type="checkbox">right to erasure, model retraining - <em>kedro pipeline</em></label></li>
+</ul>
+</section>
+<section id="inference" class="level1">
+<h1>Inference</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">explainability - <em>deel</em></label></li>
+<li><label><input type="checkbox">confidence calibration - <em>deel</em>, <strong>?</strong></label></li>
+<li><label><input type="checkbox">OOD detection - <strong>?</strong></label></li>
+<li><label><input type="checkbox">Conformal predictions - <em>deel</em></label></li>
+</ul>
+</section>
+<section id="deployment" class="level1">
+<h1>Deployment</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">model containerization - <em>mlflow, docker</em></label></li>
+<li><label><input type="checkbox">auto model deployment - <em>github actions/cloud provider</em></label></li>
+<li><label><input type="checkbox">deployment side eval</label></li>
+<li><label><input type="checkbox">data drift</label></li>
+<li><label><input type="checkbox">auto retraining triggers</label></li>
+</ul>
+</section>
+<section id="llm" class="level1">
+<h1>LLM</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">llm set up</label></li>
+<li><label><input type="checkbox">llm prompt config</label></li>
+<li><label><input type="checkbox">llm deployment</label></li>
+</ul>
+</section>
+<section id="front-end" class="level1">
+<h1>Front End</h1>
+<ul class="task-list">
+<li><label><input type="checkbox">Frontend dashboard - <em>react, bootstrap</em></label></li>
+<li><label><input type="checkbox">Chatbot window</label></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
