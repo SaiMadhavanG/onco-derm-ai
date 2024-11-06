@@ -1,5 +1,10 @@
-# Function reference {.doc .doc-index}
+# API Reference {.doc .doc-index}
 
-## API Reference
+## data_preprocessing
 
-The API reference for the OncoDerm AI package.
+Functions in the data_preprocessing pipeline
+
+| | |
+| --- | --- |
+| [normalizing_images](normalizing_images.qmd#onco_derm_ai.normalizing_images) | Normalize the pixel values of images in the given DataFrame. |
+| [tensoring_resizing](tensoring_resizing.qmd#onco_derm_ai.tensoring_resizing) | Applies a series of transformations to the 'image' column of a pandas DataFrame. |

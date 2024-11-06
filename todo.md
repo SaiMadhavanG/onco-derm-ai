@@ -20,7 +20,7 @@
 
 - [x] Load data - _kedro_
 - [x] Data versioning - _kedro_
-- [ ] Image preprocessing - normalizing, tensorizing and resizing - _torchvision_ - **srini**
+- [x] Image preprocessing - normalizing, tensorizing and resizing - _torchvision_ - **srini**
 - [ ] Data augmentation - _torchvision_
   - [ ] Data quality - **?**, _greater expectation_
   - [ ] right to erasure, forgetting - _kedro pipeline_

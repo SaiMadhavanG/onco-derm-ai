@@ -1,0 +1,23 @@
+# tensoring_resizing { #onco_derm_ai.tensoring_resizing }
+
+```python
+tensoring_resizing(data)
+```
+
+Applies a series of transformations to the 'image' column of a pandas DataFrame.
+
+The transformations include converting images to PIL format, resizing them to 28x28 pixels,
+and converting them to tensors. The transformed images are then permuted and converted back
+to numpy arrays.
+
+## Parameters {.doc-section .doc-section-parameters}
+
+| Name   | Type         | Description                                                      | Default    |
+|--------|--------------|------------------------------------------------------------------|------------|
+| data   | pd.DataFrame | A pandas DataFrame containing an 'image' column with image data. | _required_ |
+
+## Returns {.doc-section .doc-section-returns}
+
+| Name   | Type         | Description                                              |
+|--------|--------------|----------------------------------------------------------|
+|        | pd.DataFrame | The input DataFrame with the 'image' column transformed. |

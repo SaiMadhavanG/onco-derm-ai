@@ -16,16 +16,58 @@
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
-    "title": "Function reference",
+    "title": "API Reference",
     "section": "",
-    "text": "The API reference for the OncoDerm AI package."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
   },
   {
-    "objectID": "reference/index.html#api-reference",
-    "href": "reference/index.html#api-reference",
-    "title": "Function reference",
+    "objectID": "reference/index.html#data_preprocessing",
+    "href": "reference/index.html#data_preprocessing",
+    "title": "API Reference",
     "section": "",
-    "text": "The API reference for the OncoDerm AI package."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html",
+    "href": "reference/tensoring_resizing.html",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "tensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html#parameters",
+    "href": "reference/tensoring_resizing.html#parameters",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired"
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html#returns",
+    "href": "reference/tensoring_resizing.html#returns",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+  },
+  {
+    "objectID": "reference/normalizing_images.html",
+    "href": "reference/normalizing_images.html",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "normalizing_images(data)\nNormalize the pixel values of images in the given DataFrame.\nThis function takes a DataFrame containing image data and normalizes the pixel values by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
+  },
+  {
+    "objectID": "reference/normalizing_images.html#parameters",
+    "href": "reference/normalizing_images.html#parameters",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired"
+  },
+  {
+    "objectID": "reference/normalizing_images.html#returns",
+    "href": "reference/normalizing_images.html#returns",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
   },
   {
     "objectID": "notebooks/DermaMnist.html",
