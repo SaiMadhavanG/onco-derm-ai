@@ -175,13 +175,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="cell-3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> medmnist <span class="im">import</span> DermaMNIST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/05/24 22:40:46] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Using                                                                  <a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/framework/project/__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/framework/project/__init__.py#270" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">270</span></a>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">'/home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">               </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">-packages/kedro/framework/project/rich_logging.yml'</span> as logging         <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">               </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         configuration.                                                         <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">               </span>
-</pre>
-</div>
 </div>
 <div id="cell-4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_train <span class="op">=</span> DermaMNIST(split<span class="op">=</span><span class="st">"train"</span>, download<span class="op">=</span><span class="va">True</span>, root<span class="op">=</span><span class="st">"../data/01_raw/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -189,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>Downloading https://zenodo.org/records/10519652/files/dermamnist.npz?download=1 to ../data/01_raw/dermamnist.npz</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
-<pre><code>100%|██████████| 19.7M/19.7M [04:47&lt;00:00, 68.5kB/s]</code></pre>
+<pre><code>100%|██████████| 19.7M/19.7M [00:52&lt;00:00, 379kB/s] </code></pre>
 </div>
 </div>
 <div id="cell-5" class="cell" data-execution_count="3">
@@ -210,23 +203,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>val_len <span class="op">=</span> <span class="bu">len</span>(val_images)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>test_len <span class="op">=</span> <span class="bu">len</span>(test_images)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-8" class="cell" data-execution_count="12">
+<div id="cell-8" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># generate ids array</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>train_ids <span class="op">=</span> [<span class="ss">f"train_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(train_len)]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>val_ids <span class="op">=</span> [<span class="ss">f"val_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(val_len)]</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>test_ids <span class="op">=</span> [<span class="ss">f"test_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(test_len)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="20">
+<div id="cell-9" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>train_images <span class="op">=</span> <span class="bu">list</span>(train_images)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>val_images <span class="op">=</span> <span class="bu">list</span>(val_images)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>test_images <span class="op">=</span> <span class="bu">list</span>(test_images)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="22">
+<div id="cell-10" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>train_labels <span class="op">=</span> <span class="bu">list</span>(train_labels)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>val_labels <span class="op">=</span> <span class="bu">list</span>(val_labels)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>test_labels <span class="op">=</span> <span class="bu">list</span>(test_labels)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-11" class="cell" data-execution_count="23">
+<div id="cell-11" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># construct a df for each of the splits</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -252,27 +245,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    }</span>
 <span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-12" class="cell" data-execution_count="33">
+<div id="cell-12" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>train_df.to_pickle(<span class="st">"../data/01_raw/train.pkl"</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>test_df.to_pickle(<span class="st">"../data/01_raw/test.pkl"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>val_df.to_pickle(<span class="st">"../data/01_raw/val.pkl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="29">
+<div id="cell-13" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>train_df_loaded <span class="op">=</span> pd.read_pickle(<span class="st">"../data/01_raw/train.pkl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-14" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>train_df_loaded[<span class="st">"image"</span>][<span class="dv">0</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="34">
-<div class="ansi-escaped-output">
-<pre><span class="ansi-bold">(</span><span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">3</span><span class="ansi-bold">)</span></pre>
+<div id="cell-14" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>train_df_loaded[<span class="st">"image"</span>].iloc[<span class="dv">0</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>(28, 28, 3)</code></pre>
 </div>
 </div>
+<div id="cell-15" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> normalizing_images(data: pd.DataFrame) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">"image"</span>] <span class="op">=</span> data[<span class="st">"image"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x <span class="op">/</span> <span class="fl">255.0</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-15" class="cell" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext kedro.ipython</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-16" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>train_df_loaded_new <span class="op">=</span> normalizing_images(train_df_loaded)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>train_df_loaded_new</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">image</th>
+<th data-quarto-table-cell-role="th">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>train_0</td>
+<td>[[[0.002429834678969627, 0.001707035755478662,...</td>
+<td>[0]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>train_1</td>
+<td>[[[0.003537101114955786, 0.001707035755478662,...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>train_2</td>
+<td>[[[0.003521722414455979, 0.002399077277970012,...</td>
+<td>[5]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>train_3</td>
+<td>[[[0.003506343713956171, 0.0019530949634755863...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>train_4</td>
+<td>[[[0.0033217993079584776, 0.002891195693963860...</td>
+<td>[4]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7002</td>
+<td>train_7002</td>
+<td>[[[0.0030911188004613607, 0.001953094963475586...</td>
+<td>[5]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7003</td>
+<td>train_7003</td>
+<td>[[[0.003506343713956171, 0.0018762014609765476...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7004</td>
+<td>train_7004</td>
+<td>[[[0.00030757400999615535, 0.00027681660899653...</td>
+<td>[2]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7005</td>
+<td>train_7005</td>
+<td>[[[0.002629757785467128, 0.002168396770472895,...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">7006</td>
+<td>train_7006</td>
+<td>[[[0.003675509419454056, 0.002399077277970012,...</td>
+<td>[5]</td>
+</tr>
+</tbody>
+</table>
+
+<p>7007 rows × 3 columns</p>
+</div>
+</div>
+</div>
+<div id="cell-17" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchvision <span class="im">import</span> transforms</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tensoring_resizing(data: pd.DataFrame) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    transform <span class="op">=</span> transforms.Compose(</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        [transforms.ToPILImage(), transforms.Resize((<span class="dv">28</span>, <span class="dv">28</span>)), transforms.ToTensor()]</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    data[<span class="st">"image"</span>] <span class="op">=</span> data[<span class="st">"image"</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: transform(x).permute(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>).numpy())</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-18" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>train_df_loaded_new <span class="op">=</span> tensoring_resizing(train_df_loaded_new)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>train_df_loaded_new[<span class="st">"image"</span>].iloc[<span class="dv">0</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>(28, 28, 3)</code></pre>
+</div>
+</div>
+<div id="cell-19" class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext kedro.ipython</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/05/24 23:08:04] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Registered line magic <span style="color: #008000; text-decoration-color: #008000">'%reload_kedro'</span>                                   <a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/ipython/__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/ipython/__init__.py#61" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">61</span></a>
 </pre>
@@ -309,15 +411,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 </div>
-<div id="cell-16" class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kedro.io.data_catalog <span class="im">import</span> DataCatalog</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> DataCatalog.from_config(<span class="st">"../conf/base/catalog.yml"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-20" class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kedro.io.data_catalog <span class="im">import</span> DataCatalog</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> DataCatalog.from_config(<span class="st">"../conf/base/catalog.yml"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-17" class="cell" data-execution_count="43">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"train_raw"</span>, train_df)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"test_raw"</span>, test_df)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"val_raw"</span>, val_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-21" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"train_raw"</span>, train_df)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"test_raw"</span>, test_df)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"val_raw"</span>, val_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/05/24 23:13:11] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Saving data to <span style="color: #ff8700; text-decoration-color: #ff8700">train_raw</span> <span style="font-weight: bold">(</span>PickleDataset<span style="font-weight: bold">)</span><span style="color: #808000; text-decoration-color: #808000">...</span>                        <a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/io/data_catalog.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">data_catalog.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/io/data_catalog.py#431" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">431</span></a>
 </pre>
@@ -331,15 +433,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="45">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> catalog.load(<span class="st">"train_raw"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-22" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> catalog.load(<span class="st">"train_raw"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/05/24 23:13:47] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Loading data from <span style="color: #ff8700; text-decoration-color: #ff8700">train_raw</span> <span style="font-weight: bold">(</span>PickleDataset<span style="font-weight: bold">)</span><span style="color: #808000; text-decoration-color: #808000">...</span>                     <a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/io/data_catalog.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">data_catalog.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file:///home/saimadhavang/sem7/mlpe/onco-derm-ai/.od_env/lib/python3.12/site-packages/kedro/io/data_catalog.py#389" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">389</span></a>
 </pre>
 </div>
 </div>
-<div id="cell-19" class="cell" data-execution_count="49">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"image"</span>][<span class="dv">0</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-23" class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"image"</span>][<span class="dv">0</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
