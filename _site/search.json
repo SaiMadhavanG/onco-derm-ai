@@ -14,6 +14,69 @@
     "text": "Project Proposal\n\nExecutive Summary\nWe propose developing a machine learning-based skin cancer screening system utilizing dermatoscopic images. The system will assist medical professionals in preliminary skin lesion assessment while incorporating robust MLOps practices, responsible AI principles, and an interactive chatbot feature powered by a Large Language Model (LLM) for enhanced user engagement.\n\n\nProblem Statement\nSkin cancer diagnosis requires expert dermatological knowledge and careful image analysis. While machine learning can assist in this process, deploying such systems in clinical settings requires careful consideration of reliability, explainability, operational excellence, and ease of interaction for medical professionals.\n\n\nDataset\n\nSource: DermaMNIST (based on HAM10000)\nClasses: 7 distinct skin lesion categories:\n\nActinic keratoses and intraepithelial carcinoma (akiec)\nBasal cell carcinoma (bcc)\nBenign keratosis-like lesions (bkl)\nDermatofibroma (df)\nMelanoma (mel)\nMelanocytic nevi (nv)\nVascular lesions (vasc)\n\nCharacteristics:\n\n28x28 pixel dermatoscopic images\n10,015 training images\n1,268 validation images\n2,239 test images\n\nData Split: Predefined splits provided by MedMNIST\n\n\n\nTechnical Architecture\n\n1. Model Development\n\nBase Architecture:\n\nResNet-18 or MobileNetV2 (modified for 28x28 input)\nLightweight models for compatibility with small input size\n\nTraining Pipeline:\n\nData augmentation (rotation, flipping, color jittering)\nTransfer learning with ImageNet weights\nFine-tuning for small images\nCross-validation for robust performance estimation\n\n\n\n\n2. MLOps Infrastructure\n\nData Pipeline:\n\nData ingestion and preprocessing\nData versioning\nData quality checks\n\nExperiment Tracking:\n\nMLflow for model versioning and tracking\nHyperparameter optimization\nModel performance visualization\n\nCI/CD Pipeline:\n\nAutomated testing (unit, integration, model performance)\nAutomated model deployment\nAutomated documentation generation\n\nMonitoring:\n\nModel performance metrics\nData drift detection\nAutomatic retraining triggers\n\n\n\n\n3. Production Features\n\nModel Robustness & Reliability\n\nExplainability\nConfidence Calibration\nAdversarial Robustness\nOut-of-Distribution Detection\n\n\n\nChatbot Integration with LLM\n\nInteractive Chatbot: We will integrate a chatbot powered by an LLM to enable natural language interactions with users.\n\nFunctionality: The chatbot will provide explanations, clarifications, and further details about the model’s prediction, confidence score, and lesion category. Medical professionals can ask follow-up questions, discuss specific cases, and obtain interpretative guidance.\nImplementation: All model outputs (prediction, confidence score, and explainability results) will be passed as inputs to the LLM, enabling contextual and conversational responses based on real-time model data.\nBenefits: Allows users to interact in natural language, promoting accessibility and understanding, especially useful for non-technical users in clinical settings.\n\n\n\n\nClinical Integration\n\nInteractive Dashboard:\n\nReal-time inference results\nConfidence scores and explanations\nImage preprocessing and quality checks\nResolution handling and upscaling options\n\nConformal Predictions:\n\nSet-valued predictions with guaranteed coverage\nCalibrated confidence scores\n\n\n\n\nData Privacy & Compliance\n\nRight to Erasure:\n\nAutomated removal pipeline\n\n\n\n\n\n\nEvaluation Metrics\n\nTechnical Metrics\n\nModel accuracy\nPrecision, recall, F1-score per class\nInference latency\nData drift metrics\n\n\n\nClinical Metrics\n\nFalse positive/negative rates\nCalibration error\nOOD detection accuracy\nExplanation quality (user feedback from chatbot interactions)\n\n\n\n\nChallenges & Risks\n\nTechnical Risks:\n\nLimited resolution impact on performance\nModel bias\nSystem scalability\nIntegration challenges\n\nClinical Risks:\n\nOver-reliance on system\nMisinterpretation of results\nEdge case handling\nResolution limitations affecting diagnosis\n\n\n\n\nMitigation Strategies\n\nClear Disclaimer: System is for screening assistance only\nResolution Warning: Clear indication of image resolution limitations\nComprehensive Documentation: Usage guidelines and limitations\nRegular Updates: Continuous model improvement\nUser Training: Proper system usage and interpretation"
   },
   {
+    "objectID": "docs/cards/index.html",
+    "href": "docs/cards/index.html",
+    "title": "Cards",
+    "section": "",
+    "text": "Cards are intended to serve as a document giving a high level overview of the system developed and deployed. It is meant to be a high level document and as details emerge, documents such Model Cards and Data Cards can be linked. Below are the cards relevant to the OncoDermAI project:\n\nProject Card\nData Card"
+  },
+  {
+    "objectID": "reference/normalizing_images.html",
+    "href": "reference/normalizing_images.html",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "normalizing_images(data)\nNormalize the pixel values of images in the given DataFrame.\nThis function takes a DataFrame containing image data and normalizes the pixel values by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
+  },
+  {
+    "objectID": "reference/normalizing_images.html#parameters",
+    "href": "reference/normalizing_images.html#parameters",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired"
+  },
+  {
+    "objectID": "reference/normalizing_images.html#returns",
+    "href": "reference/normalizing_images.html#returns",
+    "title": "normalizing_images",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html",
+    "href": "reference/tensoring_resizing.html",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "tensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html#parameters",
+    "href": "reference/tensoring_resizing.html#parameters",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired"
+  },
+  {
+    "objectID": "reference/tensoring_resizing.html#returns",
+    "href": "reference/tensoring_resizing.html#returns",
+    "title": "tensoring_resizing",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+  },
+  {
+    "objectID": "reference/index.html",
+    "href": "reference/index.html",
+    "title": "API Reference",
+    "section": "",
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
+  },
+  {
+    "objectID": "reference/index.html#data_preprocessing",
+    "href": "reference/index.html#data_preprocessing",
+    "title": "API Reference",
+    "section": "",
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
+  },
+  {
     "objectID": "docs/cards/project-card.html",
     "href": "docs/cards/project-card.html",
     "title": "Project Card",
@@ -112,67 +175,60 @@
     "text": "Continuous Improvement\nHow will the system/model will improve? Provide a plan and means.\n\nUser Feedback Loop:\n\nChatbot Interactions: Track and analyze questions and responses from users (e.g., health workers or clinicians) to understand common inquiries, misconceptions, and desired information. This feedback will guide adjustments to the LLM’s responses and overall user experience.\nPrediction Accuracy: Collect feedback on predictions and confidence levels to assess areas of the model that need recalibration or fine-tuning, especially in cases that are challenging or prone to misclassification.\n\nData Collection and Expansion:\n\nCase Database Expansion: Gather additional dermatoscopic images from new rural cases, focusing on underrepresented lesion types or skin tones, to enhance model generalization.\nOut-of-Distribution (OOD) Tracking: Continuously monitor for OOD cases flagged by the model, then investigate and potentially incorporate these cases into training to improve robustness.\n\nScheduled Model Re-Training:\n\nAutomated Retraining Triggers: Implement retraining based on key metrics such as data drift, calibration error, and user feedback patterns to ensure that the model remains up-to-date with the latest data.\nData Augmentation: Periodically apply advanced data augmentation techniques (e.g., rotation, color adjustments) to create a more diverse and robust training dataset.\n\nModel Evaluation and Metrics Review:\n\nRegular Performance Audits: Conduct periodic evaluations to check model performance on critical metrics such as accuracy, false positive/negative rates, and OOD detection accuracy. Adjust hyperparameters and model architecture if necessary to address any consistent performance gaps.\nCalibration Checks: Regularly verify confidence scores to ensure accurate and reliable results, minimizing the risk of overconfidence in predictions."
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "API Reference",
+    "objectID": "docs/cards/data-card.html",
+    "href": "docs/cards/data-card.html",
+    "title": "DermaMNIST Dataset Card",
     "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
+    "text": "Using downloaded and verified file: /home/saimadhavang/.medmnist/dermamnist.npz"
   },
   {
-    "objectID": "reference/index.html#data_preprocessing",
-    "href": "reference/index.html#data_preprocessing",
-    "title": "API Reference",
-    "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
+    "objectID": "docs/cards/data-card.html#purpose-of-collection",
+    "href": "docs/cards/data-card.html#purpose-of-collection",
+    "title": "DermaMNIST Dataset Card",
+    "section": "Purpose of Collection",
+    "text": "Purpose of Collection\nThe DermaMNIST dataset is collected to aid in the development and evaluation of machine learning models for skin lesion classification. Its primary application is in dermatological research and clinical diagnostics."
   },
   {
-    "objectID": "reference/tensoring_resizing.html",
-    "href": "reference/tensoring_resizing.html",
-    "title": "tensoring_resizing",
-    "section": "",
-    "text": "tensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+    "objectID": "docs/cards/data-card.html#collection-timeline",
+    "href": "docs/cards/data-card.html#collection-timeline",
+    "title": "DermaMNIST Dataset Card",
+    "section": "Collection Timeline",
+    "text": "Collection Timeline\n\nCollection Period: 2020 (part of the MedMNIST collection)\nVersion: 2.1.0"
   },
   {
-    "objectID": "reference/tensoring_resizing.html#parameters",
-    "href": "reference/tensoring_resizing.html#parameters",
-    "title": "tensoring_resizing",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired"
+    "objectID": "docs/cards/data-card.html#data-collectors-and-stakeholders",
+    "href": "docs/cards/data-card.html#data-collectors-and-stakeholders",
+    "title": "DermaMNIST Dataset Card",
+    "section": "Data Collectors and Stakeholders",
+    "text": "Data Collectors and Stakeholders\n\nPrincipal Investigators: Jiancheng Yang, et al.\nInstitution: Shanghai Jiao Tong University\nRepository: MedMNIST (GitHub: medmnist/medmnist)\nMaintainer: MedMNIST team"
   },
   {
-    "objectID": "reference/tensoring_resizing.html#returns",
-    "href": "reference/tensoring_resizing.html#returns",
-    "title": "tensoring_resizing",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+    "objectID": "docs/cards/data-card.html#dataset-overview",
+    "href": "docs/cards/data-card.html#dataset-overview",
+    "title": "DermaMNIST Dataset Card",
+    "section": "Dataset Overview",
+    "text": "Dataset Overview\n\nFormat: .npz (NumPy compressed)\nData Type: Image-based (RGB, 28x28 resolution)\nStorage Requirements: Approx. 13 MB"
   },
   {
-    "objectID": "reference/normalizing_images.html",
-    "href": "reference/normalizing_images.html",
-    "title": "normalizing_images",
-    "section": "",
-    "text": "normalizing_images(data)\nNormalize the pixel values of images in the given DataFrame.\nThis function takes a DataFrame containing image data and normalizes the pixel values by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
+    "objectID": "docs/cards/data-card.html#sensitive-data-assessment",
+    "href": "docs/cards/data-card.html#sensitive-data-assessment",
+    "title": "DermaMNIST Dataset Card",
+    "section": "Sensitive Data Assessment",
+    "text": "Sensitive Data Assessment\nThe dataset contains de-identified medical images of skin lesions. While there is no personal health information (PHI), users are advised to follow ethical guidelines for medical data usage."
   },
   {
-    "objectID": "reference/normalizing_images.html#parameters",
-    "href": "reference/normalizing_images.html#parameters",
-    "title": "normalizing_images",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired"
+    "objectID": "docs/cards/data-card.html#recommended-applications",
+    "href": "docs/cards/data-card.html#recommended-applications",
+    "title": "DermaMNIST Dataset Card",
+    "section": "Recommended Applications",
+    "text": "Recommended Applications\n\nImage Classification Models: For lesion detection and diagnosis.\nBenchmarking: A standard benchmark for medical imaging tasks.\nEducational Use: Ideal for teaching machine learning in medical contexts."
   },
   {
-    "objectID": "reference/normalizing_images.html#returns",
-    "href": "reference/normalizing_images.html#returns",
-    "title": "normalizing_images",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
-  },
-  {
-    "objectID": "docs/cards/index.html",
-    "href": "docs/cards/index.html",
-    "title": "Cards",
-    "section": "",
-    "text": "Cards are intended to serve as a document giving a high level overview of the system developed and deployed. It is meant to be a high level document and as details emerge, documents such Model Cards and Data Cards can be linked. Below are the cards relevant to the OncoDermAI project:\n\nProject Card"
+    "objectID": "docs/cards/data-card.html#known-limitations",
+    "href": "docs/cards/data-card.html#known-limitations",
+    "title": "DermaMNIST Dataset Card",
+    "section": "Known Limitations",
+    "text": "Known Limitations\n\nLimited to 28x28 resolution, which may constrain advanced model performance."
   },
   {
     "objectID": "notebooks/DermaMnist.html",
