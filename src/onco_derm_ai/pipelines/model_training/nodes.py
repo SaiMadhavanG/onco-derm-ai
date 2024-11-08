@@ -11,6 +11,21 @@ from torchvision import models, transforms
 
 
 class DermaMNISTDataset(Dataset):
+    """
+    A custom Dataset class for the DermaMNIST dataset.
+    Args:
+        dataframe (pd.DataFrame): A pandas DataFrame containing the dataset.
+                                  It should have two columns: 'image' and 'label'.
+                                  'image' should contain (28, 28, 3) numpy arrays.
+        transform (callable, optional): Optional transform to be applied on a sample.
+    Attributes:
+        dataframe (pd.DataFrame): The dataframe containing the dataset.
+        transform (callable): The transform to be applied on a sample.
+    Methods:
+        __len__(): Returns the length of the dataset.
+        __getitem__(idx): Returns the image and label at the given index.
+    """
+
     def __init__(self, dataframe, transform=None):
         self.dataframe = dataframe
         self.transform = transform
@@ -34,6 +49,19 @@ class DermaMNISTDataset(Dataset):
 
 
 def preprocess_data_input(train_data: pd.DataFrame) -> DermaMNISTDataset:
+    """
+    Preprocesses the input training data for the DermaMNIST dataset.
+
+    This function applies a series of transformations to the input training data,
+    including resizing the images to 224x224 pixels and normalizing them using
+    the specified mean and standard deviation values.
+
+    Args:
+        train_data (pd.DataFrame): The input training data in the form of a pandas DataFrame.
+
+    Returns:
+        DermaMNISTDataset: The preprocessed training dataset ready for model training.
+    """
     transform = transforms.Compose(
         [
             transforms.Resize((224, 224)),  # Resize to 224x224
@@ -48,6 +76,15 @@ def preprocess_data_input(train_data: pd.DataFrame) -> DermaMNISTDataset:
 
 
 def model_select(model_name: str) -> models:
+    """
+    Selects and returns a pre-trained model based on the provided model name.
+    Parameters:
+    model_name (str): The name of the model to select. Supported values are "ResNet18" and "VGG16".
+    Returns:
+    models: The selected pre-trained model.
+    Raises:
+    ValueError: If the provided model name is not supported.
+    """
     if model_name == "ResNet18":
         model = models.resnet18(pretrained=True)
     elif model_name == "VGG16":
@@ -60,6 +97,15 @@ def model_select(model_name: str) -> models:
 def model_finetune(
     train_dataset: DermaMNISTDataset, model: models, num_epochs: int
 ) -> dict:
+    """
+    Fine-tunes a pre-trained model on the given training dataset.
+    Args:
+        train_dataset (DermaMNISTDataset): The dataset to train the model on.
+        model (models): The pre-trained model to be fine-tuned.
+        num_epochs (int): The number of epochs to train the model.
+    Returns:
+        dict: The state dictionary of the fine-tuned model.
+    """
     train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
     num_classes = 7
     model.fc = nn.Linear(model.fc.in_features, num_classes)

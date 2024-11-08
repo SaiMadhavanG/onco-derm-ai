@@ -1,1 +1,1 @@
-{"train_raw": {"rows": 7007, "columns": 3, "file_size": 17085004}, "train_intermediate": {"rows": 7007, "columns": 3, "file_size": null}, "pre-processed_train_data": {"rows": 7007, "columns": 3, "file_size": 0}}
+{"pre-processed_train_data": {"rows": 7007, "columns": 3, "file_size": 0}}
