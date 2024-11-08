@@ -6,11 +6,11 @@ title: "OncoDerm AI"
 
 ### Executive Summary
 
-We propose developing a machine learning-based skin cancer screening system utilizing dermatoscopic images. The system will assist medical professionals in preliminary skin lesion assessment while incorporating robust MLOps practices and responsible AI principles.
+We propose developing a machine learning-based skin cancer screening system utilizing dermatoscopic images. The system will assist medical professionals in preliminary skin lesion assessment while incorporating robust MLOps practices, responsible AI principles, and an interactive chatbot feature powered by a Large Language Model (LLM) for enhanced user engagement.
 
 ### Problem Statement
 
-Skin cancer diagnosis requires expert dermatological knowledge and careful image analysis. While machine learning can assist in this process, deploying such systems in clinical settings requires careful consideration of reliability, explainability, and operational excellence.
+Skin cancer diagnosis requires expert dermatological knowledge and careful image analysis. While machine learning can assist in this process, deploying such systems in clinical settings requires careful consideration of reliability, explainability, operational excellence, and ease of interaction for medical professionals.
 
 ### Dataset
 
@@ -36,11 +36,11 @@ Skin cancer diagnosis requires expert dermatological knowledge and careful image
 
 - **Base Architecture**:
   - ResNet-18 or MobileNetV2 (modified for 28x28 input)
-  - Consideration for lightweight models due to smaller input size
+  - Lightweight models for compatibility with small input size
 - **Training Pipeline**:
   - Data augmentation (rotation, flipping, color jittering)
   - Transfer learning with ImageNet weights
-  - Fine-tuning strategies for small image sizes
+  - Fine-tuning for small images
   - Cross-validation for robust performance estimation
 
 #### 2. MLOps Infrastructure
@@ -66,11 +66,17 @@ Skin cancer diagnosis requires expert dermatological knowledge and careful image
 
 ##### Model Robustness & Reliability
 
-- **Explainability**:
-- **Confidence Calibration**:
+- **Explainability**
+- **Confidence Calibration**
+- **Adversarial Robustness**
+- **Out-of-Distribution Detection**
 
-- **Adversarial Robustness**:
-- **Out-of-Distribution Detection**:
+##### Chatbot Integration with LLM
+
+- **Interactive Chatbot**: We will integrate a chatbot powered by an LLM to enable natural language interactions with users.
+  - **Functionality**: The chatbot will provide explanations, clarifications, and further details about the model's prediction, confidence score, and lesion category. Medical professionals can ask follow-up questions, discuss specific cases, and obtain interpretative guidance.
+  - **Implementation**: All model outputs (prediction, confidence score, and explainability results) will be passed as inputs to the LLM, enabling contextual and conversational responses based on real-time model data.
+  - **Benefits**: Allows users to interact in natural language, promoting accessibility and understanding, especially useful for non-technical users in clinical settings.
 
 ##### Clinical Integration
 
@@ -102,7 +108,7 @@ Skin cancer diagnosis requires expert dermatological knowledge and careful image
 - False positive/negative rates
 - Calibration error
 - OOD detection accuracy
-- Explanation quality (user feedback)
+- Explanation quality (user feedback from chatbot interactions)
 
 ### Challenges & Risks
 
@@ -124,10 +130,3 @@ Skin cancer diagnosis requires expert dermatological knowledge and careful image
 3. **Comprehensive Documentation**: Usage guidelines and limitations
 4. **Regular Updates**: Continuous model improvement
 5. **User Training**: Proper system usage and interpretation
-
-### Future Enhancements
-
-1. VQA chatbot for assisting medical professionals
-2. Extension to other dermoscopic datasets
-
-
