@@ -1,0 +1,7 @@
+---
+title: Cards
+---
+
+Cards are intended to serve as a document giving a high level overview of the system developed and deployed. It is meant to be a high level document and as details emerge, documents such Model Cards and Data Cards can be linked. Below are the cards relevant to the [OncoDermAI](../index.qmd) project:
+
+- [Project Card](./project-card.ipynb)
