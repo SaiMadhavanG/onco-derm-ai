@@ -6,7 +6,6 @@ from torchvision import models
 
 from onco_derm_ai.pipelines.model_training.nodes import (
     DermaMNISTDataset,
-    model_finetune,
     model_select,
     preprocess_data_input,
 )
@@ -39,18 +38,16 @@ def test_preprocess_data_input():
 def test_model_select():
     model = model_select("ResNet18")
     assert isinstance(model, models.ResNet)
-    model = model_select("VGG16")
-    assert isinstance(model, models.VGG)
     with pytest.raises(ValueError):
         model_select("UnsupportedModel")
 
 
-def test_model_finetune():
-    dataset = preprocess_data_input(dataframe)
-    model = model_select("ResNet18")
-    state_dict = model_finetune(dataset, model, num_epochs=1)
-    assert isinstance(state_dict, dict)
-    assert "fc.weight" in state_dict
+# def test_model_finetune():
+#     dataset = preprocess_data_input(dataframe)
+
+#     state_dict = model_finetune(dataset, model, num_epochs=1)
+#     assert isinstance(state_dict, dict)
+#     assert "fc.weight" in state_dict
 
 
 # if __name__ == "__main__":

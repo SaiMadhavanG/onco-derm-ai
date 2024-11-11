@@ -18,14 +18,22 @@ pre-processed_train_data:
   filepath: data/02_intermediate/pre-processed_train_data.pkl
   versioned: true
 
+pre-processed_val_data:
+  type: pickle.PickleDataset
+  filepath: data/02_intermediate/pre-processed_val_data.pkl
+  versioned: true
+
 image_classification_model:
   type: pickle.PickleDataset
-  filepath: models/image_classification_model.pkl
+  filepath: data/06_models/image_classification_model.pkl
   versioned: true
 
 model_finetuned:
   type: pickle.PickleDataset
-  filepath: models/model_fintuned.pkl
+  filepath: data/06_models/model_fintuned.pkl
   versioned: true
 
-  
+model_metrics:
+  type: json.JSONDataset
+  filepath: data/07_reporting/model_metrics.json
+  versioned: true

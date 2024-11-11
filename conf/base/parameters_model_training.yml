@@ -5,5 +5,7 @@
 # Link: https://docs.kedro.org/en/0.19.8/configuration/parameters.html
 
 model_name: ResNet18
-
 num_epochs: 1
+batch_size: 64
+device: cuda
+lr: 0.001

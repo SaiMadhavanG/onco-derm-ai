@@ -32,7 +32,7 @@
     "href": "reference/model_select.html",
     "title": "model_select",
     "section": "",
-    "text": "model_select\nmodel_select(model_name)\nSelects and returns a pre-trained model based on the provided model name. Parameters: model_name (str): The name of the model to select. Supported values are “ResNet18” and “VGG16”. Returns: models: The selected pre-trained model. Raises: ValueError: If the provided model name is not supported."
+    "text": "model_select\nmodel_select(model_name, num_outputs=7, pretrained=False)\nSelects and returns a pre-trained model based on the provided model name. Parameters: model_name (str): The name of the model to select. Supported values are “ResNet18” and “VGG16”. Returns: models: The selected pre-trained model. Raises: ValueError: If the provided model name is not supported."
   },
   {
     "objectID": "reference/tensoring_resizing.html",
@@ -60,14 +60,14 @@
     "href": "reference/model_finetune.html",
     "title": "model_finetune",
     "section": "",
-    "text": "model_finetune\nmodel_finetune(train_dataset, model, num_epochs)\nFine-tunes a pre-trained model on the given training dataset. Args: train_dataset (DermaMNISTDataset): The dataset to train the model on. model (models): The pre-trained model to be fine-tuned. num_epochs (int): The number of epochs to train the model. Returns: dict: The state dictionary of the fine-tuned model."
+    "text": "model_finetune\nmodel_finetune(\n    train_dataset\n    model_name\n    num_epochs\n    batch_size\n    device='cpu'\n    lr=0.001\n)\nFinetunes a pre-trained model on the given training dataset. Args: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. num_epochs (int): The number of epochs to train the model for. batch_size (int): The batch size to use during training. device (str): The device to train the model on (e.g., “cpu” or “cuda”). lr (float): The learning rate for the optimizer. Returns: dict: The state dictionary of the finetuned model."
   },
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFine-tunes a pre-trained model on the given training dataset."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset."
   },
   {
     "objectID": "reference/index.html#data_preprocessing",
@@ -81,7 +81,7 @@
     "href": "reference/index.html#model_training",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFine-tunes a pre-trained model on the given training dataset."
+    "text": "Functions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset."
   },
   {
     "objectID": "reference/normalizing_images.html",

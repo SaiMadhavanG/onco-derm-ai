@@ -1,13 +1,23 @@
 # model_finetune { #onco_derm_ai.model_finetune }
 
 ```python
-model_finetune(train_dataset, model, num_epochs)
+model_finetune(
+    train_dataset
+    model_name
+    num_epochs
+    batch_size
+    device='cpu'
+    lr=0.001
+)
 ```
 
-Fine-tunes a pre-trained model on the given training dataset.
+Finetunes a pre-trained model on the given training dataset.
 Args:
     train_dataset (DermaMNISTDataset): The dataset to train the model on.
-    model (models): The pre-trained model to be fine-tuned.
-    num_epochs (int): The number of epochs to train the model.
+    model_name (str): The name of the model to finetune.
+    num_epochs (int): The number of epochs to train the model for.
+    batch_size (int): The batch size to use during training.
+    device (str): The device to train the model on (e.g., "cpu" or "cuda").
+    lr (float): The learning rate for the optimizer.
 Returns:
-    dict: The state dictionary of the fine-tuned model.
+    dict: The state dictionary of the finetuned model.

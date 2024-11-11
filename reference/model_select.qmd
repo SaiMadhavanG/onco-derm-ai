@@ -1,7 +1,7 @@
 # model_select { #onco_derm_ai.model_select }
 
 ```python
-model_select(model_name)
+model_select(model_name, num_outputs=7, pretrained=False)
 ```
 
 Selects and returns a pre-trained model based on the provided model name.
