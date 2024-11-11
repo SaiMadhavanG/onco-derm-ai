@@ -1,0 +1,13 @@
+# model_finetune { #onco_derm_ai.model_finetune }
+
+```python
+model_finetune(train_dataset, model, num_epochs)
+```
+
+Fine-tunes a pre-trained model on the given training dataset.
+Args:
+    train_dataset (DermaMNISTDataset): The dataset to train the model on.
+    model (models): The pre-trained model to be fine-tuned.
+    num_epochs (int): The number of epochs to train the model.
+Returns:
+    dict: The state dictionary of the fine-tuned model.

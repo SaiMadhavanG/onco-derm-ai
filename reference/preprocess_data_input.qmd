@@ -1,0 +1,17 @@
+# preprocess_data_input { #onco_derm_ai.preprocess_data_input }
+
+```python
+preprocess_data_input(train_data)
+```
+
+Preprocesses the input training data for the DermaMNIST dataset.
+
+This function applies a series of transformations to the input training data,
+including resizing the images to 224x224 pixels and normalizing them using
+the specified mean and standard deviation values.
+
+Args:
+    train_data (pd.DataFrame): The input training data in the form of a pandas DataFrame.
+
+Returns:
+    DermaMNISTDataset: The preprocessed training dataset ready for model training.

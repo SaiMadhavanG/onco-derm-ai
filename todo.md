@@ -11,8 +11,8 @@
 
 # Documentation
 
-- [ ] project card - **sai**
-- [ ] data card
+- [x] project card - **sai**
+- [x] data card
 - [ ] model card
 - [ ] mlops card
 
@@ -28,8 +28,8 @@
 # Training
 
 - [ ] Model training - Resnet - _PyTorch_
-- [ ] Model versioning - _mlflow_
 - [ ] Model eval - _Sk classification report, k cross val_
+- [ ] Model versioning - _mlflow_
 - [ ] hyperparameter tuning - _optuna/sklearn search_
 - [ ] automatic reports - _quarto and plotting libs_
 - [ ] Model pruning - _pytorch_

@@ -25,7 +25,7 @@ def test_derma_mnist_dataset():
     assert len(dataset) == num
     image, label = dataset[0]
     assert isinstance(image, torch.Tensor)
-    # assert isinstance(label, int)
+    assert isinstance(label, torch.Tensor)
 
 
 def test_preprocess_data_input():

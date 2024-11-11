@@ -36,7 +36,7 @@ class DermaMNISTDataset(Dataset):
     def __getitem__(self, idx):
         image = self.dataframe["image"][idx]  # (28, 28, 3) numpy array
         # image = (image * 255).astype(np.uint8)  # Convert to uint8 for transforms
-        label = self.dataframe["label"][idx]
+        label = torch.tensor(self.dataframe["label"][idx])
 
         # Convert numpy image to PIL Image for applying transforms
         image = transforms.ToPILImage()(image)
