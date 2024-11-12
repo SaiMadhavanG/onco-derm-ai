@@ -4,7 +4,7 @@
     "href": "todo.html",
     "title": "Initialization",
     "section": "",
-    "text": "Initialization\n\ncome up with a name\nkedro init\npre commit hooks\n\nlinting\ntesting\nquartodoc\n\ntesting - pytest, git pre commit hook\nauto documentation - quartodoc\n\n\n\nDocumentation\n\nproject card - sai\ndata card\nmodel card\nmlops card\n\n\n\nData Prep\n\nLoad data - kedro\nData versioning - kedro\nImage preprocessing - normalizing, tensorizing and resizing - torchvision - srini\nData augmentation - torchvision\n\nData quality - ?, greater expectation\nright to erasure, forgetting - kedro pipeline\n\n\n\n\nTraining\n\nModel training - Resnet - PyTorch\nModel eval - Sk classification report, k cross val\nModel versioning - mlflow\nhyperparameter tuning - optuna/sklearn search\nautomatic reports - quarto and plotting libs\nModel pruning - pytorch\nadversarial robustness - auto_lirpa\nright to erasure, model retraining - kedro pipeline\n\n\n\nInference\n\nexplainability - deel\nconfidence calibration - deel, ?\nOOD detection - ?\nConformal predictions - deel\n\n\n\nDeployment\n\nmodel containerization - mlflow, docker\nauto model deployment - github actions/cloud provider\ndeployment side eval\ndata drift\nauto retraining triggers\n\n\n\nLLM\n\nllm set up\nllm prompt config\nllm deployment\n\n\n\nFront End\n\nFrontend dashboard - react, bootstrap\nChatbot window"
+    "text": "Initialization\n\ncome up with a name\nkedro init\npre commit hooks\n\nlinting\ntesting\nquartodoc\n\ntesting - pytest, git pre commit hook\nauto documentation - quartodoc\n\n\n\nDocumentation\n\nproject card - sai\ndata card\nmodel card\nmlops card\n\n\n\nData Prep\n\nLoad data - kedro\nData versioning - kedro\nImage preprocessing - normalizing, tensorizing and resizing - torchvision - srini\nData augmentation - torchvision\n\nData quality - ?, greater expectation\nright to erasure, forgetting - kedro pipeline\n\n\n\n\nTraining\n\nModel training - Resnet - PyTorch\nModel eval - Sk classification report\nModel versioning - mlflow\nhyperparameter tuning - optuna/sklearn search\nautomatic reports - quarto and plotting libs\nModel pruning - pytorch\nadversarial robustness - auto_lirpa\nright to erasure, model retraining - kedro pipeline\n\n\n\nInference\n\nexplainability - deel\nconfidence calibration - deel, ?\nOOD detection - ?\nConformal predictions - deel\n\n\n\nDeployment\n\nmodel containerization - mlflow, docker\nauto model deployment - github actions/cloud provider\ndeployment side eval\ndata drift\nauto retraining triggers\n\n\n\nLLM\n\nllm set up\nllm prompt config\nllm deployment\n\n\n\nFront End\n\nFrontend dashboard - react, bootstrap\nChatbot window"
   },
   {
     "objectID": "notebooks/RestNet.html",
@@ -18,91 +18,70 @@
     "href": "reference/preprocess_data_input.html",
     "title": "preprocess_data_input",
     "section": "",
-    "text": "preprocess_data_input\npreprocess_data_input(train_data)\nPreprocesses the input training data for the DermaMNIST dataset.\nThis function applies a series of transformations to the input training data, including resizing the images to 224x224 pixels and normalizing them using the specified mean and standard deviation values.\nArgs: train_data (pd.DataFrame): The input training data in the form of a pandas DataFrame.\nReturns: DermaMNISTDataset: The preprocessed training dataset ready for model training."
+    "text": "preprocess_data_input\npreprocess_data_input(train_data)\nPreprocesses the input training data for the DermaMNIST dataset.\nThis function applies transformations, including resizing images to 224x224 pixels and normalizing them with specified mean and standard deviation values.\nArgs: train_data (pd.DataFrame): The input training data in the form of a pandas DataFrame.\nReturns: DermaMNISTDataset: The preprocessed training dataset ready for model training."
   },
   {
     "objectID": "reference/DermaMNISTDataset.html",
     "href": "reference/DermaMNISTDataset.html",
     "title": "DermaMNISTDataset",
     "section": "",
-    "text": "DermaMNISTDataset\nDermaMNISTDataset(self, dataframe, transform=None)\nA custom Dataset class for the DermaMNIST dataset. Args: dataframe (pd.DataFrame): A pandas DataFrame containing the dataset. It should have two columns: ‘image’ and ‘label’. ‘image’ should contain (28, 28, 3) numpy arrays. transform (callable, optional): Optional transform to be applied on a sample. Attributes: dataframe (pd.DataFrame): The dataframe containing the dataset. transform (callable): The transform to be applied on a sample. Methods: len(): Returns the length of the dataset. getitem(idx): Returns the image and label at the given index."
+    "text": "DermaMNISTDataset\nDermaMNISTDataset(self, dataframe, transform=None)\nA custom Dataset class for the DermaMNIST dataset.\nArgs: dataframe (pd.DataFrame): A pandas DataFrame containing the dataset. It should have two columns: ‘image’ and ‘label’. ‘image’ should contain (28, 28, 3) numpy arrays. transform (callable, optional): Optional transform to be applied on a sample.\nAttributes: dataframe (pd.DataFrame): The dataframe containing the dataset. transform (callable): The transform to be applied on a sample.\nMethods: len(): Returns the length of the dataset. getitem(idx): Returns the image and label at the given index."
   },
   {
     "objectID": "reference/model_select.html",
     "href": "reference/model_select.html",
     "title": "model_select",
     "section": "",
-    "text": "model_select\nmodel_select(model_name, num_outputs=7, pretrained=False)\nSelects and returns a pre-trained model based on the provided model name. Parameters: model_name (str): The name of the model to select. Supported values are “ResNet18” and “VGG16”. Returns: models: The selected pre-trained model. Raises: ValueError: If the provided model name is not supported."
+    "text": "model_select\nmodel_select(model_name, num_outputs=7, pretrained=False)\nSelects and returns a pre-trained model based on the provided model name.\nArgs: model_name (str): The name of the model to select. Supported values are “ResNet18” and “VGG16”. num_outputs (int): The number of output classes for the model. pretrained (bool): If True, loads a pre-trained model.\nReturns: models: The selected pre-trained model.\nRaises: ValueError: If the provided model name is not supported."
   },
   {
     "objectID": "reference/tensoring_resizing.html",
     "href": "reference/tensoring_resizing.html",
     "title": "tensoring_resizing",
     "section": "",
-    "text": "tensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+    "text": "tensoring_resizing\ntensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\nArgs: data (pd.DataFrame): A pandas DataFrame containing an ‘image’ column with image data.\nReturns: pd.DataFrame: The input DataFrame with the ‘image’ column transformed."
   },
   {
-    "objectID": "reference/tensoring_resizing.html#parameters",
-    "href": "reference/tensoring_resizing.html#parameters",
-    "title": "tensoring_resizing",
+    "objectID": "reference/evaluate_model.html",
+    "href": "reference/evaluate_model.html",
+    "title": "evaluate_model",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA pandas DataFrame containing an ‘image’ column with image data.\nrequired"
-  },
-  {
-    "objectID": "reference/tensoring_resizing.html#returns",
-    "href": "reference/tensoring_resizing.html#returns",
-    "title": "tensoring_resizing",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nThe input DataFrame with the ‘image’ column transformed."
+    "text": "evaluate_model\nevaluate_model(\n    model_name,\n    model_state_dict,\n    test_dataset,\n    batch_size,\n    device='cpu',\n)\nEvaluates a pre-trained model on the given test dataset.\nArgs: model_name (str): The name of the model being evaluated. model_state_dict (dict): The state dictionary of the pre-trained model. test_dataset (DermaMNISTDataset): The dataset to evaluate the model on. batch_size (int): The batch size to use during evaluation. device (str): The device to evaluate the model on (e.g., “cpu” or “cuda”).\nReturns: dict: The classification report of the model’s performance."
   },
   {
     "objectID": "reference/model_finetune.html",
     "href": "reference/model_finetune.html",
     "title": "model_finetune",
     "section": "",
-    "text": "model_finetune\nmodel_finetune(\n    train_dataset\n    model_name\n    num_epochs\n    batch_size\n    device='cpu'\n    lr=0.001\n)\nFinetunes a pre-trained model on the given training dataset. Args: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. num_epochs (int): The number of epochs to train the model for. batch_size (int): The batch size to use during training. device (str): The device to train the model on (e.g., “cpu” or “cuda”). lr (float): The learning rate for the optimizer. Returns: dict: The state dictionary of the finetuned model."
+    "text": "model_finetune\nmodel_finetune(train_dataset, model_name, train_params, device='cpu')\nFinetunes a pre-trained model on the given training dataset.\nArgs: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. train_params (dict): A dictionary containing the training parameters. device (str): The device to train the model on (e.g., “cpu” or “cuda”).\nReturns: dict: The state dictionary of the finetuned model."
   },
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalizes the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset."
   },
   {
     "objectID": "reference/index.html#data_preprocessing",
     "href": "reference/index.html#data_preprocessing",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalize the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalizes the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame."
   },
   {
     "objectID": "reference/index.html#model_training",
     "href": "reference/index.html#model_training",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset."
+    "text": "Functions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset."
   },
   {
     "objectID": "reference/normalizing_images.html",
     "href": "reference/normalizing_images.html",
     "title": "normalizing_images",
     "section": "",
-    "text": "normalizing_images(data)\nNormalize the pixel values of images in the given DataFrame.\nThis function takes a DataFrame containing image data and normalizes the pixel values by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
-  },
-  {
-    "objectID": "reference/normalizing_images.html#parameters",
-    "href": "reference/normalizing_images.html#parameters",
-    "title": "normalizing_images",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ndata\npd.DataFrame\nA DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nrequired"
-  },
-  {
-    "objectID": "reference/normalizing_images.html#returns",
-    "href": "reference/normalizing_images.html#returns",
-    "title": "normalizing_images",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\npd.DataFrame\nA DataFrame with the same structure as the input, but with normalized image pixel values."
+    "text": "normalizing_images\nnormalizing_images(data)\nNormalizes the pixel values of images in the given DataFrame.\nThis function takes a DataFrame containing image data and normalizes the pixel values by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].\nArgs: data (pd.DataFrame): A DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.\nReturns: pd.DataFrame: A DataFrame with the same structure as the input, but with normalized image pixel values."
   },
   {
     "objectID": "docs/index.html",

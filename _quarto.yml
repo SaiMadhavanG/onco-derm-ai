@@ -28,6 +28,7 @@ quartodoc:
         - preprocess_data_input
         - model_select
         - model_finetune
+        - evaluate_model
   
 
 format:

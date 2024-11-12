@@ -5,14 +5,17 @@ DermaMNISTDataset(self, dataframe, transform=None)
 ```
 
 A custom Dataset class for the DermaMNIST dataset.
+
 Args:
     dataframe (pd.DataFrame): A pandas DataFrame containing the dataset.
-                              It should have two columns: 'image' and 'label'.
-                              'image' should contain (28, 28, 3) numpy arrays.
+        It should have two columns: 'image' and 'label'. 'image' should
+        contain (28, 28, 3) numpy arrays.
     transform (callable, optional): Optional transform to be applied on a sample.
+
 Attributes:
     dataframe (pd.DataFrame): The dataframe containing the dataset.
     transform (callable): The transform to be applied on a sample.
+
 Methods:
     __len__(): Returns the length of the dataset.
     __getitem__(idx): Returns the image and label at the given index.

@@ -6,7 +6,7 @@ Functions in the data_preprocessing pipeline
 
 | | |
 | --- | --- |
-| [normalizing_images](normalizing_images.qmd#onco_derm_ai.normalizing_images) | Normalize the pixel values of images in the given DataFrame. |
+| [normalizing_images](normalizing_images.qmd#onco_derm_ai.normalizing_images) | Normalizes the pixel values of images in the given DataFrame. |
 | [tensoring_resizing](tensoring_resizing.qmd#onco_derm_ai.tensoring_resizing) | Applies a series of transformations to the 'image' column of a pandas DataFrame. |
 
 ## model_training
@@ -19,3 +19,4 @@ Functions in the model_training pipeline
 | [preprocess_data_input](preprocess_data_input.qmd#onco_derm_ai.preprocess_data_input) | Preprocesses the input training data for the DermaMNIST dataset. |
 | [model_select](model_select.qmd#onco_derm_ai.model_select) | Selects and returns a pre-trained model based on the provided model name. |
 | [model_finetune](model_finetune.qmd#onco_derm_ai.model_finetune) | Finetunes a pre-trained model on the given training dataset. |
+| [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |

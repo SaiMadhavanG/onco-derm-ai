@@ -1,1 +1,1 @@
-{"train_raw": {"rows": 7007, "columns": 3, "file_size": 4096}, "train_intermediate": {"rows": 7007, "columns": 3, "file_size": null}, "val_raw": {"rows": 1003, "columns": 3, "file_size": 4096}, "val_intermediate": {"rows": 1003, "columns": 3}, "pre-processed_train_data": {"rows": 7007, "columns": 3, "file_size": 4096}, "pre-processed_val_data": {"rows": 1003, "columns": 3, "file_size": 4096}}
+{"pre-processed_train_data": {"rows": 7007, "columns": 3, "file_size": 4096}, "pre-processed_val_data": {"rows": 1003, "columns": 3, "file_size": 4096}}

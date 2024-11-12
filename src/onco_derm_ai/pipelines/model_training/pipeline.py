@@ -21,12 +21,10 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=[
                     "train_dataset",
                     "params:model_name",
-                    "params:num_epochs",
-                    "params:batch_size",
+                    "params:train_params",
                     "params:device",
-                    "params:lr",
                 ],
-                outputs="model_finetuned",
+                outputs=["model_finetuned", "training_loss"],
             ),
             node(
                 func=preprocess_data_input,
@@ -39,7 +37,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "params:model_name",
                     "model_finetuned",
                     "val_dataset",
-                    "params:batch_size",
+                    "params:eval_batch_size",
                     "params:device",
                 ],
                 outputs="model_metrics",
