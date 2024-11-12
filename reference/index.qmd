@@ -20,3 +20,4 @@ Functions in the model_training pipeline
 | [model_select](model_select.qmd#onco_derm_ai.model_select) | Selects and returns a pre-trained model based on the provided model name. |
 | [model_finetune](model_finetune.qmd#onco_derm_ai.model_finetune) | Finetunes a pre-trained model on the given training dataset. |
 | [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |
+| [log_model](log_model.qmd#onco_derm_ai.log_model) | Logs the model, hyperparameters, and metrics to MLFlow. |

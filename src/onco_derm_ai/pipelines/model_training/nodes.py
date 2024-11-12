@@ -4,6 +4,9 @@ generated using Kedro 0.19.8
 """
 
 import matplotlib.pyplot as plt
+import mlflow
+import mlflow.pytorch
+import numpy as np
 import pandas as pd
 import torch
 from sklearn.metrics import classification_report
@@ -203,3 +206,52 @@ def evaluate_model(
         y_pred.extend(predicted.cpu().numpy())
     report = classification_report(y_true, y_pred, output_dict=True)
     return report
+
+
+def log_model(
+    model_name: str, model_state_dict: dict, hyperparams: dict, metrics: dict
+) -> str:
+    """
+    Logs the model, hyperparameters, and metrics to MLFlow.
+
+    Args:
+        model_name (str): The name of the model.
+        model_state_dict (dict): The state dictionary of the model.
+        hyperparams (dict): The hyperparameters used during training.
+        metrics (dict): The evaluation metrics of the model.
+
+    Returns:
+        str: The URI of the logged model.
+    """
+    model = model_select(model_name, 7, False)
+    model.load_state_dict(model_state_dict)
+
+    # reformat metrics to the format expected by MLflow
+    new_metrics = {}
+    for key, value in metrics.items():
+        if isinstance(value, (int, float)):
+            new_metrics[key] = value
+        elif isinstance(value, dict):
+            for k, v in value.items():
+                new_metrics[f"{key}_{k}"] = v
+
+    # Start an MLflow run
+    with mlflow.start_run():
+        # Log model
+        mlflow.pytorch.log_model(
+            model,
+            artifact_path=model_name,
+            input_example=np.random.randn(1, 3, 224, 224),
+            registered_model_name=model_name,
+        )
+
+        # Log hyperparameters
+        mlflow.log_params(hyperparams)
+
+        # Log metrics
+        mlflow.log_metrics(new_metrics)
+
+        # Get the URI of the logged model
+        model_uri = mlflow.get_artifact_uri(model_name)
+
+    return model_uri

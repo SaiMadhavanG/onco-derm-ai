@@ -4,6 +4,7 @@ from .pipelines.data_preprocessing.nodes import normalizing_images, tensoring_re
 from .pipelines.model_training.nodes import (
     DermaMNISTDataset,
     evaluate_model,
+    log_model,
     model_finetune,
     model_select,
     preprocess_data_input,
@@ -19,4 +20,5 @@ __all__ = [
     "model_select",
     "preprocess_data_input",
     "evaluate_model",
+    "log_model",
 ]

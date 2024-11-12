@@ -29,7 +29,7 @@
 
 - [x] Model training - Resnet - _PyTorch_
 - [x] Model eval - _Sk classification report_
-- [ ] Model versioning - _mlflow_
+- [x] Model versioning - _mlflow_
 - [ ] hyperparameter tuning - _optuna/sklearn search_
 - [ ] automatic reports - _quarto and plotting libs_
 - [ ] Model pruning - _pytorch_

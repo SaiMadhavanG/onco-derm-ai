@@ -7,7 +7,7 @@
 model_name: ResNet18
 device: cuda
 train_params:
-  num_epochs: 5
-  batch_size: 64
+  num_epochs: 30
+  batch_size: 128
   lr: 0.001
-eval_batch_size: 64
+eval_batch_size: 128

@@ -5,7 +5,7 @@ generated using Kedro 0.19.8
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import evaluate_model, model_finetune, preprocess_data_input
+from .nodes import evaluate_model, log_model, model_finetune, preprocess_data_input
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -41,6 +41,17 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "params:device",
                 ],
                 outputs="model_metrics",
+            ),
+            node(
+                func=log_model,
+                inputs=[
+                    "params:model_name",
+                    "model_finetuned",
+                    "params:train_params",
+                    "model_metrics",
+                ],
+                outputs="mlflow_uri",
+                name="log_model",
             ),
         ]
     )

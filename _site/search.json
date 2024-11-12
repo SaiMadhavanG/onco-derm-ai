@@ -35,11 +35,11 @@
     "text": "model_select\nmodel_select(model_name, num_outputs=7, pretrained=False)\nSelects and returns a pre-trained model based on the provided model name.\nArgs: model_name (str): The name of the model to select. Supported values are “ResNet18” and “VGG16”. num_outputs (int): The number of output classes for the model. pretrained (bool): If True, loads a pre-trained model.\nReturns: models: The selected pre-trained model.\nRaises: ValueError: If the provided model name is not supported."
   },
   {
-    "objectID": "reference/tensoring_resizing.html",
-    "href": "reference/tensoring_resizing.html",
-    "title": "tensoring_resizing",
+    "objectID": "reference/model_finetune.html",
+    "href": "reference/model_finetune.html",
+    "title": "model_finetune",
     "section": "",
-    "text": "tensoring_resizing\ntensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\nArgs: data (pd.DataFrame): A pandas DataFrame containing an ‘image’ column with image data.\nReturns: pd.DataFrame: The input DataFrame with the ‘image’ column transformed."
+    "text": "model_finetune\nmodel_finetune(train_dataset, model_name, train_params, device='cpu')\nFinetunes a pre-trained model on the given training dataset.\nArgs: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. train_params (dict): A dictionary containing the training parameters. device (str): The device to train the model on (e.g., “cpu” or “cuda”).\nReturns: dict: The state dictionary of the finetuned model."
   },
   {
     "objectID": "reference/evaluate_model.html",
@@ -49,18 +49,25 @@
     "text": "evaluate_model\nevaluate_model(\n    model_name,\n    model_state_dict,\n    test_dataset,\n    batch_size,\n    device='cpu',\n)\nEvaluates a pre-trained model on the given test dataset.\nArgs: model_name (str): The name of the model being evaluated. model_state_dict (dict): The state dictionary of the pre-trained model. test_dataset (DermaMNISTDataset): The dataset to evaluate the model on. batch_size (int): The batch size to use during evaluation. device (str): The device to evaluate the model on (e.g., “cpu” or “cuda”).\nReturns: dict: The classification report of the model’s performance."
   },
   {
-    "objectID": "reference/model_finetune.html",
-    "href": "reference/model_finetune.html",
-    "title": "model_finetune",
+    "objectID": "reference/tensoring_resizing.html",
+    "href": "reference/tensoring_resizing.html",
+    "title": "tensoring_resizing",
     "section": "",
-    "text": "model_finetune\nmodel_finetune(train_dataset, model_name, train_params, device='cpu')\nFinetunes a pre-trained model on the given training dataset.\nArgs: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. train_params (dict): A dictionary containing the training parameters. device (str): The device to train the model on (e.g., “cpu” or “cuda”).\nReturns: dict: The state dictionary of the finetuned model."
+    "text": "tensoring_resizing\ntensoring_resizing(data)\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\nThe transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.\nArgs: data (pd.DataFrame): A pandas DataFrame containing an ‘image’ column with image data.\nReturns: pd.DataFrame: The input DataFrame with the ‘image’ column transformed."
+  },
+  {
+    "objectID": "reference/log_model.html",
+    "href": "reference/log_model.html",
+    "title": "log_model",
+    "section": "",
+    "text": "log_model\nlog_model(model_name, model_state_dict, hyperparams, metrics)\nLogs the model, hyperparameters, and metrics to MLFlow.\nArgs: model_name (str): The name of the model. model_state_dict (dict): The state dictionary of the model. hyperparams (dict): The hyperparameters used during training. metrics (dict): The evaluation metrics of the model.\nReturns: str: The URI of the logged model."
   },
   {
     "objectID": "reference/index.html",
     "href": "reference/index.html",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalizes the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalizes the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset.\n\n\nlog_model\nLogs the model, hyperparameters, and metrics to MLFlow."
   },
   {
     "objectID": "reference/index.html#data_preprocessing",
@@ -74,7 +81,7 @@
     "href": "reference/index.html#model_training",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset."
+    "text": "Functions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset.\n\n\nlog_model\nLogs the model, hyperparameters, and metrics to MLFlow."
   },
   {
     "objectID": "reference/normalizing_images.html",

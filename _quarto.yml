@@ -29,6 +29,7 @@ quartodoc:
         - model_select
         - model_finetune
         - evaluate_model
+        - log_model
   
 
 format:
