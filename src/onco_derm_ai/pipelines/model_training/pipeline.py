@@ -17,19 +17,20 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs="train_dataset",
             ),
             node(
+                func=preprocess_data_input,
+                inputs="pre-processed_val_data",
+                outputs="val_dataset",
+            ),
+            node(
                 func=model_finetune,
                 inputs=[
                     "train_dataset",
+                    "val_dataset",
                     "params:model_name",
                     "params:train_params",
                     "params:device",
                 ],
                 outputs=["model_finetuned", "training_loss"],
-            ),
-            node(
-                func=preprocess_data_input,
-                inputs="pre-processed_val_data",
-                outputs="val_dataset",
             ),
             node(
                 func=evaluate_model,
@@ -49,6 +50,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "model_finetuned",
                     "params:train_params",
                     "model_metrics",
+                    "training_loss",
                 ],
                 outputs="mlflow_uri",
                 name="log_model",

@@ -39,7 +39,7 @@
     "href": "reference/model_finetune.html",
     "title": "model_finetune",
     "section": "",
-    "text": "model_finetune\nmodel_finetune(train_dataset, model_name, train_params, device='cpu')\nFinetunes a pre-trained model on the given training dataset.\nArgs: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. train_params (dict): A dictionary containing the training parameters. device (str): The device to train the model on (e.g., “cpu” or “cuda”).\nReturns: dict: The state dictionary of the finetuned model."
+    "text": "model_finetune\nmodel_finetune(\n    train_dataset,\n    val_dataset,\n    model_name,\n    train_params,\n    device='cpu',\n)\nFinetunes a pre-trained model on the given training dataset.\nArgs: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. train_params (dict): A dictionary containing the training parameters. device (str): The device to train the model on (e.g., “cpu” or “cuda”).\nReturns: dict: The state dictionary of the finetuned model."
   },
   {
     "objectID": "reference/evaluate_model.html",
@@ -60,7 +60,7 @@
     "href": "reference/log_model.html",
     "title": "log_model",
     "section": "",
-    "text": "log_model\nlog_model(model_name, model_state_dict, hyperparams, metrics)\nLogs the model, hyperparameters, and metrics to MLFlow.\nArgs: model_name (str): The name of the model. model_state_dict (dict): The state dictionary of the model. hyperparams (dict): The hyperparameters used during training. metrics (dict): The evaluation metrics of the model.\nReturns: str: The URI of the logged model."
+    "text": "log_model\nlog_model(model_name, model_state_dict, hyperparams, metrics, loss_plot)\nLogs the model, hyperparameters, and metrics to MLFlow.\nArgs: model_name (str): The name of the model. model_state_dict (dict): The state dictionary of the model. hyperparams (dict): The hyperparameters used during training. metrics (dict): The evaluation metrics of the model. loss_plot (plt.Figure): The plot of the training loss.\nReturns: str: The URI of the logged model."
   },
   {
     "objectID": "reference/index.html",

@@ -158,9 +158,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="onco_derm_ai.log_model" class="level1">
 <h1>log_model</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>log_model(model_name, model_state_dict, hyperparams, metrics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>log_model(model_name, model_state_dict, hyperparams, metrics, loss_plot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Logs the model, hyperparameters, and metrics to MLFlow.</p>
-<p>Args: model_name (str): The name of the model. model_state_dict (dict): The state dictionary of the model. hyperparams (dict): The hyperparameters used during training. metrics (dict): The evaluation metrics of the model.</p>
+<p>Args: model_name (str): The name of the model. model_state_dict (dict): The state dictionary of the model. hyperparams (dict): The hyperparameters used during training. metrics (dict): The evaluation metrics of the model. loss_plot (plt.Figure): The plot of the training loss.</p>
 <p>Returns: str: The URI of the logged model.</p>
 
 

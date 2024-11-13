@@ -3,13 +3,16 @@ This is a boilerplate pipeline 'model_training'
 generated using Kedro 0.19.8
 """
 
+import logging
+from typing import Tuple
+
 import matplotlib.pyplot as plt
 import mlflow
 import mlflow.pytorch
 import numpy as np
 import pandas as pd
 import torch
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, f1_score
 from torch import nn, optim
 from torch.utils.data import DataLoader, Dataset
 from torchvision import models, transforms
@@ -114,8 +117,60 @@ def model_select(
     return model
 
 
+def eval_after_every_epoch(
+    model: models,
+    train_loader: DataLoader,
+    val_loader: DataLoader,
+    criterion: nn.CrossEntropyLoss,
+    device: str = "cpu",
+) -> Tuple[float, float, float]:
+    """
+    Evaluates the model on the training and validation datasets after every epoch.
+
+    Args:
+        model (models): The model to evaluate.
+        train_loader (DataLoader): The training dataset loader.
+        val_loader (DataLoader): The validation dataset loader.
+        criterion (nn.CrossEntropyLoss): The loss function to use.
+
+    Returns:
+        Tuple[float, float, float]: The training loss, training macro f1, and validation macro f1.
+    """
+    model.eval()
+    train_loss = 0.0
+
+    with torch.no_grad():
+        y_true = []
+        y_pred = []
+        for imgs, labs in train_loader:
+            images, labels = imgs.to(device), labs.to(device)
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+            train_loss += loss.item()
+            _, predicted = torch.max(outputs, 1)
+            y_true.extend(labels.cpu().numpy())
+            y_pred.extend(predicted.cpu().numpy())
+
+        train_loss /= len(train_loader)
+        train_f1 = f1_score(y_true, y_pred, average="macro")
+
+        y_true = []
+        y_pred = []
+        for imgs, labs in val_loader:
+            images, labels = imgs.to(device), labs.to(device)
+            outputs = model(images)
+            _, predicted = torch.max(outputs, 1)
+            y_true.extend(labels.cpu().numpy())
+            y_pred.extend(predicted.cpu().numpy())
+
+        val_f1 = f1_score(y_true, y_pred, average="macro")
+
+    return train_loss, train_f1, val_f1
+
+
 def model_finetune(
     train_dataset: DermaMNISTDataset,
+    val_dataset: DermaMNISTDataset,
     model_name: str,
     train_params: dict,
     device: str = "cpu",
@@ -136,13 +191,17 @@ def model_finetune(
     train_loader = DataLoader(
         train_dataset, batch_size=train_params["batch_size"], shuffle=True
     )
+    val_loader = DataLoader(
+        val_dataset, batch_size=train_params["batch_size"], shuffle=False
+    )
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=train_params["lr"])
     model = model.to(device)
-    losses = []
+    train_losses = []
+    train_f1s = []
+    val_f1s = []
     for epoch in tqdm(range(train_params["num_epochs"])):
         model.train()
-        running_loss = 0.0
         for i, lbs in train_loader:
             images, labels = i.to(device), lbs.to(device)
 
@@ -156,17 +215,25 @@ def model_finetune(
             loss.backward()
             optimizer.step()
 
-            running_loss += loss.item()
+        train_loss, train_f1, val_f1 = eval_after_every_epoch(
+            model, train_loader, val_loader, criterion, device
+        )
+        train_losses.append(train_loss)
+        train_f1s.append(train_f1)
+        val_f1s.append(val_f1)
 
-        avg_loss = running_loss / len(train_loader)
-        losses.append(avg_loss)
+        logging.info(
+            f"Epoch {epoch+1}/{train_params['num_epochs']}, Train Loss: {train_loss}, Train F1: {train_f1}, Val F1: {val_f1}"
+        )
 
-    # generate loss plot
     fig = plt.figure()
-    plt.plot(losses)
+    plt.plot(train_losses)
+    plt.plot(train_f1s)
+    plt.plot(val_f1s)
+    plt.legend(["Train Loss", "Train F1", "Val F1"])
     plt.xlabel("Epoch")
     plt.ylabel("Loss")
-    plt.title("Training Loss")
+    plt.title("Training Loss and F1 Score")
 
     return model.state_dict(), fig
 
@@ -209,7 +276,11 @@ def evaluate_model(
 
 
 def log_model(
-    model_name: str, model_state_dict: dict, hyperparams: dict, metrics: dict
+    model_name: str,
+    model_state_dict: dict,
+    hyperparams: dict,
+    metrics: dict,
+    loss_plot: plt.Figure,
 ) -> str:
     """
     Logs the model, hyperparameters, and metrics to MLFlow.
@@ -219,6 +290,7 @@ def log_model(
         model_state_dict (dict): The state dictionary of the model.
         hyperparams (dict): The hyperparameters used during training.
         metrics (dict): The evaluation metrics of the model.
+        loss_plot (plt.Figure): The plot of the training loss.
 
     Returns:
         str: The URI of the logged model.
@@ -228,12 +300,10 @@ def log_model(
 
     # reformat metrics to the format expected by MLflow
     new_metrics = {}
-    for key, value in metrics.items():
-        if isinstance(value, (int, float)):
-            new_metrics[key] = value
-        elif isinstance(value, dict):
-            for k, v in value.items():
-                new_metrics[f"{key}_{k}"] = v
+    new_metrics["accuracy"] = metrics["accuracy"]
+    new_metrics["precision"] = metrics["macro avg"]["precision"]
+    new_metrics["recall"] = metrics["macro avg"]["recall"]
+    new_metrics["f1"] = metrics["macro avg"]["f1-score"]
 
     # Start an MLflow run
     with mlflow.start_run():
@@ -250,6 +320,9 @@ def log_model(
 
         # Log metrics
         mlflow.log_metrics(new_metrics)
+
+        # Log loss plot
+        mlflow.log_figure(loss_plot)
 
         # Get the URI of the logged model
         model_uri = mlflow.get_artifact_uri(model_name)

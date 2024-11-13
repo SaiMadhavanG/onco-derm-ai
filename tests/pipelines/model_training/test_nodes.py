@@ -79,6 +79,7 @@ def test_model_finetune(mock_dataset, model_name, train_params):
     device = "cpu"
     state_dict, fig = model_finetune(
         train_dataset=mock_dataset,
+        val_dataset=mock_dataset,
         model_name=model_name,
         train_params=train_params,
         device=device,
@@ -97,6 +98,7 @@ def test_evaluate_model(mock_dataset, model_name):
     train_params = {"batch_size": 2, "lr": 0.001, "num_epochs": 1}
     state_dict, _ = model_finetune(
         train_dataset=mock_dataset,
+        val_dataset=mock_dataset,
         model_name=model_name,
         train_params=train_params,
         device=device,
