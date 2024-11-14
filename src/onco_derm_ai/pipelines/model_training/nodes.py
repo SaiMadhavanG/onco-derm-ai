@@ -145,7 +145,7 @@ def eval_after_every_epoch(
         for imgs, labs in train_loader:
             images, labels = imgs.to(device), labs.to(device)
             outputs = model(images)
-            loss = criterion(outputs, labels)
+            loss = criterion(outputs, labels.squeeze().long())
             train_loss += loss.item()
             _, predicted = torch.max(outputs, 1)
             y_true.extend(labels.cpu().numpy())
@@ -223,17 +223,16 @@ def model_finetune(
         val_f1s.append(val_f1)
 
         logging.info(
-            f"Epoch {epoch+1}/{train_params['num_epochs']}, Train Loss: {train_loss}, Train F1: {train_f1}, Val F1: {val_f1}"
+            f"Epoch {epoch+1}/{train_params['num_epochs']}, Train Loss: {train_loss}, Train F1: {train_f1}, Val F1: {val_f1}",
         )
 
     fig = plt.figure()
-    plt.plot(train_losses)
     plt.plot(train_f1s)
     plt.plot(val_f1s)
-    plt.legend(["Train Loss", "Train F1", "Val F1"])
+    plt.legend(["Train F1", "Val F1"])
     plt.xlabel("Epoch")
-    plt.ylabel("Loss")
-    plt.title("Training Loss and F1 Score")
+    plt.ylabel("F1 Score")
+    plt.title("F1 Score")
 
     return model.state_dict(), fig
 
@@ -322,7 +321,7 @@ def log_model(
         mlflow.log_metrics(new_metrics)
 
         # Log loss plot
-        mlflow.log_figure(loss_plot)
+        mlflow.log_figure(loss_plot, f"{model_name}_loss_plot.png")
 
         # Get the URI of the logged model
         model_uri = mlflow.get_artifact_uri(model_name)
