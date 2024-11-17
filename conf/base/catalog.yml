@@ -13,6 +13,10 @@ test_raw:
   filepath: data/01_raw/test.pkl
   versioned: true
 
+inference_sample:
+  type: pillow.ImageDataset
+  filepath: data/01_raw/inference_sample.png
+
 pre-processed_train_data:
   type: pickle.PickleDataset
   filepath: data/02_intermediate/pre-processed_train_data.pkl

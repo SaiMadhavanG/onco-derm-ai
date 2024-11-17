@@ -21,3 +21,12 @@ Functions in the model_training pipeline
 | [model_finetune](model_finetune.qmd#onco_derm_ai.model_finetune) | Finetunes a pre-trained model on the given training dataset. |
 | [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |
 | [log_model](log_model.qmd#onco_derm_ai.log_model) | Logs the model, hyperparameters, and metrics to MLFlow. |
+
+## inference
+
+Functions used in various inference pipelines
+
+| | |
+| --- | --- |
+| [resize_image](resize_image.qmd#onco_derm_ai.resize_image) | Resize image. |
+| [normalize_image](normalize_image.qmd#onco_derm_ai.normalize_image) | Normalize image. |

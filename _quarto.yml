@@ -30,6 +30,11 @@ quartodoc:
         - model_finetune
         - evaluate_model
         - log_model
+    - title: inference
+      desc: Functions used in various inference pipelines
+      contents:
+        - resize_image
+        - normalize_image
   
 
 format:
