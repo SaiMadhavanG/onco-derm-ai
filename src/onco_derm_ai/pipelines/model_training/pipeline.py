@@ -5,7 +5,13 @@ generated using Kedro 0.19.8
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import evaluate_model, log_model, model_finetune, preprocess_data_input
+from .nodes import (
+    evaluate_model,
+    log_model,
+    model_finetune,
+    preprocess_data_input,
+    set_best_model_uri,
+)
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -54,6 +60,12 @@ def create_pipeline(**kwargs) -> Pipeline:
                 ],
                 outputs="mlflow_uri",
                 name="log_model",
+            ),
+            node(
+                func=set_best_model_uri,
+                inputs="params:model_name",
+                outputs="best_model_uri",
+                name="set_best_model_uri",
             ),
         ]
     )

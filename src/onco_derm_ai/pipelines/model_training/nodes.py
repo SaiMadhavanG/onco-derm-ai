@@ -12,6 +12,7 @@ import mlflow.pytorch
 import numpy as np
 import pandas as pd
 import torch
+from mlflow import MlflowClient
 from sklearn.metrics import classification_report, f1_score
 from torch import nn, optim
 from torch.utils.data import DataLoader, Dataset
@@ -327,3 +328,24 @@ def log_model(
         model_uri = mlflow.get_artifact_uri(model_name)
 
     return model_uri
+
+
+def set_best_model_uri(model_name: str) -> str:
+    """
+    Set the best model URI based on the best f1 score.
+
+    Args:
+        model_name (str): The name of the model.
+
+    Returns:
+        str: The URI of the best model.
+    """
+    client = MlflowClient()
+    best_score = 0.0
+    best_model_uri = ""
+    for mv in client.search_model_versions(f"name='{model_name}'"):
+        run = client.get_run(mv.run_id)
+        if run.data.metrics["f1"] > best_score:
+            best_score = run.data.metrics["f1"]
+            best_model_uri = mv.source
+    return best_model_uri
