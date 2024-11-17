@@ -11,6 +11,7 @@ from .pipelines.model_training.nodes import (
     model_select,
     preprocess_data_input,
 )
+from .pipelines.ood_detection.nodes import prepare_data, rmd_detector
 
 __version__ = "0.1"
 
@@ -26,4 +27,6 @@ __all__ = [
     "resize_image",
     "normalize_image",
     "predict",
+    "prepare_data",
+    "rmd_detector",
 ]

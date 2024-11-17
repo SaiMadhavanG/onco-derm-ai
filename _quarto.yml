@@ -30,6 +30,11 @@ quartodoc:
         - model_finetune
         - evaluate_model
         - log_model
+    - title: ood_detection
+      desc: Functions in the ood_detection pipeline
+      contents:
+        - prepare_data
+        - rmd_detector
     - title: inference
       desc: Functions used in various inference pipelines
       contents:

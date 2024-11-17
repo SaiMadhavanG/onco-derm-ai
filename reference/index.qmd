@@ -22,6 +22,15 @@ Functions in the model_training pipeline
 | [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |
 | [log_model](log_model.qmd#onco_derm_ai.log_model) | Logs the model, hyperparameters, and metrics to MLFlow. |
 
+## ood_detection
+
+Functions in the ood_detection pipeline
+
+| | |
+| --- | --- |
+| [prepare_data](prepare_data.qmd#onco_derm_ai.prepare_data) | Prepare the data for the OOD detection pipeline. |
+| [rmd_detector](rmd_detector.qmd#onco_derm_ai.rmd_detector) | Run the Relative Mahalanobis Distance (RMD) detector on the given datasets. |
+
 ## inference
 
 Functions used in various inference pipelines

@@ -28,6 +28,13 @@
     "text": "DermaMNISTDataset\nDermaMNISTDataset(self, dataframe, transform=None)\nA custom Dataset class for the DermaMNIST dataset.\nArgs: dataframe (pd.DataFrame): A pandas DataFrame containing the dataset. It should have two columns: ‘image’ and ‘label’. ‘image’ should contain (28, 28, 3) numpy arrays. transform (callable, optional): Optional transform to be applied on a sample.\nAttributes: dataframe (pd.DataFrame): The dataframe containing the dataset. transform (callable): The transform to be applied on a sample.\nMethods: len(): Returns the length of the dataset. getitem(idx): Returns the image and label at the given index."
   },
   {
+    "objectID": "reference/prepare_data.html",
+    "href": "reference/prepare_data.html",
+    "title": "prepare_data",
+    "section": "",
+    "text": "prepare_data\nprepare_data(out_ds, size, normal_mean, normal_std)\nPrepare the data for the OOD detection pipeline.\nArgs: out_ds: The dataset to use as the OOD dataset. size: The size to resize the images to. normal_mean: The mean to normalize the images. normal_std: The standard deviation to normalize the images.\nReturns: The in-distribution dataset and the out-of-distribution dataset."
+  },
+  {
     "objectID": "reference/predict.html",
     "href": "reference/predict.html",
     "title": "predict",
@@ -81,7 +88,7 @@
     "href": "reference/index.html",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalizes the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset.\n\n\nlog_model\nLogs the model, hyperparameters, and metrics to MLFlow.\n\n\n\n\n\n\nFunctions used in various inference pipelines\n\n\n\nresize_image\nResize image.\n\n\nnormalize_image\nNormalize image.\n\n\npredict\nPredicts the output of the input image using the best model."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\nnormalizing_images\nNormalizes the pixel values of images in the given DataFrame.\n\n\ntensoring_resizing\nApplies a series of transformations to the ‘image’ column of a pandas DataFrame.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset.\n\n\nlog_model\nLogs the model, hyperparameters, and metrics to MLFlow.\n\n\n\n\n\n\nFunctions in the ood_detection pipeline\n\n\n\nprepare_data\nPrepare the data for the OOD detection pipeline.\n\n\nrmd_detector\nRun the Relative Mahalanobis Distance (RMD) detector on the given datasets.\n\n\n\n\n\n\nFunctions used in various inference pipelines\n\n\n\nresize_image\nResize image.\n\n\nnormalize_image\nNormalize image.\n\n\npredict\nPredicts the output of the input image using the best model."
   },
   {
     "objectID": "reference/index.html#data_preprocessing",
@@ -98,6 +105,13 @@
     "text": "Functions in the model_training pipeline\n\n\n\nDermaMNISTDataset\nA custom Dataset class for the DermaMNIST dataset.\n\n\npreprocess_data_input\nPreprocesses the input training data for the DermaMNIST dataset.\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset.\n\n\nlog_model\nLogs the model, hyperparameters, and metrics to MLFlow."
   },
   {
+    "objectID": "reference/index.html#ood_detection",
+    "href": "reference/index.html#ood_detection",
+    "title": "API Reference",
+    "section": "",
+    "text": "Functions in the ood_detection pipeline\n\n\n\nprepare_data\nPrepare the data for the OOD detection pipeline.\n\n\nrmd_detector\nRun the Relative Mahalanobis Distance (RMD) detector on the given datasets."
+  },
+  {
     "objectID": "reference/index.html#inference",
     "href": "reference/index.html#inference",
     "title": "API Reference",
@@ -110,6 +124,13 @@
     "title": "resize_image",
     "section": "",
     "text": "resize_image\nresize_image(img, size)\nResize image. Args: img: Image to be resized. size: New size for the image. Returns: Resized image."
+  },
+  {
+    "objectID": "reference/rmd_detector.html",
+    "href": "reference/rmd_detector.html",
+    "title": "rmd_detector",
+    "section": "",
+    "text": "rmd_detector\nrmd_detector(best_model_uri, in_dataset, out_dataset, batch_size, device)\nRun the Relative Mahalanobis Distance (RMD) detector on the given datasets.\nArgs: best_model_uri: The URI of the best model. in_dataset: The in-distribution dataset. out_dataset: The out-of-distribution dataset. batch_size: The batch size to use. device: The device to use.\nReturns: The metrics of the detector and the detector itself."
   },
   {
     "objectID": "reference/normalizing_images.html",

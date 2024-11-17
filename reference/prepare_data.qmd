@@ -1,0 +1,16 @@
+# prepare_data { #onco_derm_ai.prepare_data }
+
+```python
+prepare_data(out_ds, size, normal_mean, normal_std)
+```
+
+Prepare the data for the OOD detection pipeline.
+
+Args:
+    out_ds: The dataset to use as the OOD dataset.
+    size: The size to resize the images to.
+    normal_mean: The mean to normalize the images.
+    normal_std: The standard deviation to normalize the images.
+
+Returns:
+    The in-distribution dataset and the out-of-distribution dataset.
