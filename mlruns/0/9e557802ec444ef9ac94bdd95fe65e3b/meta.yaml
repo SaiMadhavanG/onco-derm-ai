@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/9e557802ec444ef9ac94bdd95fe65e3b/artifacts
+end_time: 1731824910761
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 9e557802ec444ef9ac94bdd95fe65e3b
+run_name: carefree-perch-929
+run_uuid: 9e557802ec444ef9ac94bdd95fe65e3b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731824902950
+status: 3
+tags: []
+user_id: saimadhavang
