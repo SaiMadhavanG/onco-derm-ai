@@ -5,7 +5,6 @@
 # Link: https://docs.kedro.org/en/0.19.8/configuration/parameters.html
 
 model_name: ResNet18
-device: cuda
 train_params:
   num_epochs: 20
   batch_size: 128

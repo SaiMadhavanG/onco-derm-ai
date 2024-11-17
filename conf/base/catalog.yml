@@ -27,6 +27,10 @@ pre-processed_val_data:
   filepath: data/02_intermediate/pre-processed_val_data.pkl
   versioned: true
 
+normalized_img:
+  type: pickle.PickleDataset
+  filepath: data/02_intermediate/normalized_img.pkl
+
 image_classification_model:
   type: pickle.PickleDataset
   filepath: data/06_models/image_classification_model.pkl
@@ -43,8 +47,11 @@ best_model_uri:
   type: text.TextDataset
   filepath: data/06_models/best_model_uri.txt
 
+prediction:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/prediction.pkl
+
 model_metrics:
   type: json.JSONDataset
   filepath: data/08_reporting/model_metrics.json
   versioned: true
-

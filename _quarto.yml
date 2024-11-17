@@ -35,6 +35,7 @@ quartodoc:
       contents:
         - resize_image
         - normalize_image
+        - predict
   
 
 format:

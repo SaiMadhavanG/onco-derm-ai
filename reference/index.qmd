@@ -30,3 +30,4 @@ Functions used in various inference pipelines
 | --- | --- |
 | [resize_image](resize_image.qmd#onco_derm_ai.resize_image) | Resize image. |
 | [normalize_image](normalize_image.qmd#onco_derm_ai.normalize_image) | Normalize image. |
+| [predict](predict.qmd#onco_derm_ai.predict) | Predicts the output of the input image using the best model. |
