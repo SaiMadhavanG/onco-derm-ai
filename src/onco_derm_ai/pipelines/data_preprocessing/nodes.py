@@ -3,6 +3,7 @@ This is a boilerplate pipeline 'data_preprocessing'
 generated using Kedro 0.19.8
 """
 
+import numpy as np
 import pandas as pd
 from imblearn.over_sampling import SMOTE
 from torchvision import transforms
@@ -85,8 +86,8 @@ from torchvision import transforms
 
 def class_imbalance(data: pd.DataFrame, class_imbalance: bool) -> pd.DataFrame:
     if class_imbalance:
-        train_images = data["images"]
-        train_labels = data["labels"]
+        train_images = np.stack(data["image"])
+        train_labels = data["label"].to_numpy(dtype="int32")
         X = train_images.reshape(train_images.shape[0], -1)  # Flatten images
         y = train_labels
         smote = SMOTE(random_state=42)
@@ -95,8 +96,8 @@ def class_imbalance(data: pd.DataFrame, class_imbalance: bool) -> pd.DataFrame:
             -1, 3, 28, 28
         )  # Replace 28, 28 with actual dimensions
         train_labels = y_resampled
-        data["images"] = train_images
-        data["labels"] = train_labels
+        data = pd.DataFrame([train_images, train_labels], columns=["image", "label"])
+
     return data
 
 
