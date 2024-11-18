@@ -1,0 +1,17 @@
+# log_model { #onco_derm_ai.log_model }
+
+```python
+log_model(model_name, model_state_dict, hyperparams, metrics, loss_plot)
+```
+
+Logs the model, hyperparameters, and metrics to MLFlow.
+
+Args:
+    model_name (str): The name of the model.
+    model_state_dict (dict): The state dictionary of the model.
+    hyperparams (dict): The hyperparameters used during training.
+    metrics (dict): The evaluation metrics of the model.
+    loss_plot (plt.Figure): The plot of the training loss.
+
+Returns:
+    str: The URI of the logged model.

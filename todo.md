@@ -11,8 +11,8 @@
 
 # Documentation
 
-- [ ] project card - **sai**
-- [ ] data card
+- [x] project card - **sai**
+- [x] data card
 - [ ] model card
 - [ ] mlops card
 
@@ -27,9 +27,9 @@
 
 # Training
 
-- [ ] Model training - Resnet - _PyTorch_
-- [ ] Model versioning - _mlflow_
-- [ ] Model eval - _Sk classification report, k cross val_
+- [x] Model training - Resnet - _PyTorch_
+- [x] Model eval - _Sk classification report_
+- [x] Model versioning - _mlflow_
 - [ ] hyperparameter tuning - _optuna/sklearn search_
 - [ ] automatic reports - _quarto and plotting libs_
 - [ ] Model pruning - _pytorch_
@@ -39,8 +39,7 @@
 # Inference
 
 - [ ] explainability - _deel_
-- [ ] confidence calibration - _deel_, **?**
-- [ ] OOD detection - **?**
+- [x] OOD detection - _pytorch ood_
 - [ ] Conformal predictions - _deel_
 
 # Deployment

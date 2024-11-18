@@ -1,0 +1,17 @@
+# train_wide_resnet { #onco_derm_ai.train_wide_resnet }
+
+```python
+train_wide_resnet(in_dataset, test_dataset, n_epochs, batch_size, device)
+```
+
+Train a WideResNet model on the given datasets.
+
+Args:
+    in_dataset: The in-distribution dataset.
+    test_dataset: The test dataset.
+    n_epochs: The number of epochs to train for.
+    batch_size: The batch size to use.
+    device: The device to use.
+
+Returns:
+    The trained model.

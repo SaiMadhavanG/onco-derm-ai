@@ -13,7 +13,58 @@ test_raw:
   filepath: data/01_raw/test.pkl
   versioned: true
 
+inference_sample:
+  type: pillow.ImageDataset
+  filepath: data/01_raw/inference_sample.png
+
 pre-processed_train_data:
   type: pickle.PickleDataset
   filepath: data/02_intermediate/pre-processed_train_data.pkl
+  versioned: true
+
+pre-processed_val_data:
+  type: pickle.PickleDataset
+  filepath: data/02_intermediate/pre-processed_val_data.pkl
+  versioned: true
+
+normalized_img:
+  type: pickle.PickleDataset
+  filepath: data/02_intermediate/normalized_img.pkl
+
+image_classification_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/image_classification_model.pkl
+
+model_finetuned:
+  type: pickle.PickleDataset
+  filepath: data/06_models/model_fintuned.pkl
+
+wide_resnet_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/wide_resnet_model.pkl
+
+ood_detector:
+  type: pickle.PickleDataset
+  filepath: data/06_models/ood_detector.pkl
+
+mlflow_uri:
+  type: text.TextDataset
+  filepath: data/06_models/mlflow_uri.txt
+
+best_model_uri:
+  type: text.TextDataset
+  filepath: data/06_models/best_model_uri.txt
+
+prediction:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/prediction.pkl
+
+model_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/model_metrics.json
+  versioned: true
+
+ood_detection_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/ood_detection_metrics.json
   versioned: true

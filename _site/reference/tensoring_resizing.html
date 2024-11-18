@@ -150,11 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#onco_derm_ai.tensoring_resizing" id="toc-onco_derm_ai.tensoring_resizing" class="nav-link active" data-scroll-target="#onco_derm_ai.tensoring_resizing">tensoring_resizing</a>
-  <ul class="collapse">
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
-  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
-  </ul></li>
+  <li><a href="#onco_derm_ai.tensoring_resizing" id="toc-onco_derm_ai.tensoring_resizing" class="nav-link active" data-scroll-target="#onco_derm_ai.tensoring_resizing">tensoring_resizing</a></li>
   </ul>
 </nav>
     </div>
@@ -169,59 +165,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tensoring_resizing(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Applies a series of transformations to the ‘image’ column of a pandas DataFrame.</p>
 <p>The transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.</p>
-<section id="parameters" class="level2 doc-section doc-section-parameters">
-<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 8%">
-<col style="width: 14%">
-<col style="width: 66%">
-<col style="width: 12%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>data</td>
-<td>pd.DataFrame</td>
-<td>A pandas DataFrame containing an ‘image’ column with image data.</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="returns" class="level2 doc-section doc-section-returns">
-<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 10%">
-<col style="width: 17%">
-<col style="width: 72%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td>pd.DataFrame</td>
-<td>The input DataFrame with the ‘image’ column transformed.</td>
-</tr>
-</tbody>
-</table>
+<p>Args: data (pd.DataFrame): A pandas DataFrame containing an ‘image’ column with image data.</p>
+<p>Returns: pd.DataFrame: The input DataFrame with the ‘image’ column transformed.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

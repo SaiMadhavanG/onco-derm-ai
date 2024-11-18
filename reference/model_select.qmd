@@ -1,0 +1,19 @@
+# model_select { #onco_derm_ai.model_select }
+
+```python
+model_select(model_name, num_outputs=7, pretrained=False)
+```
+
+Selects and returns a pre-trained model based on the provided model name.
+
+Args:
+    model_name (str): The name of the model to select. Supported values
+        are "ResNet18" and "VGG16".
+    num_outputs (int): The number of output classes for the model.
+    pretrained (bool): If True, loads a pre-trained model.
+
+Returns:
+    models: The selected pre-trained model.
+
+Raises:
+    ValueError: If the provided model name is not supported.

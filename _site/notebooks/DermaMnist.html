@@ -415,10 +415,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 </div>
-<div id="cell-20" class="cell">
+<div id="cell-20" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kedro.io.data_catalog <span class="im">import</span> DataCatalog</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> DataCatalog.from_config(<span class="st">"../conf/base/catalog.yml"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg ansi-bold">AttributeError</span>                            Traceback (most recent call last)
+Cell <span class="ansi-green-fg ansi-bold">In[2], line 3</span>
+<span class="ansi-green-fg">      1</span> <span style="font-weight:bold;color:rgb(0,135,0)">from</span> <span style="font-weight:bold;color:rgb(0,0,255)">kedro</span><span style="font-weight:bold;color:rgb(0,0,255)">.</span><span style="font-weight:bold;color:rgb(0,0,255)">io</span><span style="font-weight:bold;color:rgb(0,0,255)">.</span><span style="font-weight:bold;color:rgb(0,0,255)">data_catalog</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> DataCatalog
+<span class="ansi-green-fg ansi-bold">----&gt; 3</span> catalog <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">DataCatalog</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">from_config</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">../conf/base/catalog.yml</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg ansi-bold">c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\io\data_catalog.py:314</span>, in <span class="ansi-cyan-fg">DataCatalog.from_config</span><span class="ansi-blue-fg ansi-bold">(cls, catalog, credentials, load_versions, save_version)</span>
+<span class="ansi-green-fg">    311</span> load_versions <span style="color:rgb(98,98,98)">=</span> copy<span style="color:rgb(98,98,98)">.</span>deepcopy(load_versions) <span style="font-weight:bold;color:rgb(175,0,255)">or</span> {}
+<span class="ansi-green-fg">    312</span> user_default <span style="color:rgb(98,98,98)">=</span> {}
+<span class="ansi-green-fg ansi-bold">--&gt; 314</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> ds_name, ds_config <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span class="ansi-yellow-bg">catalog</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">items</span>():
+<span class="ansi-green-fg">    315</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="color:rgb(0,135,0)">isinstance</span>(ds_config, <span style="color:rgb(0,135,0)">dict</span>):
+<span class="ansi-green-fg">    316</span>         <span style="font-weight:bold;color:rgb(0,135,0)">raise</span> DatasetError(
+<span class="ansi-green-fg">    317</span>             <span style="color:rgb(175,0,0)">f</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Catalog entry </span><span style="color:rgb(175,0,0)">'</span><span style="font-weight:bold;color:rgb(175,95,135)">{</span>ds_name<span style="font-weight:bold;color:rgb(175,95,135)">}</span><span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)"> is not a valid dataset configuration. </span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-green-fg">    318</span>             <span style="color:rgb(175,0,0)">"</span><span style="font-weight:bold;color:rgb(175,95,0)">\n</span><span style="color:rgb(175,0,0)">Hint: If this catalog entry is intended for variable interpolation, </span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-green-fg">    319</span>             <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">make sure that the key is preceded by an underscore.</span><span style="color:rgb(175,0,0)">"</span>
+<span class="ansi-green-fg">    320</span>         )
+
+<span class="ansi-red-fg ansi-bold">AttributeError</span>: 'str' object has no attribute 'items'</pre>
+</div>
+</div>
 </div>
 <div id="cell-21" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"train_raw"</span>, train_df)</span>
@@ -453,6 +475,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="ansi-escaped-output">
 <pre><span class="ansi-bold">(</span><span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">3</span><span class="ansi-bold">)</span></pre>
 </div>
+</div>
+</div>
+<div id="cell-24" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">"cuda"</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">"cpu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-25" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>device</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>device(type='cuda')</code></pre>
 </div>
 </div>
 

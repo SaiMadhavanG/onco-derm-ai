@@ -119,6 +119,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#api-reference" id="toc-api-reference" class="nav-link active" data-scroll-target="#api-reference">API Reference</a>
   <ul class="collapse">
   <li><a href="#data_preprocessing" id="toc-data_preprocessing" class="nav-link" data-scroll-target="#data_preprocessing">data_preprocessing</a></li>
+  <li><a href="#model_training" id="toc-model_training" class="nav-link" data-scroll-target="#model_training">model_training</a></li>
+  <li><a href="#ood_detection" id="toc-ood_detection" class="nav-link" data-scroll-target="#ood_detection">ood_detection</a></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">inference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -138,11 +141,91 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td><a href="../reference/normalizing_images.html#onco_derm_ai.normalizing_images">normalizing_images</a></td>
-<td>Normalize the pixel values of images in the given DataFrame.</td>
+<td>Normalizes the pixel values of images in the given DataFrame.</td>
 </tr>
 <tr class="even">
 <td><a href="../reference/tensoring_resizing.html#onco_derm_ai.tensoring_resizing">tensoring_resizing</a></td>
 <td>Applies a series of transformations to the ‘image’ column of a pandas DataFrame.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="model_training" class="level2">
+<h2 class="anchored" data-anchor-id="model_training">model_training</h2>
+<p>Functions in the model_training pipeline</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/DermaMNISTDataset.html#onco_derm_ai.DermaMNISTDataset">DermaMNISTDataset</a></td>
+<td>A custom Dataset class for the DermaMNIST dataset.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/preprocess_data_input.html#onco_derm_ai.preprocess_data_input">preprocess_data_input</a></td>
+<td>Preprocesses the input training data for the DermaMNIST dataset.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/model_select.html#onco_derm_ai.model_select">model_select</a></td>
+<td>Selects and returns a pre-trained model based on the provided model name.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/model_finetune.html#onco_derm_ai.model_finetune">model_finetune</a></td>
+<td>Finetunes a pre-trained model on the given training dataset.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/evaluate_model.html#onco_derm_ai.evaluate_model">evaluate_model</a></td>
+<td>Evaluates a pre-trained model on the given test dataset.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/log_model.html#onco_derm_ai.log_model">log_model</a></td>
+<td>Logs the model, hyperparameters, and metrics to MLFlow.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ood_detection" class="level2">
+<h2 class="anchored" data-anchor-id="ood_detection">ood_detection</h2>
+<p>Functions in the ood_detection pipeline</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/prepare_data.html#onco_derm_ai.prepare_data">prepare_data</a></td>
+<td>Prepare the data for the OOD detection pipeline.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/train_wide_resnet.html#onco_derm_ai.train_wide_resnet">train_wide_resnet</a></td>
+<td>Train a WideResNet model on the given datasets.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/multi_mahalanobis_detector.html#onco_derm_ai.multi_mahalanobis_detector">multi_mahalanobis_detector</a></td>
+<td>Run the Multi-Mahalanobis detector on the given datasets.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inference" class="level2">
+<h2 class="anchored" data-anchor-id="inference">inference</h2>
+<p>Functions used in various inference pipelines</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/resize_image.html#onco_derm_ai.resize_image">resize_image</a></td>
+<td>Resize image.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/normalize_image.html#onco_derm_ai.normalize_image">normalize_image</a></td>
+<td>Normalize image.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/prepare_data_for_ood.html#onco_derm_ai.prepare_data_for_ood">prepare_data_for_ood</a></td>
+<td>Prepare image for OOD detection.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/ood_detection.html#onco_derm_ai.ood_detection">ood_detection</a></td>
+<td>Detect out-of-distribution samples.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/predict.html#onco_derm_ai.predict">predict</a></td>
+<td>Predicts the output of the input image using the best model.</td>
 </tr>
 </tbody>
 </table>

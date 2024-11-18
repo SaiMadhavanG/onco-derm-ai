@@ -15,13 +15,25 @@ def create_pipeline(**kwargs) -> Pipeline:
                 func=normalizing_images,
                 inputs="train_raw",
                 outputs="train_intermediate",
-                name="normalizing_image_node",
+                name="normalizing_train_image_node",
             ),
             node(
                 func=tensoring_resizing,
                 inputs="train_intermediate",
                 outputs="pre-processed_train_data",
-                name="tensoring_resizing_node",
+                name="tensoring_train_resizing_node",
+            ),
+            node(
+                func=normalizing_images,
+                inputs="val_raw",
+                outputs="val_intermediate",
+                name="normalizing_val_image_node",
+            ),
+            node(
+                func=tensoring_resizing,
+                inputs="val_intermediate",
+                outputs="pre-processed_val_data",
+                name="tensoring_val_resizing_node",
             ),
         ]
     )

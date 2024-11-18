@@ -1,0 +1,12 @@
+# resize_image { #onco_derm_ai.resize_image }
+
+```python
+resize_image(img, size)
+```
+
+Resize image.
+Args:
+    img: Image to be resized.
+    size: New size for the image.
+Returns:
+    Resized image.

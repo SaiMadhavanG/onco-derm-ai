@@ -6,5 +6,40 @@ Functions in the data_preprocessing pipeline
 
 | | |
 | --- | --- |
-| [normalizing_images](normalizing_images.qmd#onco_derm_ai.normalizing_images) | Normalize the pixel values of images in the given DataFrame. |
+| [normalizing_images](normalizing_images.qmd#onco_derm_ai.normalizing_images) | Normalizes the pixel values of images in the given DataFrame. |
 | [tensoring_resizing](tensoring_resizing.qmd#onco_derm_ai.tensoring_resizing) | Applies a series of transformations to the 'image' column of a pandas DataFrame. |
+
+## model_training
+
+Functions in the model_training pipeline
+
+| | |
+| --- | --- |
+| [DermaMNISTDataset](DermaMNISTDataset.qmd#onco_derm_ai.DermaMNISTDataset) | A custom Dataset class for the DermaMNIST dataset. |
+| [preprocess_data_input](preprocess_data_input.qmd#onco_derm_ai.preprocess_data_input) | Preprocesses the input training data for the DermaMNIST dataset. |
+| [model_select](model_select.qmd#onco_derm_ai.model_select) | Selects and returns a pre-trained model based on the provided model name. |
+| [model_finetune](model_finetune.qmd#onco_derm_ai.model_finetune) | Finetunes a pre-trained model on the given training dataset. |
+| [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |
+| [log_model](log_model.qmd#onco_derm_ai.log_model) | Logs the model, hyperparameters, and metrics to MLFlow. |
+
+## ood_detection
+
+Functions in the ood_detection pipeline
+
+| | |
+| --- | --- |
+| [prepare_data](prepare_data.qmd#onco_derm_ai.prepare_data) | Prepare the data for the OOD detection pipeline. |
+| [train_wide_resnet](train_wide_resnet.qmd#onco_derm_ai.train_wide_resnet) | Train a WideResNet model on the given datasets. |
+| [multi_mahalanobis_detector](multi_mahalanobis_detector.qmd#onco_derm_ai.multi_mahalanobis_detector) | Run the Multi-Mahalanobis detector on the given datasets. |
+
+## inference
+
+Functions used in various inference pipelines
+
+| | |
+| --- | --- |
+| [resize_image](resize_image.qmd#onco_derm_ai.resize_image) | Resize image. |
+| [normalize_image](normalize_image.qmd#onco_derm_ai.normalize_image) | Normalize image. |
+| [prepare_data_for_ood](prepare_data_for_ood.qmd#onco_derm_ai.prepare_data_for_ood) | Prepare image for OOD detection. |
+| [ood_detection](ood_detection.qmd#onco_derm_ai.ood_detection) | Detect out-of-distribution samples. |
+| [predict](predict.qmd#onco_derm_ai.predict) | Predicts the output of the input image using the best model. |

@@ -1,0 +1,10 @@
+# This is a boilerplate parameters config generated for pipeline 'ood_detection'
+# using Kedro 0.19.9.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.19.9/configuration/parameters.html
+
+wide_resnet_epochs: 15
+wide_resnet_batch_size: 128
+ood_detection_out_ds: cifar10
+batch_size: 128

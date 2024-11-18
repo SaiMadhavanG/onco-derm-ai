@@ -150,11 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#onco_derm_ai.normalizing_images" id="toc-onco_derm_ai.normalizing_images" class="nav-link active" data-scroll-target="#onco_derm_ai.normalizing_images">normalizing_images</a>
-  <ul class="collapse">
-  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
-  <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
-  </ul></li>
+  <li><a href="#onco_derm_ai.normalizing_images" id="toc-onco_derm_ai.normalizing_images" class="nav-link active" data-scroll-target="#onco_derm_ai.normalizing_images">normalizing_images</a></li>
   </ul>
 </nav>
     </div>
@@ -167,61 +163,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="onco_derm_ai.normalizing_images" class="level1">
 <h1>normalizing_images</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>normalizing_images(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Normalize the pixel values of images in the given DataFrame.</p>
+<p>Normalizes the pixel values of images in the given DataFrame.</p>
 <p>This function takes a DataFrame containing image data and normalizes the pixel values by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].</p>
-<section id="parameters" class="level2 doc-section doc-section-parameters">
-<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 7%">
-<col style="width: 81%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>data</td>
-<td>pd.DataFrame</td>
-<td>A DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.</td>
-<td><em>required</em></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="returns" class="level2 doc-section doc-section-returns">
-<h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 12%">
-<col style="width: 80%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td></td>
-<td>pd.DataFrame</td>
-<td>A DataFrame with the same structure as the input, but with normalized image pixel values.</td>
-</tr>
-</tbody>
-</table>
+<p>Args: data (pd.DataFrame): A DataFrame containing image data. The DataFrame must have a column named “image” where each entry is an image represented as a numerical array.</p>
+<p>Returns: pd.DataFrame: A DataFrame with the same structure as the input, but with normalized image pixel values.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

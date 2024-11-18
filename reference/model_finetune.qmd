@@ -1,0 +1,22 @@
+# model_finetune { #onco_derm_ai.model_finetune }
+
+```python
+model_finetune(
+    train_dataset,
+    val_dataset,
+    model_name,
+    train_params,
+    device='cpu',
+)
+```
+
+Finetunes a pre-trained model on the given training dataset.
+
+Args:
+    train_dataset (DermaMNISTDataset): The dataset to train the model on.
+    model_name (str): The name of the model to finetune.
+    train_params (dict): A dictionary containing the training parameters.
+    device (str): The device to train the model on (e.g., "cpu" or "cuda").
+
+Returns:
+    dict: The state dictionary of the finetuned model.

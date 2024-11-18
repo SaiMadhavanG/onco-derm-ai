@@ -20,7 +20,6 @@ data/**
 # keep also the example dataset
 # !data/01_raw/*
 
-
 ##########################
 # Common files
 
@@ -143,15 +142,13 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.od_env/
 
 # mkdocs documentation
 /site
 
 # mypy
 .mypy_cache/
-
-# virtualenv
-.od_env/
 
 # quarto
 /.quarto/
