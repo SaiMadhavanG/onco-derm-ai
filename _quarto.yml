@@ -42,6 +42,8 @@ quartodoc:
       contents:
         - resize_image
         - normalize_image
+        - prepare_data_for_ood
+        - ood_detection
         - predict
   
 

@@ -1,7 +1,12 @@
 """onco-derm-ai"""
 
 from .pipelines.data_preprocessing.nodes import normalizing_images, tensoring_resizing
-from .pipelines.inf_data_preprocessing.nodes import normalize_image, resize_image
+from .pipelines.inf_data_preprocessing.nodes import (
+    normalize_image,
+    ood_detection,
+    prepare_data_for_ood,
+    resize_image,
+)
 from .pipelines.model_inference.nodes import predict
 from .pipelines.model_training.nodes import (
     DermaMNISTDataset,
@@ -34,4 +39,6 @@ __all__ = [
     "prepare_data",
     "train_wide_resnet",
     "multi_mahalanobis_detector",
+    "prepare_data_for_ood",
+    "ood_detection",
 ]

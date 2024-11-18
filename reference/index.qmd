@@ -40,4 +40,6 @@ Functions used in various inference pipelines
 | --- | --- |
 | [resize_image](resize_image.qmd#onco_derm_ai.resize_image) | Resize image. |
 | [normalize_image](normalize_image.qmd#onco_derm_ai.normalize_image) | Normalize image. |
+| [prepare_data_for_ood](prepare_data_for_ood.qmd#onco_derm_ai.prepare_data_for_ood) | Prepare image for OOD detection. |
+| [ood_detection](ood_detection.qmd#onco_derm_ai.ood_detection) | Detect out-of-distribution samples. |
 | [predict](predict.qmd#onco_derm_ai.predict) | Predicts the output of the input image using the best model. |
