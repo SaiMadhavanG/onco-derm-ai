@@ -29,7 +29,8 @@ Functions in the ood_detection pipeline
 | | |
 | --- | --- |
 | [prepare_data](prepare_data.qmd#onco_derm_ai.prepare_data) | Prepare the data for the OOD detection pipeline. |
-| [rmd_detector](rmd_detector.qmd#onco_derm_ai.rmd_detector) | Run the Relative Mahalanobis Distance (RMD) detector on the given datasets. |
+| [train_wide_resnet](train_wide_resnet.qmd#onco_derm_ai.train_wide_resnet) | Train a WideResNet model on the given datasets. |
+| [multi_mahalanobis_detector](multi_mahalanobis_detector.qmd#onco_derm_ai.multi_mahalanobis_detector) | Run the Multi-Mahalanobis detector on the given datasets. |
 
 ## inference
 

@@ -158,9 +158,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="onco_derm_ai.prepare_data" class="level1">
 <h1>prepare_data</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>prepare_data(out_ds, size, normal_mean, normal_std)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>prepare_data(out_ds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Prepare the data for the OOD detection pipeline.</p>
-<p>Args: out_ds: The dataset to use as the OOD dataset. size: The size to resize the images to. normal_mean: The mean to normalize the images. normal_std: The standard deviation to normalize the images.</p>
+<p>Args: out_ds: The out-of-distribution dataset to use.</p>
 <p>Returns: The in-distribution dataset and the out-of-distribution dataset.</p>
 
 

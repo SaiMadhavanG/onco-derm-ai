@@ -4,5 +4,7 @@
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/0.19.9/configuration/parameters.html
 
+wide_resnet_epochs: 15
+wide_resnet_batch_size: 128
 ood_detection_out_ds: cifar10
 batch_size: 128

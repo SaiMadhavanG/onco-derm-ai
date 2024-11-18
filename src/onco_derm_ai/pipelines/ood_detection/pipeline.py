@@ -5,7 +5,11 @@ generated using Kedro 0.19.9
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import prepare_data, rmd_detector
+from .nodes import (
+    multi_mahalanobis_detector,
+    prepare_data,
+    train_wide_resnet,
+)
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -15,23 +19,32 @@ def create_pipeline(**kwargs) -> Pipeline:
                 func=prepare_data,
                 inputs=[
                     "params:ood_detection_out_ds",
-                    "params:img_size",
-                    "params:normal_mean",
-                    "params:normal_std",
                 ],
-                outputs=["in_ds", "out_ds"],
+                outputs=["train_in_ds", "test_in_ds", "out_ds"],
                 name="ood_prepare_data",
             ),
             node(
-                func=rmd_detector,
+                func=train_wide_resnet,
                 inputs=[
-                    "best_model_uri",
-                    "in_ds",
-                    "out_ds",
-                    "params:batch_size",
+                    "train_in_ds",
+                    "test_in_ds",
+                    "params:wide_resnet_epochs",
+                    "params:wide_resnet_batch_size",
                     "params:device",
                 ],
+                outputs="wide_resnet_model",
+            ),
+            node(
+                func=multi_mahalanobis_detector,
+                inputs=[
+                    "wide_resnet_model",
+                    "train_in_ds",
+                    "test_in_ds",
+                    "out_ds",
+                    "params:batch_size",
+                ],
                 outputs=["ood_detection_metrics", "ood_detector"],
+                name="multi_mahalanobis_detector",
             ),
         ]
     )

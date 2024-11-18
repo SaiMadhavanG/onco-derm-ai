@@ -34,7 +34,9 @@ quartodoc:
       desc: Functions in the ood_detection pipeline
       contents:
         - prepare_data
-        - rmd_detector
+        - train_wide_resnet
+        - multi_mahalanobis_detector
+
     - title: inference
       desc: Functions used in various inference pipelines
       contents:
