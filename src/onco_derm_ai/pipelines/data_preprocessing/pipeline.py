@@ -5,15 +5,21 @@ generated using Kedro 0.19.8
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import normalizing_images, tensoring_resizing
+from .nodes import class_imbalance, normalizing_images, tensoring_resizing
 
 
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline(
         [
             node(
+                func=class_imbalance,
+                inputs=["train_raw", "params:class_imbalance"],
+                outputs="train_balanced",
+                name="making_sure_data_is_balanced",
+            ),
+            node(
                 func=normalizing_images,
-                inputs="train_raw",
+                inputs="train_balanced",
                 outputs="train_intermediate",
                 name="normalizing_train_image_node",
             ),

@@ -1,0 +1,15 @@
+artifact_uri: file:///mnt/c/Users/Admin/Desktop/onco-derm-ai/mlruns/312469223918544298/53643340523e44cf8e48687a4e090dd7/artifacts
+end_time: 1731084510109
+entry_point_name: ''
+experiment_id: '312469223918544298'
+lifecycle_stage: active
+run_id: 53643340523e44cf8e48687a4e090dd7
+run_name: model_training
+run_uuid: 53643340523e44cf8e48687a4e090dd7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731084415658
+status: 3
+tags: []
+user_id: Admin
