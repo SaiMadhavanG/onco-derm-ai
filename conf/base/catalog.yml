@@ -39,6 +39,10 @@ model_finetuned:
   type: pickle.PickleDataset
   filepath: data/06_models/model_fintuned.pkl
 
+wide_resnet_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/wide_resnet_model.pkl
+
 ood_detector:
   type: pickle.PickleDataset
   filepath: data/06_models/ood_detector.pkl

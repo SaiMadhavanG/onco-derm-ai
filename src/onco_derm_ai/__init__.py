@@ -11,7 +11,11 @@ from .pipelines.model_training.nodes import (
     model_select,
     preprocess_data_input,
 )
-from .pipelines.ood_detection.nodes import prepare_data, rmd_detector
+from .pipelines.ood_detection.nodes import (
+    multi_mahalanobis_detector,
+    prepare_data,
+    train_wide_resnet,
+)
 
 __version__ = "0.1"
 
@@ -28,5 +32,6 @@ __all__ = [
     "normalize_image",
     "predict",
     "prepare_data",
-    "rmd_detector",
+    "train_wide_resnet",
+    "multi_mahalanobis_detector",
 ]
