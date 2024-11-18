@@ -16,7 +16,7 @@ def resize_image(img: Image, size: Tuple[int, int]) -> torch.Tensor:
         Resized image.
     """
     img = np.array(img.convert("RGB")).astype(np.float32)
-    img = F.to_tensor(img)
+    img = F.to_tensor(img) / 255.0
     img = F.resize(img, size)
     return img
 

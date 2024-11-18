@@ -20,6 +20,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "params:normal_std",
                 ],
                 outputs=["in_ds", "out_ds"],
+                name="ood_prepare_data",
             ),
             node(
                 func=rmd_detector,
