@@ -295,6 +295,8 @@ def log_model(
     Returns:
         str: The URI of the logged model.
     """
+    mlflow.set_tracking_uri("http://localhost:5000")
+
     model = model_select(model_name, 7, False)
     model.load_state_dict(model_state_dict)
 
