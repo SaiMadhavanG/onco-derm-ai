@@ -1,2 +1,6 @@
 train_dataset:
   type: MemoryDataset
+
+training_loss:
+  type: pickle.PickleDataset
+  filepath: data/08_reporting/training_loss.pkl
