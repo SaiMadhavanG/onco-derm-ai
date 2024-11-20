@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>index – OncoDerm AI</title>
+<title>log_prediction – OncoDerm AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -97,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Cards</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
+    <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -116,14 +150,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#api-reference" id="toc-api-reference" class="nav-link active" data-scroll-target="#api-reference">API Reference</a>
-  <ul class="collapse">
-  <li><a href="#data_preprocessing" id="toc-data_preprocessing" class="nav-link" data-scroll-target="#data_preprocessing">data_preprocessing</a></li>
-  <li><a href="#model_training" id="toc-model_training" class="nav-link" data-scroll-target="#model_training">model_training</a></li>
-  <li><a href="#ood_detection" id="toc-ood_detection" class="nav-link" data-scroll-target="#ood_detection">ood_detection</a></li>
-  <li><a href="#conformal_prediction" id="toc-conformal_prediction" class="nav-link" data-scroll-target="#conformal_prediction">conformal_prediction</a></li>
-  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">inference</a></li>
-  </ul></li>
+  <li><a href="#onco_derm_ai.log_prediction" id="toc-onco_derm_ai.log_prediction" class="nav-link active" data-scroll-target="#onco_derm_ai.log_prediction">log_prediction</a></li>
   </ul>
 </nav>
     </div>
@@ -133,134 +160,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="api-reference" class="level1 doc doc-index">
-<h1 class="doc doc-index">API Reference</h1>
-<section id="data_preprocessing" class="level2">
-<h2 class="anchored" data-anchor-id="data_preprocessing">data_preprocessing</h2>
-<p>Functions in the data_preprocessing pipeline</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/normalizing_images.html#onco_derm_ai.normalizing_images">normalizing_images</a></td>
-<td>Normalizes the pixel values of images in the given DataFrame.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/tensoring_resizing.html#onco_derm_ai.tensoring_resizing">tensoring_resizing</a></td>
-<td>Applies a series of transformations to the ‘image’ column of a pandas DataFrame.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="model_training" class="level2">
-<h2 class="anchored" data-anchor-id="model_training">model_training</h2>
-<p>Functions in the model_training pipeline</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/DermaMNISTDataset.html#onco_derm_ai.DermaMNISTDataset">DermaMNISTDataset</a></td>
-<td>A custom Dataset class for the DermaMNIST dataset.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/preprocess_data_input.html#onco_derm_ai.preprocess_data_input">preprocess_data_input</a></td>
-<td>Preprocesses the input training data for the DermaMNIST dataset.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/model_select.html#onco_derm_ai.model_select">model_select</a></td>
-<td>Selects and returns a pre-trained model based on the provided model name.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/model_finetune.html#onco_derm_ai.model_finetune">model_finetune</a></td>
-<td>Finetunes a pre-trained model on the given training dataset.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/evaluate_model.html#onco_derm_ai.evaluate_model">evaluate_model</a></td>
-<td>Evaluates a pre-trained model on the given test dataset.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/log_model.html#onco_derm_ai.log_model">log_model</a></td>
-<td>Logs the model, hyperparameters, and metrics to MLFlow.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="ood_detection" class="level2">
-<h2 class="anchored" data-anchor-id="ood_detection">ood_detection</h2>
-<p>Functions in the ood_detection pipeline</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/prepare_data.html#onco_derm_ai.prepare_data">prepare_data</a></td>
-<td>Prepare the data for the OOD detection pipeline.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/train_wide_resnet.html#onco_derm_ai.train_wide_resnet">train_wide_resnet</a></td>
-<td>Train a WideResNet model on the given datasets.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/multi_mahalanobis_detector.html#onco_derm_ai.multi_mahalanobis_detector">multi_mahalanobis_detector</a></td>
-<td>Run the Multi-Mahalanobis detector on the given datasets.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="conformal_prediction" class="level2">
-<h2 class="anchored" data-anchor-id="conformal_prediction">conformal_prediction</h2>
-<p>Functions in the conformal_prediction pipeline</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/data_prep.html#onco_derm_ai.data_prep">data_prep</a></td>
-<td>Prepare the calibration and test sets for the conformal prediction pipeline.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/calibrate_predictor.html#onco_derm_ai.calibrate_predictor">calibrate_predictor</a></td>
-<td>Calibrate a SplitPredictor using the calibration set.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/evaluate_predictor.html#onco_derm_ai.evaluate_predictor">evaluate_predictor</a></td>
-<td>Evaluate a SplitPredictor using the test set.</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="inference" class="level2">
-<h2 class="anchored" data-anchor-id="inference">inference</h2>
-<p>Functions used in various inference pipelines</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/resize_image.html#onco_derm_ai.resize_image">resize_image</a></td>
-<td>Resize image.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/normalize_image.html#onco_derm_ai.normalize_image">normalize_image</a></td>
-<td>Normalize image.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/prepare_data_for_ood.html#onco_derm_ai.prepare_data_for_ood">prepare_data_for_ood</a></td>
-<td>Prepare image for OOD detection.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/ood_detection.html#onco_derm_ai.ood_detection">ood_detection</a></td>
-<td>Detect out-of-distribution samples.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/predict.html#onco_derm_ai.predict">predict</a></td>
-<td>Predicts the output of the input image using the best model.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/conformal_prediction.html#onco_derm_ai.conformal_prediction">conformal_prediction</a></td>
-<td>Perform conformal prediction on the output tensor.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/log_prediction.html#onco_derm_ai.log_prediction">log_prediction</a></td>
-<td>Log the prediction.</td>
-</tr>
-</tbody>
-</table>
+<section id="onco_derm_ai.log_prediction" class="level1">
+<h1>log_prediction</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>log_prediction(prediction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Log the prediction.</p>
+<p>Args: prediction: The prediction.</p>
+<p>Returns: None</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

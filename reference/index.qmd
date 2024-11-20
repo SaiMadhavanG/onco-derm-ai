@@ -53,3 +53,5 @@ Functions used in various inference pipelines
 | [prepare_data_for_ood](prepare_data_for_ood.qmd#onco_derm_ai.prepare_data_for_ood) | Prepare image for OOD detection. |
 | [ood_detection](ood_detection.qmd#onco_derm_ai.ood_detection) | Detect out-of-distribution samples. |
 | [predict](predict.qmd#onco_derm_ai.predict) | Predicts the output of the input image using the best model. |
+| [conformal_prediction](conformal_prediction.qmd#onco_derm_ai.conformal_prediction) | Perform conformal prediction on the output tensor. |
+| [log_prediction](log_prediction.qmd#onco_derm_ai.log_prediction) | Log the prediction. |

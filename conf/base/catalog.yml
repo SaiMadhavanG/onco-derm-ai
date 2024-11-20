@@ -63,6 +63,10 @@ prediction:
   type: pickle.PickleDataset
   filepath: data/07_model_output/prediction.pkl
 
+conformal_prediction:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/conformal_prediction.pkl
+
 model_metrics:
   type: json.JSONDataset
   filepath: data/08_reporting/model_metrics.json

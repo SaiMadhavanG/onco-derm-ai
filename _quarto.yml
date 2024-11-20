@@ -53,6 +53,8 @@ quartodoc:
         - prepare_data_for_ood
         - ood_detection
         - predict
+        - conformal_prediction
+        - log_prediction
   
 
 format:
