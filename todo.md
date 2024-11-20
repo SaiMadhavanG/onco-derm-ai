@@ -39,8 +39,7 @@
 # Inference
 
 - [ ] explainability - _deel_
-- [ ] confidence calibration - _deel_, **?**
-- [ ] OOD detection - **?**
+- [x] OOD detection - _pytorch ood_
 - [ ] Conformal predictions - _deel_
 
 # Deployment

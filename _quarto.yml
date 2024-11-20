@@ -7,6 +7,8 @@ website:
     left:
       - href: docs/index.qmd
         text: Home
+      - href: docs/cards/index.qmd
+        text: Cards
       - href: reference/index.qmd
         text: Reference
 
@@ -30,6 +32,21 @@ quartodoc:
         - model_finetune
         - evaluate_model
         - log_model
+    - title: ood_detection
+      desc: Functions in the ood_detection pipeline
+      contents:
+        - prepare_data
+        - train_wide_resnet
+        - multi_mahalanobis_detector
+
+    - title: inference
+      desc: Functions used in various inference pipelines
+      contents:
+        - resize_image
+        - normalize_image
+        - prepare_data_for_ood
+        - ood_detection
+        - predict
   
 
 format:

@@ -1,0 +1,13 @@
+# normalize_image { #onco_derm_ai.normalize_image }
+
+```python
+normalize_image(img, mean, std)
+```
+
+Normalize image.
+Args:
+    img: Image to be normalized.
+    mean: Mean value for normalization.
+    std: Standard deviation for normalization.
+Returns:
+    Normalized image.

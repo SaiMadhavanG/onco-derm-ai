@@ -21,3 +21,25 @@ Functions in the model_training pipeline
 | [model_finetune](model_finetune.qmd#onco_derm_ai.model_finetune) | Finetunes a pre-trained model on the given training dataset. |
 | [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |
 | [log_model](log_model.qmd#onco_derm_ai.log_model) | Logs the model, hyperparameters, and metrics to MLFlow. |
+
+## ood_detection
+
+Functions in the ood_detection pipeline
+
+| | |
+| --- | --- |
+| [prepare_data](prepare_data.qmd#onco_derm_ai.prepare_data) | Prepare the data for the OOD detection pipeline. |
+| [train_wide_resnet](train_wide_resnet.qmd#onco_derm_ai.train_wide_resnet) | Train a WideResNet model on the given datasets. |
+| [multi_mahalanobis_detector](multi_mahalanobis_detector.qmd#onco_derm_ai.multi_mahalanobis_detector) | Run the Multi-Mahalanobis detector on the given datasets. |
+
+## inference
+
+Functions used in various inference pipelines
+
+| | |
+| --- | --- |
+| [resize_image](resize_image.qmd#onco_derm_ai.resize_image) | Resize image. |
+| [normalize_image](normalize_image.qmd#onco_derm_ai.normalize_image) | Normalize image. |
+| [prepare_data_for_ood](prepare_data_for_ood.qmd#onco_derm_ai.prepare_data_for_ood) | Prepare image for OOD detection. |
+| [ood_detection](ood_detection.qmd#onco_derm_ai.ood_detection) | Detect out-of-distribution samples. |
+| [predict](predict.qmd#onco_derm_ai.predict) | Predicts the output of the input image using the best model. |
