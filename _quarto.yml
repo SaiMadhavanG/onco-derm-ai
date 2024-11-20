@@ -38,6 +38,12 @@ quartodoc:
         - prepare_data
         - train_wide_resnet
         - multi_mahalanobis_detector
+    - title: conformal_prediction
+      desc: Functions in the conformal_prediction pipeline
+      contents:
+        - data_prep
+        - calibrate_predictor
+        - evaluate_predictor
 
     - title: inference
       desc: Functions used in various inference pipelines

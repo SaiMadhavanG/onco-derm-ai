@@ -32,6 +32,16 @@ Functions in the ood_detection pipeline
 | [train_wide_resnet](train_wide_resnet.qmd#onco_derm_ai.train_wide_resnet) | Train a WideResNet model on the given datasets. |
 | [multi_mahalanobis_detector](multi_mahalanobis_detector.qmd#onco_derm_ai.multi_mahalanobis_detector) | Run the Multi-Mahalanobis detector on the given datasets. |
 
+## conformal_prediction
+
+Functions in the conformal_prediction pipeline
+
+| | |
+| --- | --- |
+| [data_prep](data_prep.qmd#onco_derm_ai.data_prep) | Prepare the calibration and test sets for the conformal prediction pipeline. |
+| [calibrate_predictor](calibrate_predictor.qmd#onco_derm_ai.calibrate_predictor) | Calibrate a SplitPredictor using the calibration set. |
+| [evaluate_predictor](evaluate_predictor.qmd#onco_derm_ai.evaluate_predictor) | Evaluate a SplitPredictor using the test set. |
+
 ## inference
 
 Functions used in various inference pipelines

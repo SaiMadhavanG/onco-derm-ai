@@ -1,5 +1,10 @@
 """onco-derm-ai"""
 
+from .pipelines.conformal_prediction.nodes import (
+    calibrate_predictor,
+    data_prep,
+    evaluate_predictor,
+)
 from .pipelines.data_preprocessing.nodes import normalizing_images, tensoring_resizing
 from .pipelines.inf_data_preprocessing.nodes import (
     normalize_image,
@@ -41,4 +46,7 @@ __all__ = [
     "multi_mahalanobis_detector",
     "prepare_data_for_ood",
     "ood_detection",
+    "data_prep",
+    "calibrate_predictor",
+    "evaluate_predictor",
 ]
