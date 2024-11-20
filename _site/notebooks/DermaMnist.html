@@ -173,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="cell-2" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install medmnist</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="28">
+<div id="cell-3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> medmnist <span class="im">import</span> DermaMNIST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -529,16 +529,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>(28, 28, 3)</code></pre>
 </div>
 </div>
-<div id="cell-30" class="cell" data-execution_count="75">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext kedro.ipython</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-30" class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># %reload_ext kedro.ipython</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:20:28] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Using                                                                  <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\framework\project\__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\framework\project\__init__.py#249" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">249</span></a>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">'c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\framewor</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">               </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">k\project\rich_logging.yml'</span> as logging configuration.                  <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">               </span>
-</pre>
-</div>
-<div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Registered line magic <span style="color: #008000; text-decoration-color: #008000">'%reload_kedro'</span>                                   <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py#58" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">58</span></a>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/20/24 11:51:51] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Registered line magic <span style="color: #008000; text-decoration-color: #008000">'%reload_kedro'</span>                                   <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py#58" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">58</span></a>
 </pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -551,7 +545,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:20:31] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Registering new custom resolver: <span style="color: #008000; text-decoration-color: #008000">'km.random_name'</span>                    <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro_mlflow\framework\hooks\mlflow_hook.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">mlflow_hook.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro_mlflow\framework\hooks\mlflow_hook.py#62" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">62</span></a>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/20/24 11:51:52] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Registering new custom resolver: <span style="color: #008000; text-decoration-color: #008000">'km.random_name'</span>                    <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro_mlflow\framework\hooks\mlflow_hook.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">mlflow_hook.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro_mlflow\framework\hooks\mlflow_hook.py#62" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">62</span></a>
 </pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -633,74 +627,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:20:32] </span><span style="color: #808000; text-decoration-color: #808000">WARNING </span> Malformed experiment <span style="color: #008000; text-decoration-color: #008000">'312469223918544298'</span>. Detailed error Yaml file  <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">file_store.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py#331" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">331</span></a>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">'C:\Users\Admin\Desktop\onco-derm-ai\mlruns\312469223918544298\meta.</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">yaml'</span> does not exist.                                                <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">╭─────────────── </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">Traceback </span><span style="color: #bf7f7f; text-decoration-color: #bf7f7f; font-weight: bold">(most recent call last)</span><span style="color: #800000; text-decoration-color: #800000"> ────────────────╮</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\st</span> <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">ore\tracking\file_store.py</span>:<span style="color: #0000ff; text-decoration-color: #0000ff">327</span> in <span style="color: #00ff00; text-decoration-color: #00ff00">search_experiments</span>             <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 324 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">for</span> exp_id <span style="color: #ff00ff; text-decoration-color: #ff00ff">in</span> experiment_ids:                     <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 325 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">try</span>:                                          <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 326 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f"># trap and warn known issues, will raise </span> <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #800000; text-decoration-color: #800000">❱ </span> 327 <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span>exp = <span style="color: #00ffff; text-decoration-color: #00ffff">self</span>._get_experiment(exp_id, view_t <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 328 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">if</span> exp <span style="color: #ff00ff; text-decoration-color: #ff00ff">is</span> <span style="color: #ff00ff; text-decoration-color: #ff00ff">not</span> <span style="color: #0000ff; text-decoration-color: #0000ff">None</span>:                       <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 329 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   │   </span>experiments.append(exp)               <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 330 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">except</span> MissingConfigException <span style="color: #0000ff; text-decoration-color: #0000ff">as</span> e:           <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\st</span> <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">ore\tracking\file_store.py</span>:<span style="color: #0000ff; text-decoration-color: #0000ff">421</span> in <span style="color: #00ff00; text-decoration-color: #00ff00">_get_experiment</span>                <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 418 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span><span style="color: #808000; text-decoration-color: #808000">f"Could not find experiment with ID {</span>expe <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 419 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span>databricks_pb2.RESOURCE_DOES_NOT_EXIST,   <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 420 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   </span>)                                             <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #800000; text-decoration-color: #800000">❱ </span> 421 <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span>meta = FileStore._read_yaml(experiment_dir, FileS <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 422 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span>meta[<span style="color: #808000; text-decoration-color: #808000">"tags"</span>] = <span style="color: #00ffff; text-decoration-color: #00ffff">self</span>.get_all_experiment_tags(exper <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 423 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span>experiment = _read_persisted_experiment_dict(meta <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 424 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">if</span> experiment_id != experiment.experiment_id:     <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\st</span> <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">ore\tracking\file_store.py</span>:<span style="color: #0000ff; text-decoration-color: #0000ff">1367</span> in <span style="color: #00ff00; text-decoration-color: #00ff00">_read_yaml</span>                    <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1364 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span>time.sleep(<span style="color: #0000ff; text-decoration-color: #0000ff">0.1</span> * (<span style="color: #0000ff; text-decoration-color: #0000ff">3</span> - attempts_remaining) <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1365 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">return</span> _read_helper(root, file_name, atte <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1366 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span>                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #800000; text-decoration-color: #800000">❱ </span>1367 <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">return</span> _read_helper(root, file_name, attempts_rem <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1368 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   </span>                                                      <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1369 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   </span><span style="color: #0000ff; text-decoration-color: #0000ff">def</span> <span style="color: #00ff00; text-decoration-color: #00ff00">_get_traces_artifact_dir</span>(<span style="color: #00ffff; text-decoration-color: #00ffff">self</span>, experiment_id, req <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1370 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">return</span> append_to_uri_path(                        <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\st</span> <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">ore\tracking\file_store.py</span>:<span style="color: #0000ff; text-decoration-color: #0000ff">1360</span> in <span style="color: #00ff00; text-decoration-color: #00ff00">_read_helper</span>                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1357 </span><span style="color: #bfbf7f; text-decoration-color: #bfbf7f">│   │   </span><span style="color: #808000; text-decoration-color: #808000">"""</span>                                               <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1358 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span>                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1359 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">def</span> <span style="color: #00ff00; text-decoration-color: #00ff00">_read_helper</span>(root, file_name, attempts_remain <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #800000; text-decoration-color: #800000">❱ </span>1360 <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   </span>result = read_yaml(root, file_name)           <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1361 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">if</span> result <span style="color: #ff00ff; text-decoration-color: #ff00ff">is</span> <span style="color: #ff00ff; text-decoration-color: #ff00ff">not</span> <span style="color: #0000ff; text-decoration-color: #0000ff">None</span> <span style="color: #ff00ff; text-decoration-color: #ff00ff">or</span> attempts_remaining = <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1362 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">return</span> result                             <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">1363 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">else</span>:                                         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\ut</span> <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #808000; text-decoration-color: #808000">ils\file_utils.py</span>:<span style="color: #0000ff; text-decoration-color: #0000ff">309</span> in <span style="color: #00ff00; text-decoration-color: #00ff00">read_yaml</span>                               <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>                                                                  <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 306 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   </span>                                                      <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 307 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   </span>file_path = os.path.join(root, file_name)             <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 308 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   </span><span style="color: #0000ff; text-decoration-color: #0000ff">if</span> <span style="color: #ff00ff; text-decoration-color: #ff00ff">not</span> exists(file_path):                             <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #800000; text-decoration-color: #800000">❱ </span> 309 <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">raise</span> MissingConfigException(<span style="color: #808000; text-decoration-color: #808000">f"Yaml file '{</span>file_p <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 310 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   </span><span style="color: #0000ff; text-decoration-color: #0000ff">with</span> codecs.open(file_path, mode=<span style="color: #808000; text-decoration-color: #808000">"r"</span>, encoding=ENCODI <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 311 </span><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">│   │   </span><span style="color: #0000ff; text-decoration-color: #0000ff">return</span> yaml.load(yaml_file, Loader=YamlSafeLoader <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">│</span>   <span style="color: #7f7f7f; text-decoration-color: #7f7f7f"> 312 </span>                                                          <span style="color: #800000; text-decoration-color: #800000">│</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">╰──────────────────────────────────────────────────────────────────╯</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #ff0000; text-decoration-color: #ff0000; font-weight: bold">MissingConfigException: </span>Yaml file                                    <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">'C:\Users\Admin\Desktop\onco-derm-ai\mlruns\312469223918544298\meta.</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-<span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">yaml'</span> does not exist.                                                <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
-</pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>2024/11/18 23:20:32 INFO mlflow.tracking.fluent: Experiment with name 'onco_derm_ai' does not exist. Creating a new experiment.</code></pre>
-</div>
-<div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span><span style="color: #808000; text-decoration-color: #808000">WARNING </span> Malformed experiment <span style="color: #008000; text-decoration-color: #008000">'312469223918544298'</span>. Detailed error Yaml file  <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">file_store.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py#331" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">331</span></a>
 <span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">'C:\Users\Admin\Desktop\onco-derm-ai\mlruns\312469223918544298\meta.</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
 <span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">yaml'</span> does not exist.                                                <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
@@ -766,7 +692,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:20:33] </span><span style="color: #808000; text-decoration-color: #808000">WARNING </span> Malformed experiment <span style="color: #008000; text-decoration-color: #008000">'312469223918544298'</span>. Detailed error Yaml file  <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">file_store.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py#331" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">331</span></a>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/20/24 11:51:53] </span><span style="color: #808000; text-decoration-color: #808000">WARNING </span> Malformed experiment <span style="color: #008000; text-decoration-color: #008000">'312469223918544298'</span>. Detailed error Yaml file  <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">file_store.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\mlflow\store\tracking\file_store.py#331" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">331</span></a>
 <span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">'C:\Users\Admin\Desktop\onco-derm-ai\mlruns\312469223918544298\meta.</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
 <span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #008000; text-decoration-color: #008000">yaml'</span> does not exist.                                                <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
 <span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span>         <span style="color: #800000; text-decoration-color: #800000">╭─────────────── </span><span style="color: #800000; text-decoration-color: #800000; font-weight: bold">Traceback </span><span style="color: #bf7f7f; text-decoration-color: #bf7f7f; font-weight: bold">(most recent call last)</span><span style="color: #800000; text-decoration-color: #800000"> ────────────────╮</span> <span style="color: #7f7f7f; text-decoration-color: #7f7f7f">                 </span>
@@ -840,7 +766,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:20:34] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Kedro project onco-derm-ai                                             <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py#141" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">141</span></a>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/20/24 11:51:54] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Kedro project onco-derm-ai                                             <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py#141" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">141</span></a>
 </pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -849,14 +775,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </pre>
 </div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:20:35] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Registered line magic <span style="color: #008000; text-decoration-color: #008000">'run_viz'</span>                                        <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py#148" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">148</span></a>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">                    </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Registered line magic <span style="color: #008000; text-decoration-color: #008000">'run_viz'</span>                                        <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">__init__.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\ipython\__init__.py#148" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">148</span></a>
 </pre>
 </div>
 </div>
 <div id="cell-31" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kedro.io.data_catalog <span class="im">import</span> DataCatalog</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> DataCatalog.from_config(<span class="st">"../conf/base/catalog.yml"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> kedro.io.data_catalog <span class="im">import</span> DataCatalog</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>catalog <span class="op">=</span> DataCatalog.from_config(<span class="st">"../conf/base/catalog.yml"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg ansi-bold">---------------------------------------------------------------------------</span>
@@ -881,9 +807,9 @@ File <span class="ansi-green-fg ansi-bold">c:\Users\Admin\miniconda3\envs\MlOps\
 </div>
 </div>
 <div id="cell-32" class="cell" data-execution_count="79">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"train_raw"</span>, train_df)</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># catalog.save("test_raw", test_df)</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># catalog.save("val_raw", val_df)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>catalog.save(<span class="st">"train_raw"</span>, train_df)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="co"># catalog.save("test_raw", test_df)</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co"># catalog.save("val_raw", val_df)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:22:45] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Saving data to <span style="color: #ff8700; text-decoration-color: #ff8700">train_raw</span> <span style="font-weight: bold">(</span>PickleDataset<span style="font-weight: bold">)</span><span style="color: #808000; text-decoration-color: #808000">...</span>                        <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\io\data_catalog.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">data_catalog.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\io\data_catalog.py#581" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">581</span></a>
 </pre>
@@ -916,19 +842,19 @@ versioning is enabled.
 </pre>
 </div>
 </div>
-<div id="cell-33" class="cell" data-execution_count="83">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> catalog.load(<span class="st">"train_raw"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-33" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> catalog.load(<span class="st">"train_raw"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/18/24 23:30:16] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Loading data from <span style="color: #ff8700; text-decoration-color: #ff8700">train_raw</span> <span style="font-weight: bold">(</span>PickleDataset<span style="font-weight: bold">)</span><span style="color: #808000; text-decoration-color: #808000">...</span>                     <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\io\data_catalog.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">data_catalog.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\io\data_catalog.py#539" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">539</span></a>
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"><span style="color: #7fbfbf; text-decoration-color: #7fbfbf">[11/20/24 11:52:04] </span><span style="color: #000080; text-decoration-color: #000080">INFO    </span> Loading data from <span style="color: #ff8700; text-decoration-color: #ff8700">train_raw</span> <span style="font-weight: bold">(</span>PickleDataset<span style="font-weight: bold">)</span><span style="color: #808000; text-decoration-color: #808000">...</span>                     <a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\io\data_catalog.py" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">data_catalog.py</span></a><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">:</span><a href="file://c:\Users\Admin\miniconda3\envs\MlOps\lib\site-packages\kedro\io\data_catalog.py#539" target="_blank"><span style="color: #7f7f7f; text-decoration-color: #7f7f7f">539</span></a>
 </pre>
 </div>
 </div>
-<div id="cell-34" class="cell" data-execution_count="84">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-34" class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># df</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="84">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -945,32 +871,32 @@ versioning is enabled.
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>train_0</td>
-<td>[[[158, 111, 117, 161, 116, 121, 164, 121, 130...</td>
-<td>0</td>
+<td>[[[158, 111, 117], [161, 116, 121], [164, 121,...</td>
+<td>[0]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
 <td>train_1</td>
-<td>[[[230, 111, 105, 226, 107, 99, 225, 106, 98, ...</td>
-<td>5</td>
+<td>[[[230, 111, 105], [226, 107, 99], [225, 106, ...</td>
+<td>[5]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
 <td>train_2</td>
-<td>[[[229, 156, 173, 229, 156, 173, 227, 156, 174...</td>
-<td>5</td>
+<td>[[[229, 156, 173], [229, 156, 173], [227, 156,...</td>
+<td>[5]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
 <td>train_3</td>
-<td>[[[228, 127, 115, 224, 126, 113, 223, 125, 112...</td>
-<td>5</td>
+<td>[[[228, 127, 115], [224, 126, 113], [223, 125,...</td>
+<td>[5]</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
 <td>train_4</td>
-<td>[[[216, 188, 187, 217, 189, 188, 220, 192, 191...</td>
-<td>4</td>
+<td>[[[216, 188, 187], [217, 189, 188], [220, 192,...</td>
+<td>[4]</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">...</td>
@@ -979,62 +905,244 @@ versioning is enabled.
 <td>...</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">32846</td>
-<td>train_32846</td>
-<td>[[[220, 155, 157, 220, 154, 156, 222, 248, 155...</td>
-<td>6</td>
+<td data-quarto-table-cell-role="th">7002</td>
+<td>train_7002</td>
+<td>[[[201, 127, 144], [199, 125, 142], [201, 124,...</td>
+<td>[5]</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">32847</td>
-<td>train_32847</td>
-<td>[[[37, 228, 147, 39, 230, 148, 39, 230, 238, 3...</td>
-<td>6</td>
+<td data-quarto-table-cell-role="th">7003</td>
+<td>train_7003</td>
+<td>[[[228, 122, 136], [229, 123, 137], [231, 126,...</td>
+<td>[5]</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">32848</td>
-<td>train_32848</td>
-<td>[[[189, 161, 208, 189, 161, 208, 191, 160, 175...</td>
-<td>6</td>
+<td data-quarto-table-cell-role="th">7004</td>
+<td>train_7004</td>
+<td>[[[20, 18, 32], [54, 52, 66], [95, 94, 108], [...</td>
+<td>[2]</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">32849</td>
-<td>train_32849</td>
-<td>[[[159, 107, 128, 246, 106, 128, 248, 103, 129...</td>
-<td>6</td>
+<td data-quarto-table-cell-role="th">7005</td>
+<td>train_7005</td>
+<td>[[[171, 141, 177], [172, 142, 178], [175, 143,...</td>
+<td>[5]</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">32850</td>
-<td>train_32850</td>
-<td>[[[70, 39, 67, 69, 38, 66, 70, 38, 66, 71, 39,...</td>
-<td>6</td>
+<td data-quarto-table-cell-role="th">7006</td>
+<td>train_7006</td>
+<td>[[[239, 156, 176], [235, 152, 172], [231, 149,...</td>
+<td>[5]</td>
 </tr>
 </tbody>
 </table>
 
-<p>32851 rows × 3 columns</p>
+<p>7007 rows × 3 columns</p>
 </div>
 </div>
 </div>
-<div id="cell-35" class="cell" data-execution_count="81">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"image"</span>][<span class="dv">0</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-35" class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"image"</span>][<span class="dv">0</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="81">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div class="ansi-escaped-output">
-<pre><span class="ansi-bold">(</span><span class="ansi-cyan-fg ansi-bold">3</span>, <span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">28</span><span class="ansi-bold">)</span></pre>
+<pre><span class="ansi-bold">(</span><span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">3</span><span class="ansi-bold">)</span></pre>
 </div>
 </div>
 </div>
 <div id="cell-36" class="cell" data-execution_count="82">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">"cuda"</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">"cpu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">"cuda"</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">"cpu"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-37" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>device</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>device</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>device(type='cuda')</code></pre>
+</div>
+</div>
+<div id="cell-38" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>data_augmentation <span class="op">=</span> transforms.Compose(</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>        transforms.RandomHorizontalFlip(p<span class="op">=</span><span class="fl">0.75</span>),</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>        transforms.RandomVerticalFlip(p<span class="op">=</span><span class="fl">0.75</span>),</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>        transforms.RandomRotation(degrees<span class="op">=</span><span class="dv">30</span>),</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        transforms.ColorJitter(brightness<span class="op">=</span><span class="fl">0.2</span>, contrast<span class="op">=</span><span class="fl">0.2</span>, saturation<span class="op">=</span><span class="fl">0.2</span>, hue<span class="op">=</span><span class="fl">0.1</span>),</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>        transforms.ToTensor(),</span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> augment_and_add_rows(original_df, augment_fn, num_augmented_per_image):</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a><span class="co">    Augments the images in the DataFrame and appends the augmented rows.</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Args:</span></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a><span class="co">        original_df (pd.DataFrame): Original DataFrame containing images and metadata.</span></span>
+<span id="cb46-21"><a href="#cb46-21" aria-hidden="true" tabindex="-1"></a><span class="co">        augment_fn (callable): Augmentation function to apply.</span></span>
+<span id="cb46-22"><a href="#cb46-22" aria-hidden="true" tabindex="-1"></a><span class="co">        num_augmented_per_image (int): Number of augmented images to create for each original image.</span></span>
+<span id="cb46-23"><a href="#cb46-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-24"><a href="#cb46-24" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns:</span></span>
+<span id="cb46-25"><a href="#cb46-25" aria-hidden="true" tabindex="-1"></a><span class="co">        pd.DataFrame: DataFrame with new augmented rows added.</span></span>
+<span id="cb46-26"><a href="#cb46-26" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb46-27"><a href="#cb46-27" aria-hidden="true" tabindex="-1"></a>    augmented_rows <span class="op">=</span> []</span>
+<span id="cb46-28"><a href="#cb46-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-29"><a href="#cb46-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> idx, row <span class="kw">in</span> original_df.iterrows():</span>
+<span id="cb46-30"><a href="#cb46-30" aria-hidden="true" tabindex="-1"></a>        original_image <span class="op">=</span> row[<span class="st">"image"</span>]</span>
+<span id="cb46-31"><a href="#cb46-31" aria-hidden="true" tabindex="-1"></a>        label <span class="op">=</span> row[<span class="st">"label"</span>]</span>
+<span id="cb46-32"><a href="#cb46-32" aria-hidden="true" tabindex="-1"></a>        image_id <span class="op">=</span> row[<span class="st">"id"</span>]</span>
+<span id="cb46-33"><a href="#cb46-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-34"><a href="#cb46-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Convert image array to PIL Image</span></span>
+<span id="cb46-35"><a href="#cb46-35" aria-hidden="true" tabindex="-1"></a>        pil_image <span class="op">=</span> Image.fromarray(np.array(original_image, dtype<span class="op">=</span>np.uint8))</span>
+<span id="cb46-36"><a href="#cb46-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-37"><a href="#cb46-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_augmented_per_image):</span>
+<span id="cb46-38"><a href="#cb46-38" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Apply augmentations</span></span>
+<span id="cb46-39"><a href="#cb46-39" aria-hidden="true" tabindex="-1"></a>            augmented_image <span class="op">=</span> augment_fn(pil_image)</span>
+<span id="cb46-40"><a href="#cb46-40" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Convert back to numpy array for storage</span></span>
+<span id="cb46-41"><a href="#cb46-41" aria-hidden="true" tabindex="-1"></a>            augmented_array <span class="op">=</span> np.array(augmented_image.permute(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">0</span>) <span class="op">*</span> <span class="dv">255</span>).astype(</span>
+<span id="cb46-42"><a href="#cb46-42" aria-hidden="true" tabindex="-1"></a>                np.uint8</span>
+<span id="cb46-43"><a href="#cb46-43" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb46-44"><a href="#cb46-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-45"><a href="#cb46-45" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Create a new unique ID for the augmented image</span></span>
+<span id="cb46-46"><a href="#cb46-46" aria-hidden="true" tabindex="-1"></a>            new_id <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>image_id<span class="sc">}</span><span class="ss">_aug_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb46-47"><a href="#cb46-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-48"><a href="#cb46-48" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Add the new row</span></span>
+<span id="cb46-49"><a href="#cb46-49" aria-hidden="true" tabindex="-1"></a>            augmented_rows.append(</span>
+<span id="cb46-50"><a href="#cb46-50" aria-hidden="true" tabindex="-1"></a>                {<span class="st">"id"</span>: new_id, <span class="st">"image"</span>: augmented_array, <span class="st">"label"</span>: label}</span>
+<span id="cb46-51"><a href="#cb46-51" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb46-52"><a href="#cb46-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-53"><a href="#cb46-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert augmented rows to a DataFrame</span></span>
+<span id="cb46-54"><a href="#cb46-54" aria-hidden="true" tabindex="-1"></a>    augmented_df <span class="op">=</span> pd.DataFrame(augmented_rows)</span>
+<span id="cb46-55"><a href="#cb46-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-56"><a href="#cb46-56" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Append the augmented DataFrame to the original</span></span>
+<span id="cb46-57"><a href="#cb46-57" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.concat([original_df, augmented_df], ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-39" class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>augmented_df <span class="op">=</span> augment_and_add_rows(df, data_augmentation, num_augmented_per_image<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the resulting DataFrame</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="co"># print(augmented_df.head())</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="co"># augmented_df</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="co"># print(f"Original rows: {len(df)}, Augmented rows: {len(augmented_df) - len(df)}, Total rows: {len(augmented_df)}")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">image</th>
+<th data-quarto-table-cell-role="th">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>train_0</td>
+<td>[[[158, 111, 117], [161, 116, 121], [164, 121,...</td>
+<td>[0]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>train_1</td>
+<td>[[[230, 111, 105], [226, 107, 99], [225, 106, ...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>train_2</td>
+<td>[[[229, 156, 173], [229, 156, 173], [227, 156,...</td>
+<td>[5]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>train_3</td>
+<td>[[[228, 127, 115], [224, 126, 113], [223, 125,...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>train_4</td>
+<td>[[[216, 188, 187], [217, 189, 188], [220, 192,...</td>
+<td>[4]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">21016</td>
+<td>train_7004_aug_1</td>
+<td>[[[20, 20, 20], [20, 20, 20], [20, 20, 20], [2...</td>
+<td>[2]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">21017</td>
+<td>train_7005_aug_0</td>
+<td>[[[17, 17, 17], [17, 17, 17], [160, 127, 144],...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">21018</td>
+<td>train_7005_aug_1</td>
+<td>[[[1, 1, 1], [131, 108, 140], [131, 108, 140],...</td>
+<td>[5]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">21019</td>
+<td>train_7006_aug_0</td>
+<td>[[[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], ...</td>
+<td>[5]</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">21020</td>
+<td>train_7006_aug_1</td>
+<td>[[[5, 5, 5], [5, 5, 5], [5, 5, 5], [251, 178, ...</td>
+<td>[5]</td>
+</tr>
+</tbody>
+</table>
+
+<p>21021 rows × 3 columns</p>
+</div>
+</div>
+</div>
+<div id="cell-40" class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Access the shape of image present in last row</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>last_image <span class="op">=</span> augmented_df[<span class="st">"image"</span>].iloc[<span class="dv">0</span>]</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co"># len(last_image[0][0])</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a><span class="co"># last_image</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print(type(last_image))</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="co"># print(type(augmented_df["image"].iloc[-1]))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'numpy.ndarray'&gt;
+&lt;class 'numpy.ndarray'&gt;</code></pre>
+</div>
+</div>
+<div id="cell-41" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>augmented_df[<span class="st">"image"</span>].iloc[<span class="op">-</span><span class="dv">1</span>].shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre style="white-space:pre;overflow-x:auto;line-height:normal;font-family:Menlo,'DejaVu Sans Mono',consolas,'Courier New',monospace"></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-bold">(</span><span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">28</span>, <span class="ansi-cyan-fg ansi-bold">3</span><span class="ansi-bold">)</span></pre>
+</div>
 </div>
 </div>
 

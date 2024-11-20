@@ -6,6 +6,7 @@ generated using Kedro 0.19.8
 import numpy as np
 import pandas as pd
 from imblearn.over_sampling import SMOTE
+from PIL import Image
 from torchvision import transforms
 
 
@@ -28,6 +29,67 @@ def class_imbalance(data: pd.DataFrame, class_imbalance: bool) -> pd.DataFrame:
         data["label"] = list(train_labels)
         # data = pd.DataFrame([train_images, train_labels], columns=["image", "label"])
     return data
+
+
+data_augmentation = transforms.Compose(
+    [
+        transforms.RandomHorizontalFlip(p=0.75),
+        transforms.RandomVerticalFlip(p=0.75),
+        transforms.RandomRotation(degrees=30),
+        transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
+        transforms.ToTensor(),
+    ]
+)
+
+
+def data_aug(
+    data: pd.DataFrame, data_augmentation_flg: bool, num_augmented_per_image: int
+) -> pd.DataFrame:
+    """
+    Augments the images in the DataFrame and appends the augmented rows.
+
+    Args:
+        data (pd.DataFrame): Original DataFrame containing images and metadata.
+        augment_fn (callable): Augmentation function to apply.
+        num_augmented_per_image (int): Number of augmented images to create for each original image.
+
+    Returns:
+        pd.DataFrame: DataFrame with new augmented rows added.
+    """
+    if not data_augmentation_flg:
+        return data
+
+    augmented_rows = []
+
+    for idx, row in data.iterrows():
+        original_image = row["image"]
+        label = row["label"]
+        image_id = row["id"]
+
+        # Convert image array to PIL Image
+        pil_image = Image.fromarray(np.array(original_image, dtype=np.uint8))
+
+        for i in range(num_augmented_per_image):
+            # Apply augmentations
+            augmented_image = data_augmentation(pil_image)
+            # Convert back to numpy array for storage
+            augmented_array = np.array(augmented_image.permute(1, 2, 0) * 255).astype(
+                np.uint8
+            )
+
+            # Create a new unique ID for the augmented image
+            new_id = f"{image_id}_aug_{i}"
+
+            # Add the new row
+            augmented_rows.append(
+                {"id": new_id, "image": augmented_array, "label": label}
+            )
+
+    # Convert augmented rows to a DataFrame
+    augmented_df = pd.DataFrame(augmented_rows)
+
+    # Append the augmented DataFrame to the original
+    return pd.concat([data, augmented_df], ignore_index=True)
 
 
 def normalizing_images(data: pd.DataFrame) -> pd.DataFrame:

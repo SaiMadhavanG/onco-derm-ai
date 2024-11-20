@@ -5,7 +5,7 @@ generated using Kedro 0.19.8
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import class_imbalance, normalizing_images, tensoring_resizing
+from .nodes import class_imbalance, data_aug, normalizing_images, tensoring_resizing
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -18,8 +18,18 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="making_sure_data_is_balanced",
             ),
             node(
+                func=data_aug,
+                inputs=[
+                    "train_balanced",
+                    "params:data_augmentation",
+                    "params:num_augmented_per_image",
+                ],
+                outputs="train_augmented",
+                name="data_augmentation_node",
+            ),
+            node(
                 func=normalizing_images,
-                inputs="train_balanced",
+                inputs="train_augmented",
                 outputs="train_intermediate",
                 name="normalizing_train_image_node",
             ),

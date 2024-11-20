@@ -1,2 +1,8 @@
 train_intermediate:
   type: MemoryDataset
+
+train_balanced:
+  type: MemoryDataset
+
+train_augmented:
+  type: MemoryDataset
