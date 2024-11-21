@@ -1,0 +1,15 @@
+# data_prep { #onco_derm_ai.data_prep }
+
+```python
+data_prep(size, mean, std)
+```
+
+Prepare the calibration and test sets for the conformal prediction pipeline.
+
+Args:
+    size: The size to which the images should be resized.
+    mean: The mean values for normalization.
+    std: The standard deviation values for normalization.
+
+Returns:
+    A tuple containing the calibration and test sets.

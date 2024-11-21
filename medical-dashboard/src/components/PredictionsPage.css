@@ -1,0 +1,39 @@
+.result-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .result-card {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .back-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #00c4ff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-image: url('../assets/image.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #ffffff;
+  }
+  .back-button:hover {
+    background: #009edc;
+  }
+  

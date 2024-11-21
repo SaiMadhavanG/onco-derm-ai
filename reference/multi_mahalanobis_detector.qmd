@@ -1,0 +1,23 @@
+# multi_mahalanobis_detector { #onco_derm_ai.multi_mahalanobis_detector }
+
+```python
+multi_mahalanobis_detector(
+    wide_resnet
+    train_in_dataset
+    test_in_dataset
+    out_dataset
+    batch_size
+)
+```
+
+Run the Multi-Mahalanobis detector on the given datasets.
+
+Args:
+    wide_resnet: The WideResNet model.
+    train_in_dataset: The in-distribution training dataset.
+    test_in_dataset: The in-distribution test dataset.
+    out_dataset: The out-of-distribution dataset.
+    batch_size: The batch size to use.
+
+Returns:
+    The metrics of the detector and the detector itself.

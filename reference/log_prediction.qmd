@@ -1,0 +1,13 @@
+# log_prediction { #onco_derm_ai.log_prediction }
+
+```python
+log_prediction(prediction)
+```
+
+Log the prediction.
+
+Args:
+    prediction: The prediction.
+
+Returns:
+    None

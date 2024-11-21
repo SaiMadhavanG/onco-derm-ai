@@ -1,0 +1,17 @@
+# calibrate_predictor { #onco_derm_ai.calibrate_predictor }
+
+```python
+calibrate_predictor(calibration_set, best_model_uri, alpha, penalty, batch_size)
+```
+
+Calibrate a SplitPredictor using the calibration set.
+
+Args:
+    calibration_set: The calibration set.
+    best_model_uri: The URI of the best model.
+    alpha: The significance level.
+    penalty: The penalty parameter for the RAPS score.
+    batch_size: The batch size.
+
+Returns:
+    The calibrated SplitPredict

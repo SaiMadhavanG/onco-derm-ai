@@ -1,0 +1,139 @@
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-image: url('./assets/image.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ffffff;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+  padding: 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.app-title {
+  font-size: 3rem;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.app-subtitle {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: slideUp 1.5s ease-in-out;
+}
+
+.upload-section,
+.result-section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.upload-input {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  outline: none;
+}
+
+.upload-input:hover {
+  border-color: #00c4ff;
+}
+
+.submit-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #00c4ff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background: #009edc;
+}
+
+.placeholder-text {
+  font-style: italic;
+  color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.result-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.result-card {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #00c4ff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.back-button:hover {
+  background: #009edc;
+}

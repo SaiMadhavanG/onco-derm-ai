@@ -1,0 +1,13 @@
+# prepare_data { #onco_derm_ai.prepare_data }
+
+```python
+prepare_data(out_ds)
+```
+
+Prepare the data for the OOD detection pipeline.
+
+Args:
+    out_ds: The out-of-distribution dataset to use.
+
+Returns:
+    The in-distribution dataset and the out-of-distribution dataset.

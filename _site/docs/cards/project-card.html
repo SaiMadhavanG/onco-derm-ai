@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sai Madhavan G and Srinivasan M">
+<meta name="dcterms.date" content="2024-08-11">
+
+<title>Project Card – OncoDerm AI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../docs/styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">OncoDerm AI</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/cards/index.html"> 
+<span class="menu-text">Cards</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../reference/index.html"> 
+<span class="menu-text">Reference</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#business-view" id="toc-business-view" class="nav-link active" data-scroll-target="#business-view">Business View</a>
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#problem" id="toc-problem" class="nav-link" data-scroll-target="#problem">Problem</a></li>
+  <li><a href="#customer" id="toc-customer" class="nav-link" data-scroll-target="#customer">Customer</a></li>
+  <li><a href="#value-proposition" id="toc-value-proposition" class="nav-link" data-scroll-target="#value-proposition">Value Proposition</a></li>
+  <li><a href="#product" id="toc-product" class="nav-link" data-scroll-target="#product">Product</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#risks-challenges" id="toc-risks-challenges" class="nav-link" data-scroll-target="#risks-challenges">Risks &amp; Challenges</a></li>
+  <li><a href="#risks-challenges-1" id="toc-risks-challenges-1" class="nav-link" data-scroll-target="#risks-challenges-1">Risks &amp; Challenges</a></li>
+  </ul></li>
+  <li><a href="#ml-view" id="toc-ml-view" class="nav-link" data-scroll-target="#ml-view">ML View</a>
+  <ul class="collapse">
+  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task">Task</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">Metrics</a>
+  <ul class="collapse">
+  <li><a href="#ml-metrics" id="toc-ml-metrics" class="nav-link" data-scroll-target="#ml-metrics">ML Metrics</a></li>
+  <li><a href="#business-metrics" id="toc-business-metrics" class="nav-link" data-scroll-target="#business-metrics">Business Metrics</a></li>
+  </ul></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a>
+  <ul class="collapse">
+  <li><a href="#technical-evaluation" id="toc-technical-evaluation" class="nav-link" data-scroll-target="#technical-evaluation">1. <strong>Technical Evaluation</strong></a></li>
+  <li><a href="#clinical-pilot-testing-in-rural-clinics" id="toc-clinical-pilot-testing-in-rural-clinics" class="nav-link" data-scroll-target="#clinical-pilot-testing-in-rural-clinics">2. <strong>Clinical Pilot Testing in Rural Clinics</strong></a></li>
+  <li><a href="#ongoing-monitoring" id="toc-ongoing-monitoring" class="nav-link" data-scroll-target="#ongoing-monitoring">3. <strong>Ongoing Monitoring</strong></a></li>
+  </ul></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-requirements" id="toc-data-requirements" class="nav-link" data-scroll-target="#data-requirements">Data Requirements</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a></li>
+  </ul></li>
+  <li><a href="#continuous-improvement" id="toc-continuous-improvement" class="nav-link" data-scroll-target="#continuous-improvement">Continuous Improvement</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Project Card</h1>
+<p class="subtitle lead">OncoDermAI</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sai Madhavan G and Srinivasan M </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 11, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="business-view" class="level1">
+<h1>Business View</h1>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p><em>Provide succinct <strong>background</strong> to the problem so that the reader can empathize with the problem.</em></p>
+<p>Skin cancer is a growing concern worldwide, and in rural India, the lack of accessible dermatological care creates significant barriers to early diagnosis and treatment. Many rural communities face a shortage of dermatologists, with patients often traveling long distances to receive specialized care. Without timely diagnosis, skin cancer cases may go undetected or be identified too late, impacting patient outcomes.</p>
+</section>
+<section id="problem" class="level2">
+<h2 class="anchored" data-anchor-id="problem">Problem</h2>
+<p><em><strong>What</strong> is the problem being solved?</em></p>
+<p>The problem being solved is the lack of accessible, early skin cancer screening and diagnosis in rural India, where dermatologists and specialized medical resources are scarce. Patients in these regions often struggle to receive timely assessments, which can delay diagnosis and treatment of skin cancers and other serious skin conditions.</p>
+</section>
+<section id="customer" class="level2">
+<h2 class="anchored" data-anchor-id="customer">Customer</h2>
+<p><em><strong>Who</strong> it is for? Is that a _user</em> or a <em>beneficiary</em>? What is the problem being solved? Who it is for?_</p>
+<p>OncoDerm AI is designed for healthcare providers in rural India who lack access to specialized dermatological support. The primary <strong>users</strong> of the system are non-specialist healthcare workers, such as general practitioners, nurses, and community health workers, who can utilize the tool to make preliminary skin cancer assessments. These healthcare workers rely on OncoDerm AI to screen patients for potential skin lesions, helping them identify high-risk cases that require further specialist care.</p>
+<p>The <strong>beneficiaries</strong> of this project are the patients in these rural communities. By receiving timely and accessible screening, they gain a greater chance for early detection and treatment of skin cancer, which can improve outcomes and save lives.</p>
+</section>
+<section id="value-proposition" class="level2">
+<h2 class="anchored" data-anchor-id="value-proposition">Value Proposition</h2>
+<p><em>Why it needs to be solved?</em></p>
+<p>The need for OncoDerm AI arises from the critical gap in dermatological care in rural India, where access to early diagnosis and specialist support is limited. Skin cancer, when detected early, can often be treated successfully; however, without timely screening, cases may go undiagnosed until they reach advanced stages, significantly affecting patient outcomes and increasing healthcare costs.</p>
+<p>By solving this problem, OncoDerm AI aims to improve early detection rates, support healthcare providers in delivering higher-quality care, and ultimately enhance health outcomes for underserved populations. This tool brings reliable, cost-effective diagnostic support to rural areas, where it’s most needed, helping to bridge the healthcare gap for vulnerable communities.</p>
+</section>
+<section id="product" class="level2">
+<h2 class="anchored" data-anchor-id="product">Product</h2>
+<p><em>How does the solution look like? It is more of the experience, rather how it will be developed.</em></p>
+<p>OncoDerm AI is an AI-powered skin cancer screening tool designed to provide healthcare workers in rural India with the ability to assess skin lesions using dermatoscopic images. The product consists of the following key components:</p>
+<ol type="1">
+<li><p><strong>AI Model</strong>: The core of the system is a deep learning model trained on a large dataset of dermatoscopic images (DermaMNIST), capable of classifying skin lesions into one of seven categories, including melanoma, basal cell carcinoma, and benign conditions. The model outputs predictions along with confidence scores and explanations for each classification.</p></li>
+<li><p><strong>Interactive Chatbot</strong>: To enhance user engagement and accessibility, OncoDerm AI features a chatbot powered by a Large Language Model (LLM). Healthcare workers can interact with the chatbot to ask follow-up questions, seek clarifications, and obtain detailed explanations of the model’s predictions. The chatbot will provide context, offer interpretive guidance, and help users understand the significance of the results in simple language, making it easier for non-specialist users to interpret complex AI outputs.</p></li>
+<li><p><strong>Interactive Dashboard</strong>: The tool provides a user-friendly dashboard that displays real-time skin lesion assessments. The dashboard includes:</p>
+<ul>
+<li>Predictions with confidence scores</li>
+<li>Explanations of the model’s decision-making process</li>
+<li>Image preprocessing and quality checks</li>
+<li>Options for resolution handling and upscaling to ensure clarity of images</li>
+</ul></li>
+<li><p><strong>Clinical Integration</strong>: OncoDerm AI can be integrated into the existing healthcare workflows in rural clinics, making it easy to use without the need for specialized equipment. Healthcare workers can upload dermatoscopic images via mobile devices or computers, receive immediate results, and engage in a conversation with the chatbot for further guidance.</p></li>
+<li><p><strong>Data Privacy &amp; Compliance</strong>: OncoDerm AI ensures data privacy, featuring an automated data removal pipeline to handle the right to erasure requests from patients.</p></li>
+</ol>
+<p>The experience for the user is seamless: after uploading a skin lesion image, the healthcare worker receives immediate feedback from the AI model along with an explanation of the diagnosis. If they need further clarification, they can interact with the chatbot to receive more detailed information, enhancing their understanding and confidence in the decision-making process.</p>
+<p>OncoDerm AI is designed to be easy to use, ensuring that healthcare providers in rural areas, with varying levels of technical expertise, can effectively use it to support early skin cancer detection.</p>
+</section>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p><em>Breakdown the product into key (business) objectives that need to be delivered?</em> <a href="https://med.stanford.edu/content/dam/sm/s-spire/documents/How-to-write-SMART-Goals-v2.pdf">SMART Goals</a> is useful to frame</p>
+<p>The OncoDerm AI project aims to deliver a comprehensive solution for skin cancer screening in rural India, where access to dermatologists is limited. Below are the key business objectives, framed as SMART goals:</p>
+<ol type="1">
+<li><p><strong>Objective 1: Achieve 85% Model Accuracy in Skin Lesion Classification</strong></p>
+<ul>
+<li><strong>Specific</strong>: Develop and deploy an AI model that classifies skin lesions into 7 categories (including melanoma and basal cell carcinoma) with a minimum accuracy of 85%.</li>
+<li><strong>Measurable</strong>: Accuracy will be evaluated using the validation set (1,268 images) and tested on the test set (2,239 images).</li>
+<li><strong>Achievable</strong>: Using a well-known architecture like ResNet-18 or MobileNetV2, and leveraging transfer learning and data augmentation.</li>
+<li><strong>Relevant</strong>: High classification accuracy is critical to ensuring the system provides reliable results to healthcare workers.</li>
+<li><strong>Time-bound</strong>: Achieve this goal within end of semseter.</li>
+</ul></li>
+<li><p><strong>Objective 2: Integrate an Interactive Chatbot for Enhanced User Engagement</strong></p>
+<ul>
+<li><strong>Specific</strong>: Integrate a chatbot powered by an LLM that allows users to interact with the system, asking for clarifications and receiving model predictions, confidence scores, and explanations.</li>
+<li><strong>Measurable</strong>: Measure user engagement through usage statistics, and collect feedback on chatbot helpfulness through user surveys.</li>
+<li><strong>Achievable</strong>: Integrating a pre-trained LLM and providing a user-friendly interface for querying the model.</li>
+<li><strong>Relevant</strong>: The chatbot will help medical professionals in rural areas, who may not have in-depth dermatological knowledge, interpret the model’s results more confidently.</li>
+<li><strong>Time-bound</strong>: Achieve this goal within end of semseter.</li>
+</ul></li>
+<li><p><strong>Objective 3: Ensure Data Privacy Compliance and Implement Right to Erasure</strong></p>
+<ul>
+<li><strong>Specific</strong>: Implement a data pipeline that ensures patient data is securely handled, with a fully automated removal process for data erasure requests, in compliance with privacy laws and regulations.</li>
+<li><strong>Measurable</strong>: Successfully process at least 99% of data removal requests within 24 hours.</li>
+<li><strong>Achievable</strong>: Design and implement an automated data removal pipeline that complies with local privacy standards.</li>
+<li><strong>Relevant</strong>: Ensuring patient data privacy is crucial in gaining trust among users, particularly in rural settings where data sensitivity is a concern.</li>
+<li><strong>Time-bound</strong>: Achieve this goal within end of semseter.</li>
+</ul></li>
+<li><p><strong>Objective 5: Monitor System Performance and Retrain Model Every 3 Months</strong></p>
+<ul>
+<li><strong>Specific</strong>: Implement a system for continuous monitoring of model performance and retrain the model every 3 months to ensure its accuracy and adapt to any changes in data (e.g., new skin lesion patterns).</li>
+<li><strong>Measurable</strong>: Measure model performance using metrics such as accuracy, precision, and recall, and retrain when performance degrades by more than 5%.</li>
+<li><strong>Achievable</strong>: Set up continuous integration and delivery (CI/CD) pipelines to monitor performance and trigger retraining as needed.</li>
+<li><strong>Relevant</strong>: Ensuring the model stays up-to-date and reliable is essential for maintaining trust and accuracy in the system.</li>
+<li><strong>Time-bound</strong>: Implement continuous monitoring and retraining pipeline within 3 months of initial deployment, and retrain every 3 months thereafter.</li>
+</ul></li>
+</ol>
+</section>
+<section id="risks-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="risks-challenges">Risks &amp; Challenges</h2>
+<p><em>What are the challenges one can face and ways to overcome?</em></p>
+</section>
+<section id="risks-challenges-1" class="level2">
+<h2 class="anchored" data-anchor-id="risks-challenges-1">Risks &amp; Challenges</h2>
+<p>Developing and deploying the OncoDerm AI system in rural India presents several challenges. Here are the key risks and potential mitigation strategies:</p>
+<ol type="1">
+<li><p><strong>Limited Image Resolution and Dataset Size</strong></p>
+<ul>
+<li><strong>Challenge</strong>: The DermaMNIST dataset contains 28x28 pixel images, which may limit the model’s ability to detect subtle visual features. Additionally, the dataset is relatively small, which can lead to overfitting.</li>
+<li><strong>Mitigation</strong>: Use transfer learning with pre-trained models on higher-resolution dermatoscopic images to improve feature extraction. Employ data augmentation techniques (e.g., rotation, flipping, color jittering) to create a more diverse dataset. Continuously update and expand the dataset by incorporating new data from partner clinics to improve model robustness.</li>
+</ul></li>
+<li><p><strong>Model Interpretability and User Trust</strong></p>
+<ul>
+<li><strong>Challenge</strong>: Users in rural areas, often non-specialist healthcare workers, may lack the medical background to interpret complex AI outputs, which could lead to mistrust or misuse.</li>
+<li><strong>Mitigation</strong>: Provide clear, interpretable model outputs and confidence scores. Integrate the LLM-powered chatbot to provide accessible explanations, allowing users to ask questions and understand predictions better. Implement conformal predictions to communicate confidence in a way that’s easy to understand (e.g., “high confidence” vs.&nbsp;“low confidence”).</li>
+</ul></li>
+<li><p><strong>Technical Infrastructure Constraints in Rural Areas</strong></p>
+<ul>
+<li><strong>Challenge</strong>: Rural clinics may face limited access to high-speed internet, modern hardware, or reliable electricity, affecting system deployment and performance.</li>
+<li><strong>Mitigation</strong>: Optimize the model for low-resource environments by using lightweight architectures (e.g., MobileNetV2) and deploying the model on local devices with minimal computational requirements. Consider offline capabilities and integrate power backups if feasible.</li>
+</ul></li>
+<li><p><strong>Privacy and Data Security Concerns</strong></p>
+<ul>
+<li><strong>Challenge</strong>: Patient data privacy is crucial, particularly in sensitive areas like healthcare. Rural clinics may also have limited understanding of data privacy practices.</li>
+<li><strong>Mitigation</strong>: Implement data encryption, secure access controls, and compliance with local privacy laws. Develop training sessions for clinic staff on data privacy best practices. Set up an automated data removal pipeline to handle right-to-erasure requests efficiently, and regularly review compliance.</li>
+</ul></li>
+<li><p><strong>Model Drift and Data Distribution Shifts</strong></p>
+<ul>
+<li><strong>Challenge</strong>: Skin lesion data may change over time due to environmental, genetic, or treatment factors, leading to model drift.</li>
+<li><strong>Mitigation</strong>: Implement continuous monitoring for data drift and set up a CI/CD pipeline to retrain the model as needed. Regularly assess model accuracy, and retrain every 3 months or when performance drops significantly. Collect user feedback and periodic clinical validation to ensure the model remains relevant.</li>
+</ul></li>
+<li><p><strong>User Adoption and Training</strong></p>
+<ul>
+<li><strong>Challenge</strong>: Local healthcare workers may be unfamiliar with AI systems, and mistrust or a lack of training may reduce adoption.</li>
+<li><strong>Mitigation</strong>: Collaborate with healthcare providers and NGOs to train healthcare workers on using the system effectively, including hands-on demonstrations and support materials in regional languages. Establish a support team for ongoing assistance, and offer a simplified user interface with a clear workflow to increase usability and confidence.</li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="ml-view" class="level1">
+<h1>ML View</h1>
+<section id="task" class="level2">
+<h2 class="anchored" data-anchor-id="task">Task</h2>
+<p><em>What type of prediction problem is this? Link <a href="https://arxiv.org/abs/1810.03993">Model Card</a> when sufficient details become available (start small but early)</em></p>
+<p>The prediction task for OncoDerm AI is a <strong>multi-class classification</strong> problem, where the model identifies one of seven distinct skin lesion types from dermatoscopic images. Using a labeled dataset (DermaMNIST), the model is trained to recognize each class based on visual features in low-resolution images (28x28 pixels), aiming to assist in preliminary diagnosis.</p>
+</section>
+<section id="metrics" class="level2">
+<h2 class="anchored" data-anchor-id="metrics">Metrics</h2>
+<p><em>How will the solution be evaluated - What are the ML metrics? What are the business metrics? Link <a href="https://arxiv.org/abs/1810.03993">Model Card</a> when sufficient details become available (start small but early)</em></p>
+<section id="ml-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="ml-metrics">ML Metrics</h3>
+<ol type="1">
+<li><strong>Accuracy</strong>: Measures the model’s overall correctness in identifying the correct lesion category.</li>
+<li><strong>Precision, Recall, and F1-score</strong> (per class): Evaluates performance across each lesion type, ensuring balanced identification and minimizing false positives and false negatives, especially for critical classes like melanoma.</li>
+<li><strong>Out-of-Distribution (OOD) Detection Accuracy</strong>: Measures the model’s ability to detect and flag cases it hasn’t been trained on, ensuring safer real-world application.</li>
+<li><strong>Inference Latency</strong>: Tracks the speed at which the model generates predictions to support smooth, real-time interactions in clinical settings.</li>
+</ol>
+</section>
+<section id="business-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="business-metrics">Business Metrics</h3>
+<ol type="1">
+<li><strong>Reduction in Referral Time</strong>: Measures time saved in identifying high-risk cases for further diagnosis, aiming to improve early detection rates.</li>
+<li><strong>User Engagement</strong>: Tracks interactions with the LLM-powered chatbot, measuring how often medical assistants use it for explanations, confidence clarification, and follow-up inquiries.</li>
+<li><strong>Feedback from Rural Health Workers</strong>: Collect qualitative data on ease of use, clarity, and clinical effectiveness in providing primary assessments for skin lesions.</li>
+<li><strong>System Usage Rate</strong>: Monitors adoption rates in rural clinics to ensure the model is accessible and practical for real-world needs.</li>
+</ol>
+</section>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p><em>How will the solution be evaluated (process)? Link <a href="https://arxiv.org/abs/1810.03993">Model Card</a> when sufficient details become available (start small but early)</em></p>
+<section id="technical-evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="technical-evaluation">1. <strong>Technical Evaluation</strong></h3>
+<ul>
+<li><strong>Offline Testing</strong>:
+<ul>
+<li>Conduct rigorous testing on the DermaMNIST validation and test datasets to evaluate baseline accuracy, precision, recall, F1-score, and confidence calibration.</li>
+<li>Perform stress testing for out-of-distribution (OOD) detection using external images not present in the training data, ensuring the model can reliably flag unfamiliar or rare cases.</li>
+</ul></li>
+<li><strong>Human-in-the-Loop Validation</strong>:
+<ul>
+<li>Dermatologists will review a subset of model predictions, offering feedback on accuracy, confidence scores, and explanations provided by the chatbot, allowing for continuous refinement.</li>
+</ul></li>
+</ul>
+</section>
+<section id="clinical-pilot-testing-in-rural-clinics" class="level3">
+<h3 class="anchored" data-anchor-id="clinical-pilot-testing-in-rural-clinics">2. <strong>Clinical Pilot Testing in Rural Clinics</strong></h3>
+<ul>
+<li><strong>User Acceptance Testing (UAT)</strong>:
+<ul>
+<li>Deploy the model in a few rural clinics to observe its usability, particularly with non-specialist health workers. Measure system usage, evaluate time savings in preliminary assessments, and record feedback on interpretability and clarity of results.</li>
+</ul></li>
+<li><strong>Real-World Feedback Collection</strong>:
+<ul>
+<li>Integrate a feedback loop for rural health workers to share experiences using the chatbot, focusing on how well it assists in understanding and relaying predictions.</li>
+<li>Assess the reduction in referral time for high-risk cases, aiming to expedite diagnosis.</li>
+</ul></li>
+</ul>
+</section>
+<section id="ongoing-monitoring" class="level3">
+<h3 class="anchored" data-anchor-id="ongoing-monitoring">3. <strong>Ongoing Monitoring</strong></h3>
+<ul>
+<li><strong>Continuous Model Evaluation</strong>:
+<ul>
+<li>Track and log model performance metrics in real-time, including confidence scores, latency, and data drift, triggering automatic retraining if significant shifts are detected.</li>
+<li>Calibrate the chatbot’s responses based on feedback to ensure it effectively answers typical questions and addresses user needs.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p><em>What type of data is needed? How will it be collected - for training and for continuous improvement? Link <a href="https://arxiv.org/abs/2204.01075">Data Cards</a> when sufficient details become available (start small but early)</em></p>
+<section id="data-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="data-requirements">Data Requirements</h3>
+<ul>
+<li><strong>Primary Data</strong>: Dermatoscopic images for training and validating the model.
+<ul>
+<li><strong>Type</strong>: 28x28 pixel RGB images focused on different skin lesions.</li>
+<li><strong>Classes</strong>: Seven distinct skin lesion types (e.g., melanoma, basal cell carcinoma).</li>
+</ul></li>
+<li><strong>Auxiliary Data</strong>: Patient metadata (e.g., age, lesion location) may be incorporated if available to enhance prediction accuracy.</li>
+</ul>
+</section>
+<section id="data-collection" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection">Data Collection</h3>
+<ul>
+<li><p><strong>Training and Initial Evaluation</strong>:</p>
+<ul>
+<li><strong>Dataset</strong>: DermaMNIST (based on the HAM10000 dataset), which provides a comprehensive set of images from diverse patients.</li>
+<li><strong>Splits</strong>: Predefined training, validation, and test splits will be used to ensure consistency and reliability in performance evaluation.</li>
+</ul></li>
+<li><p><strong>Continuous Improvement</strong>:</p>
+<ul>
+<li><strong>User-Generated Data</strong>: Images from new cases in rural clinics can be anonymized and added to expand and adapt the model to real-world conditions.</li>
+<li><strong>Feedback Loop</strong>: Health workers’ and dermatologists’ feedback on chatbot interactions, predictions, and flagged OOD cases can further refine the system.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="continuous-improvement" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-improvement">Continuous Improvement</h2>
+<p><em>How will the system/model will improve? Provide a plan and means.</em></p>
+<ol type="1">
+<li><p><strong>User Feedback Loop</strong>:</p>
+<ul>
+<li><strong>Chatbot Interactions</strong>: Track and analyze questions and responses from users (e.g., health workers or clinicians) to understand common inquiries, misconceptions, and desired information. This feedback will guide adjustments to the LLM’s responses and overall user experience.</li>
+<li><strong>Prediction Accuracy</strong>: Collect feedback on predictions and confidence levels to assess areas of the model that need recalibration or fine-tuning, especially in cases that are challenging or prone to misclassification.</li>
+</ul></li>
+<li><p><strong>Data Collection and Expansion</strong>:</p>
+<ul>
+<li><strong>Case Database Expansion</strong>: Gather additional dermatoscopic images from new rural cases, focusing on underrepresented lesion types or skin tones, to enhance model generalization.</li>
+<li><strong>Out-of-Distribution (OOD) Tracking</strong>: Continuously monitor for OOD cases flagged by the model, then investigate and potentially incorporate these cases into training to improve robustness.</li>
+</ul></li>
+<li><p><strong>Scheduled Model Re-Training</strong>:</p>
+<ul>
+<li><strong>Automated Retraining Triggers</strong>: Implement retraining based on key metrics such as data drift, calibration error, and user feedback patterns to ensure that the model remains up-to-date with the latest data.</li>
+<li><strong>Data Augmentation</strong>: Periodically apply advanced data augmentation techniques (e.g., rotation, color adjustments) to create a more diverse and robust training dataset.</li>
+</ul></li>
+<li><p><strong>Model Evaluation and Metrics Review</strong>:</p>
+<ul>
+<li><strong>Regular Performance Audits</strong>: Conduct periodic evaluations to check model performance on critical metrics such as accuracy, false positive/negative rates, and OOD detection accuracy. Adjust hyperparameters and model architecture if necessary to address any consistent performance gaps.</li>
+<li><strong>Calibration Checks</strong>: Regularly verify confidence scores to ensure accurate and reliable results, minimizing the risk of overconfidence in predictions.</li>
+</ul></li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
