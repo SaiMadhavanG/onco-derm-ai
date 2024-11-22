@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1732258580396
+current_stage: None
+description: ''
+last_updated_timestamp: 1732258580396
+name: ResNet18
+run_id: 15c9e90bd2914d67b9e737c69f35b4da
+run_link: ''
+source: mlflow-artifacts:/0/15c9e90bd2914d67b9e737c69f35b4da/artifacts/ResNet18
+status: READY
+status_message: null
+storage_location: mlflow-artifacts:/0/15c9e90bd2914d67b9e737c69f35b4da/artifacts/ResNet18
+user_id: null
+version: 3
