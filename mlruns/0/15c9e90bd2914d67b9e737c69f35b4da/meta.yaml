@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/15c9e90bd2914d67b9e737c69f35b4da/artifacts
+end_time: 1732258583981
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 15c9e90bd2914d67b9e737c69f35b4da
+run_name: bright-frog-965
+run_uuid: 15c9e90bd2914d67b9e737c69f35b4da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732258572936
+status: 3
+tags: []
+user_id: saimadhavang
