@@ -10,8 +10,8 @@ def predict(best_model_uri: str, input_img: torch.Tensor, device: str) -> torch.
         input_img: Input image to predict.
         device: Device to run the model on.
     Returns:
-        Predicted output of the input image.
+        output: The output tensor.
     """
     model = mlflow.pytorch.load_model(best_model_uri).to(device)
     output = model(input_img.unsqueeze(0).to(device))
-    return output
+    return output.detach().cpu()

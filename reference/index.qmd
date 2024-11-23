@@ -54,4 +54,5 @@ Functions used in various inference pipelines
 | [ood_detection](ood_detection.qmd#onco_derm_ai.ood_detection) | Detect out-of-distribution samples. |
 | [predict](predict.qmd#onco_derm_ai.predict) | Predicts the output of the input image using the best model. |
 | [conformal_prediction](conformal_prediction.qmd#onco_derm_ai.conformal_prediction) | Perform conformal prediction on the output tensor. |
+| [integrated_gradients](integrated_gradients.qmd#onco_derm_ai.integrated_gradients) | Perform integrated gradients on the input image. |
 | [log_prediction](log_prediction.qmd#onco_derm_ai.log_prediction) | Log the prediction. |

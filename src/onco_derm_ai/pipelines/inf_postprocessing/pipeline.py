@@ -5,7 +5,7 @@ generated using Kedro 0.19.9
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import conformal_prediction, log_prediction
+from .nodes import conformal_prediction, integrated_gradients, log_prediction
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -16,6 +16,19 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=["prediction", "cp_predictor"],
                 outputs="conformal_prediction",
                 name="conformal_prediction_node",
+                tags=["inference"],
+            ),
+            node(
+                func=integrated_gradients,
+                inputs=[
+                    "best_model_uri",
+                    "normalized_img",
+                    "resized_img",
+                    "conformal_prediction",
+                    "params:show_figures",
+                ],
+                outputs="integrated_gradients",
+                name="integrated_gradients_node",
                 tags=["inference"],
             ),
             node(

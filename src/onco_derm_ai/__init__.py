@@ -12,7 +12,11 @@ from .pipelines.inf_data_preprocessing.nodes import (
     prepare_data_for_ood,
     resize_image,
 )
-from .pipelines.inf_postprocessing.nodes import conformal_prediction, log_prediction
+from .pipelines.inf_postprocessing.nodes import (
+    conformal_prediction,
+    integrated_gradients,
+    log_prediction,
+)
 from .pipelines.model_inference.nodes import predict
 from .pipelines.model_training.nodes import (
     DermaMNISTDataset,
@@ -52,4 +56,5 @@ __all__ = [
     "evaluate_predictor",
     "conformal_prediction",
     "log_prediction",
+    "integrated_gradients",
 ]

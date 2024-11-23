@@ -1,0 +1,23 @@
+# integrated_gradients { #onco_derm_ai.integrated_gradients }
+
+```python
+integrated_gradients(
+    best_model_uri,
+    input_processed_img,
+    input_img,
+    predictions,
+    show=False,
+)
+```
+
+Perform integrated gradients on the input image.
+
+Args:
+    best_model_uri: The URI of the best model.
+    input_processed_img: The processed input image.
+    input_img: The input image.
+    predictions: The predictions.
+    show: Whether to show the figures.
+
+Returns:
+    The visualizations.

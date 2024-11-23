@@ -10,4 +10,4 @@ Args:
     input_img: Input image to predict.
     device: Device to run the model on.
 Returns:
-    Predicted output of the input image.
+    output: The output tensor.

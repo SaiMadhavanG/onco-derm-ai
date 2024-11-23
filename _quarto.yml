@@ -54,7 +54,9 @@ quartodoc:
         - ood_detection
         - predict
         - conformal_prediction
+        - integrated_gradients
         - log_prediction
+
   
 
 format:
