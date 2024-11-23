@@ -6,6 +6,7 @@ kedro-datasets>=1.0; python_version < "3.9"
 kedro-viz>=6.7.0
 kedro[jupyter]
 medmnist
+mlflow
 quartodoc
 notebook
 pre-commit
