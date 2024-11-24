@@ -21,7 +21,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             node(
                 func=integrated_gradients,
                 inputs=[
-                    "best_model_uri",
+                    "best_model",
                     "normalized_img",
                     "resized_img",
                     "conformal_prediction",

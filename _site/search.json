@@ -95,7 +95,7 @@
     "href": "reference/integrated_gradients.html",
     "title": "integrated_gradients",
     "section": "",
-    "text": "integrated_gradients\nintegrated_gradients(\n    best_model_uri,\n    input_processed_img,\n    input_img,\n    predictions,\n    show=False,\n)\nPerform integrated gradients on the input image.\nArgs: best_model_uri: The URI of the best model. input_processed_img: The processed input image. input_img: The input image. predictions: The predictions. show: Whether to show the figures.\nReturns: The visualizations."
+    "text": "integrated_gradients\nintegrated_gradients(\n    best_model,\n    input_processed_img,\n    input_img,\n    predictions,\n    show=False,\n)\nPerform integrated gradients on the input image.\nArgs: best_model: The best model. input_processed_img: The processed input image. input_img: The input image. predictions: The predictions. show: Whether to show the figures.\nReturns: The visualizations."
   },
   {
     "objectID": "reference/DermaMNISTDataset.html",
@@ -263,7 +263,7 @@
     "href": "reference/predict.html",
     "title": "predict",
     "section": "",
-    "text": "predict\npredict(best_model_uri, input_img, device)\nPredicts the output of the input image using the best model. Args: best_model_uri: URI of the best model. input_img: Input image to predict. device: Device to run the model on. Returns: output: The output tensor."
+    "text": "predict\npredict(best_model, input_img, device)\nPredicts the output of the input image using the best model. Args: best_model: The best model to use for prediction. input_img: Input image to predict. device: Device to run the model on. Returns: output: The output tensor."
   },
   {
     "objectID": "reference/prepare_data_for_ood.html",

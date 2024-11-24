@@ -163,14 +163,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="onco_derm_ai.integrated_gradients" class="level1">
 <h1>integrated_gradients</h1>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>integrated_gradients(</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    best_model_uri,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    best_model,</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    input_processed_img,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    input_img,</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    predictions,</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    show<span class="op">=</span><span class="va">False</span>,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Perform integrated gradients on the input image.</p>
-<p>Args: best_model_uri: The URI of the best model. input_processed_img: The processed input image. input_img: The input image. predictions: The predictions. show: Whether to show the figures.</p>
+<p>Args: best_model: The best model. input_processed_img: The processed input image. input_img: The input image. predictions: The predictions. show: Whether to show the figures.</p>
 <p>Returns: The visualizations.</p>
 
 

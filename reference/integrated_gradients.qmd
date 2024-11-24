@@ -2,7 +2,7 @@
 
 ```python
 integrated_gradients(
-    best_model_uri,
+    best_model,
     input_processed_img,
     input_img,
     predictions,
@@ -13,7 +13,7 @@ integrated_gradients(
 Perform integrated gradients on the input image.
 
 Args:
-    best_model_uri: The URI of the best model.
+    best_model: The best model.
     input_processed_img: The processed input image.
     input_img: The input image.
     predictions: The predictions.

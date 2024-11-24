@@ -63,6 +63,10 @@ best_model_uri:
   type: text.TextDataset
   filepath: data/06_models/best_model_uri.txt
 
+best_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/best_model.pkl
+
 prediction:
   type: pickle.PickleDataset
   filepath: data/07_model_output/prediction.pkl

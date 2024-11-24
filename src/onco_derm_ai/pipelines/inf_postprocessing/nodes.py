@@ -2,7 +2,6 @@ import logging
 from typing import List
 
 import matplotlib.pyplot as plt
-import mlflow
 import numpy as np
 import torch
 from captum.attr import IntegratedGradients
@@ -29,7 +28,7 @@ def conformal_prediction(
 
 
 def integrated_gradients(
-    best_model_uri: str,
+    best_model: torch.nn.Module,
     input_processed_img: torch.Tensor,
     input_img: torch.Tensor,
     predictions: List[int],
@@ -39,15 +38,16 @@ def integrated_gradients(
     Perform integrated gradients on the input image.
 
     Args:
-        best_model_uri: The URI of the best model.
+        best_model: The best model.
         input_processed_img: The processed input image.
         input_img: The input image.
         predictions: The predictions.
         show: Whether to show the figures.
 
     Returns:
-        The visualizations."""
-    model = mlflow.pytorch.load_model(best_model_uri)
+        The visualizations.
+    """
+    model = best_model
     model.eval()
     IMG_DIM = 3
     if input_processed_img.dim() == IMG_DIM:
