@@ -1,5 +1,5 @@
 import logging
-from typing import List
+from typing import List, Tuple
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -33,7 +33,7 @@ def integrated_gradients(
     input_img: torch.Tensor,
     predictions: List[int],
     show: bool = False,
-) -> List[plt.Figure]:
+) -> Tuple[List[plt.Figure], List[int]]:
     """
     Perform integrated gradients on the input image.
 
@@ -47,7 +47,8 @@ def integrated_gradients(
     Returns:
         The visualizations.
     """
-    model = best_model
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model = best_model.to(device)
     model.eval()
     IMG_DIM = 3
     if input_processed_img.dim() == IMG_DIM:
@@ -58,7 +59,7 @@ def integrated_gradients(
     input_img = np.array(input_img).transpose((1, 2, 0))
     visualizations = []
     for target in predictions:
-        attribution = ig.attribute(input_processed_img, target=target)
+        attribution = ig.attribute(input_processed_img.to(device), target=target)
         attr_ig = np.transpose(attribution.squeeze().cpu().detach().numpy(), (1, 2, 0))
         visualization = viz.visualize_image_attr(
             attr_ig,
@@ -74,7 +75,7 @@ def integrated_gradients(
         #     plt.imshow(visualization[0])
         #     plt.show()
 
-    return visualizations
+    return visualizations, predictions
 
 
 def log_prediction(prediction: List[int]) -> None:

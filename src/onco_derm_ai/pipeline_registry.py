@@ -41,17 +41,19 @@ def register_pipelines() -> Dict[str, Pipeline]:
 
     inference_pipeline = pipeline(
         [inf_data_preprocessing_nodes, model_inference_nodes, inf_postprocessing_nodes],
-        inputs=["inference_sample"],
+        inputs=["cp_predictor", "best_model", "ood_detector"],
         parameters=[
-            "params:img_size",
-            "params:normal_mean",
-            "params:normal_std",
-            "params:ood_threshold",
-            "params:device",
-            "params:show_figures",
+            "show_figures",
+            "ood_threshold",
+            "normal_mean",
+            "normal_std",
+            "device",
+            "img_size",
         ],
+        # outputs={"conformal_prediction": "inference.conformal_prediction", "integrated_gradients": "inference.integrated_gradients"},
+        # namespace="inference"
     )
 
     pipelines = find_pipelines()
-    pipelines["__default__"] = inference_pipeline
+    pipelines["inference"] = inference_pipeline
     return pipelines

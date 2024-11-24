@@ -27,7 +27,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "conformal_prediction",
                     "params:show_figures",
                 ],
-                outputs="integrated_gradients",
+                outputs=["integrated_gradients", "predictions"],
                 name="integrated_gradients_node",
                 tags=["inference"],
             ),

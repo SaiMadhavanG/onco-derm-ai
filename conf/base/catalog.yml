@@ -17,6 +17,10 @@ inference_sample:
   type: pillow.ImageDataset
   filepath: data/01_raw/inference_sample.png
 
+inference.inference_sample:
+  type: pillow.ImageDataset
+  filepath: data/01_raw/inference_sample.png
+
 pre-processed_train_data:
   type: pickle.PickleDataset
   filepath: data/02_intermediate/pre-processed_train_data.pkl
@@ -75,9 +79,25 @@ conformal_prediction:
   type: pickle.PickleDataset
   filepath: data/07_model_output/conformal_prediction.pkl
 
+inference.conformal_prediction:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/conformal_prediction.pkl
+
 integrated_gradients:
   type: pickle.PickleDataset
   filepath: data/07_model_output/integrated_gradients.pkl
+
+inference.integrated_gradients:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/integrated_gradients.pkl
+
+predictions:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/predictions.pkl
+
+inference.predictions:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/predictions.pkl
 
 model_metrics:
   type: json.JSONDataset
