@@ -32,12 +32,10 @@ pre-processed_val_data:
   versioned: true
 
 resized_img:
-  type: pickle.PickleDataset
-  filepath: data/02_intermediate/resized_img.pkl
+  type: MemoryDataset
 
 normalized_img:
-  type: pickle.PickleDataset
-  filepath: data/02_intermediate/normalized_img.pkl
+  type: MemoryDataset
 
 image_classification_model:
   type: pickle.PickleDataset
@@ -72,28 +70,16 @@ best_model:
   filepath: data/06_models/best_model.pkl
 
 prediction:
-  type: pickle.PickleDataset
-  filepath: data/07_model_output/prediction.pkl
+  type: MemoryDataset
 
 conformal_prediction:
-  type: pickle.PickleDataset
-  filepath: data/07_model_output/conformal_prediction.pkl
-
-inference.conformal_prediction:
-  type: pickle.PickleDataset
-  filepath: data/07_model_output/conformal_prediction.pkl
+  type: MemoryDataset
 
 integrated_gradients:
-  type: pickle.PickleDataset
-  filepath: data/07_model_output/integrated_gradients.pkl
-
-inference.integrated_gradients:
-  type: pickle.PickleDataset
-  filepath: data/07_model_output/integrated_gradients.pkl
+  type: MemoryDataset
 
 predictions:
-  type: pickle.PickleDataset
-  filepath: data/07_model_output/predictions.pkl
+  type: MemoryDataset
 
 inference.predictions:
   type: pickle.PickleDataset
