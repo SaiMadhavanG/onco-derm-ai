@@ -2,12 +2,15 @@ import base64
 import os
 from io import BytesIO
 
-from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.responses import JSONResponse, RedirectResponse
 from kedro_boot.app.booter import boot_package
 from kedro_boot.framework.compiler.specs import CompilationSpec
 from matplotlib.figure import Figure
 from PIL import Image
+from pydantic import BaseModel
+
+from onco_derm_ai.pipelines.inf_data_preprocessing.nodes import OutOfDistributionError
 
 project_dir = os.environ.get("PROJECT_DIR", ".")
 
@@ -27,6 +30,11 @@ session = boot_package(
 app = FastAPI(title="Onco Derm AI - Skin Cancer Detection")
 
 
+class PredictionResponse(BaseModel):
+    predictions: list[int]
+    integrated_gradients: list[str]
+
+
 def serialize_figure(fig: Figure) -> str:
     """
     Convert a Matplotlib figure to a Base64-encoded PNG string.
@@ -38,14 +46,32 @@ def serialize_figure(fig: Figure) -> str:
 
 
 @app.post("/predict")
-async def predict(image: UploadFile = File(...)):
+async def predict(image: UploadFile = File(...)) -> PredictionResponse:
     try:
         image_content = await image.read()
         pil_image = Image.open(BytesIO(image_content))
     except Exception:
-        return JSONResponse(content={"error": "Invalid image file."}, status_code=400)
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid Image",
+            headers={"X-Error": "InvalidImage"},
+        )
 
-    results = session.run(inputs={"inference_sample": pil_image})
+    try:
+        results = session.run(inputs={"inference_sample": pil_image})
+    except OutOfDistributionError as e:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Out of distribution error: {str(e)}",
+            headers={"X-Error": "OutOfDistributionError"},
+        )
+    except Exception as e:
+        # For any other unexpected errors, raise a generic 500 Internal Server Error
+        raise HTTPException(
+            status_code=500,
+            detail=f"Internal Server Error: {str(e)}",
+            headers={"X-Error": "InternalServerError"},
+        )
 
     gradients_base64 = [
         serialize_figure(fig) for fig in results["integrated_gradients"]
@@ -54,8 +80,13 @@ async def predict(image: UploadFile = File(...)):
     predictions = results["predictions"]
 
     response = {
-        "integrated_gradients": gradients_base64,
         "predictions": predictions,
+        "integrated_gradients": gradients_base64,
     }
 
     return JSONResponse(content=response)
+
+
+@app.get("/")
+async def docs_redirect():
+    return RedirectResponse(url="/docs")

@@ -1046,6 +1046,26 @@ Files already downloaded and verified</code></pre>
 </div>
 </div>
 </div>
+<div id="cell-32" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> medmnist <span class="im">import</span> DermaMNIST</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-33" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>test <span class="op">=</span> DermaMNIST(split<span class="op">=</span><span class="st">"test"</span>, download<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Using downloaded and verified file: /home/saimadhavang/.medmnist/dermamnist.npz</code></pre>
+</div>
+</div>
+<div id="cell-34" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, (img, label) <span class="kw">in</span> <span class="bu">enumerate</span>(test):</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># save the image with the label</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    img.save(<span class="ss">f"data/01_raw/inference_examples/</span><span class="sc">{</span>idx<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-35" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>test[<span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>(&lt;PIL.Image.Image image mode=RGB size=28x28&gt;, array([1]))</code></pre>
+</div>
+</div>
 
 
 
