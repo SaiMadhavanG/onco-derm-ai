@@ -6,3 +6,4 @@ Cards are intended to serve as a document giving a high level overview of the sy
 
 - [Project Card](./project-card.ipynb)
 - [Data Card](./data-card.ipynb)
+- [Model card](./Model-card.ipynb)

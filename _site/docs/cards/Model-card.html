@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cards – OncoDerm AI</title>
+<title>Model Card for ResNet-18 on DermaMNIST Image Classification – OncoDerm AI</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../docs/cards/index.html" aria-current="page"> 
+    <a class="nav-link" href="../../docs/cards/index.html"> 
 <span class="menu-text">Cards</span></a>
   </li>  
   <li class="nav-item">
@@ -111,15 +111,29 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#model-details" id="toc-model-details" class="nav-link active" data-scroll-target="#model-details">Model Details</a></li>
+  <li><a href="#intended-use" id="toc-intended-use" class="nav-link" data-scroll-target="#intended-use">Intended Use</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors">Factors</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link" data-scroll-target="#metrics">Metrics</a></li>
+  <li><a href="#evaluation-data" id="toc-evaluation-data" class="nav-link" data-scroll-target="#evaluation-data">Evaluation Data</a></li>
+  <li><a href="#training-data" id="toc-training-data" class="nav-link" data-scroll-target="#training-data">Training Data</a></li>
+  <li><a href="#quantitative-analyses" id="toc-quantitative-analyses" class="nav-link" data-scroll-target="#quantitative-analyses">Quantitative Analyses</a></li>
+  <li><a href="#ethical-considerations" id="toc-ethical-considerations" class="nav-link" data-scroll-target="#ethical-considerations">Ethical Considerations</a></li>
+  <li><a href="#caveats-and-recommendations" id="toc-caveats-and-recommendations" class="nav-link" data-scroll-target="#caveats-and-recommendations">Caveats and Recommendations</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cards</h1>
+<h1 class="title">Model Card for ResNet-18 on DermaMNIST Image Classification</h1>
 </div>
 
 
@@ -136,14 +150,192 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Cards are intended to serve as a document giving a high level overview of the system developed and deployed. It is meant to be a high level document and as details emerge, documents such Model Cards and Data Cards can be linked. Below are the cards relevant to the <a href="../../docs/index.html">OncoDermAI</a> project:</p>
+<hr>
+<section id="model-details" class="level2">
+<h2 class="anchored" data-anchor-id="model-details">Model Details</h2>
 <ul>
-<li><a href="../../docs/cards/project-card.html">Project Card</a></li>
-<li><a href="../../docs/cards/data-card.html">Data Card</a></li>
-<li><a href="../../docs/cards/Model-card.html">Model card</a></li>
+<li><p><strong>Person or Organization Developing Model</strong>:<br>
+This implementation was developed by <a href="https://www.linkedin.com/in/sai-madhavan-g/">Sai Madhavan</a> and <a href="https://www.linkedin.com/in/srinivasan-m-668154228/">M Srinivasan</a> as part of a project for AI-839 for skin lesion classification using the DermaMNIST dataset.</p></li>
+<li><p><strong>Model Date</strong>:<br>
+November 2024</p></li>
+<li><p><strong>Model Version</strong>:<br>
+ResNet-18</p></li>
+<li><p><strong>Model Type</strong>:<br>
+Convolutional Neural Network (CNN)</p></li>
+<li><p><strong>Information about Training Algorithms, Parameters, Fairness Constraints, or Other Applied Approaches, and Features</strong>:<br>
+ResNet-18 is a deep residual network that introduces skip connections to solve vanishing gradient problems in deep networks. It was trained using the following parameters:</p>
+<ul>
+<li>Optimizer: Adam<br>
+</li>
+<li>Learning Rate: 0.001<br>
+</li>
+<li>Batch Size: 32<br>
+</li>
+<li>Number of Epochs: 20<br>
+</li>
+<li>Loss Function: Cross-Entropy Loss</li>
+</ul></li>
+<li><p><strong>Fine Tune</strong>: We used a pre-trained Resnet-18 model from Pytorch and then fine tuned it for classification purposes on the DermaMNIST dataset.</p>
+<ul>
+<li>Modified the final layers to match the number of classes in the DermaMnist dataset.</li>
+<li>Trained the modified model on the DermaMnist dataset.</li>
+<li>Evaluated the performance of the fine-tuned model.</li>
+</ul></li>
+<li><p><strong>Paper or Other Resource for More Information</strong>:</p>
+<ul>
+<li><a href="https://arxiv.org/abs/1512.03385">ResNet Original Paper (He et al., 2015)</a><br>
+</li>
+<li><a href="https://medmnist.com">DermaMNIST Dataset Resource</a></li>
+</ul></li>
+<li><p><strong>Citation Details</strong>:</p>
+<ul>
+<li>ResNet: <em>He, Kaiming, et al.&nbsp;“Deep residual learning for image recognition.” Proceedings of the IEEE conference on computer vision and pattern recognition. 2016.</em><br>
+</li>
+<li>DermaMNIST: <em>Yang, Jiancheng, et al.&nbsp;“MedMNIST Classification Decathlon: A Lightweight AutoML Benchmark for Medical Image Analysis.” arXiv preprint arXiv:2110.14795 (2021).</em></li>
+</ul></li>
+<li><p><strong>License</strong>:<br>
+Apache License 2.0 for the ResNet model implementation; refer to the MedMNIST dataset licensing for dataset usage.</p></li>
+</ul>
+<!-- /*************  ✨ Codeium Command 🌟  *************/ -->
+<p>Please reach out to <a href="mailto:m.srinivasan@iiitb.ac.in">M Srinivasan - (mail id)</a> or <a href="mailto:g.saimadhavan@iiitb.ac.in">Sai Madhavan - (mail id)</a> for any questions or comments about the model.</p>
+<hr>
+</section>
+<section id="intended-use" class="level2">
+<h2 class="anchored" data-anchor-id="intended-use">Intended Use</h2>
+<ul>
+<li><strong>Primary Intended Uses</strong>:
+<ul>
+<li>Early screening for skin cancer and other serious skin conditions in resource-constrained settings.<br>
+</li>
+<li>Assisting non-specialist healthcare workers in making preliminary assessments of skin lesions.<br>
+</li>
+<li>Identifying high-risk cases that require referral to dermatology specialists for further evaluation.</li>
+</ul></li>
+<li><strong>Primary Intended Users</strong>:
+<ul>
+<li>Non-specialist healthcare workers, such as general practitioners, nurses, and community health workers in rural India.<br>
+</li>
+<li>Healthcare providers in underserved regions lacking access to specialized dermatological support.</li>
+</ul></li>
+<li><strong>Out-of-Scope Use Cases</strong>:
+<ul>
+<li>Providing a definitive medical diagnosis without specialist consultation.<br>
+</li>
+<li>Use in advanced clinical settings where dermatologists and specialized diagnostic tools are available.<br>
+</li>
+<li>Screening for skin conditions outside the scope of the model’s training (e.g., non-cancerous cosmetic dermatology issues).</li>
+</ul></li>
+</ul>
+</section>
+<section id="factors" class="level2">
+<h2 class="anchored" data-anchor-id="factors">Factors</h2>
+<ul>
+<li><strong>Relevant Factors</strong>:
+<ul>
+<li>Demographic and phenotypic groups, including variations in skin tone and lesion types.<br>
+</li>
+<li>Environmental conditions like lighting in image capture.</li>
+</ul></li>
+<li><strong>Evaluation Factors</strong>:
+<ul>
+<li>Classification accuracy, precision, recall, and F1 score across demographic groups.<br>
+</li>
+<li>Sensitivity to image preprocessing and augmentation techniques.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="metrics" class="level2">
+<h2 class="anchored" data-anchor-id="metrics">Metrics</h2>
+<ul>
+<li><strong>Model Performance Measures</strong>:
+<ul>
+<li>Accuracy: Overall percentage of correctly classified samples.<br>
+</li>
+<li>Precision: Proportion of true positives among predicted positives.<br>
+</li>
+<li>Recall (Sensitivity): Proportion of true positives among actual positives.<br>
+</li>
+<li>F1 Score: Harmonic mean of precision and recall.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="evaluation-data" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-data">Evaluation Data</h2>
+<ul>
+<li><p><strong>Datasets</strong>:<br>
+The evaluation was conducted on a subset of the dataset split into training, validation, and test sets. Images were resized to <code>(224, 224)</code> and normalized using ImageNet mean (<code>[0.485, 0.456, 0.406]</code>) and standard deviation (<code>[0.229, 0.224, 0.225]</code>).</p></li>
+<li><p><strong>Motivation</strong>:<br>
+The goal of the evaluation data preparation was to ensure consistent preprocessing and transformations for fair model assessment. This included resizing and normalization to align with ResNet-18’s pretrained parameters.</p></li>
+<li><p><strong>Preprocessing</strong>:</p>
+<ul>
+<li>Images were normalized by dividing pixel values by 255.<br>
+</li>
+<li>Applied a <code>transforms.Compose</code> pipeline to perform resizing and normalization.<br>
+</li>
+<li>For additional evaluation, data augmentation techniques like horizontal and vertical flips, rotation, and color jitter were applied during testing to assess model robustness.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="training-data" class="level2">
+<h2 class="anchored" data-anchor-id="training-data">Training Data</h2>
+<ul>
+<li><p><strong>Datasets</strong>:<br>
+Training data consisted of the DermaMNIST dataset, augmented to increase diversity and robustness. Images were resized to <code>(224, 224)</code> and normalized similarly to the evaluation data.</p></li>
+<li><p><strong>Preprocessing</strong>:</p>
+<ul>
+<li>Images were converted to tensors and resized to <code>(224, 224)</code>.<br>
+</li>
+<li>Normalization used the ImageNet mean and standard deviation.<br>
+</li>
+<li>Data augmentation techniques were extensively applied, including horizontal/vertical flips, random rotations, and color jittering.<br>
+</li>
+<li>For each original image, multiple augmented versions were generated and added to the dataset using the provided augmentation function, with unique identifiers for each augmented sample.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="quantitative-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="quantitative-analyses">Quantitative Analyses</h2>
+<ul>
+<li><strong>Unitary Results</strong>:
+<ul>
+<li>Accuracy: 75%<br>
+</li>
+<li>Macro F1 Score: 0.539</li>
+</ul></li>
+<li><strong>Intersectional Results</strong>:
+<ul>
+<li>Performance variation observed across lesion types, with lower recall for rarer lesion classes.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="ethical-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-considerations">Ethical Considerations</h2>
+<ul>
+<li>Potential bias in training data due to overrepresentation of certain demographics or lesion types.<br>
+</li>
+<li>Model is not a substitute for clinical expertise and should be used only for research purposes.<br>
+</li>
+<li>Misclassifications could lead to inappropriate confidence in model predictions.</li>
+</ul>
+<hr>
+</section>
+<section id="caveats-and-recommendations" class="level2">
+<h2 class="anchored" data-anchor-id="caveats-and-recommendations">Caveats and Recommendations</h2>
+<ul>
+<li>The model’s performance is dependent on the quality of input images and generalizes poorly to out-of-distribution samples.<br>
+</li>
+<li>Clinical use requires thorough validation and expert oversight.<br>
+</li>
+<li>Future work should focus on improving robustness to demographic and environmental variations.</li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
