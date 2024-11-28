@@ -2,7 +2,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif;
   background-image: url('./assets/image.png');
   background-size: cover;
   background-attachment: fixed;

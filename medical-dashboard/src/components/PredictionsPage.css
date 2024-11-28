@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif;
   background-image: url('../assets/image.png');
   background-size: cover;
   background-attachment: fixed;
@@ -76,6 +75,57 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
+
+.predictions-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prediction-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ig-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.disclaimer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.disclaimer-section p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
 
 /* Animations for fade-in and slide-up effects */
 @keyframes fadeIn {

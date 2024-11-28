@@ -57,6 +57,21 @@ function UploadPage({ handleAnalyze, error }) {
             Analyze Image
           </button>
         </div>
+
+        <div className="disclaimer-section">
+          <h3>Disclaimer</h3>
+          <ul className="disclaimer-list">
+            <li>
+              The model was trained on a low-resolution dataset (28x28). Predictions may have significant inaccuracies.
+            </li>
+            <li>
+              View the dataset's <a href="https://github.com/SaiMadhavanG/onco-derm-ai/blob/main/docs/cards/data-card.ipynb" target="_blank" rel="noopener noreferrer">data card</a> for more details.
+            </li>
+            <li>
+              This tool is intended for use by medical professionals for screening purposes only and should not replace a formal diagnosis.
+            </li>
+          </ul>
+        </div>
       </main>
     </div>
   );

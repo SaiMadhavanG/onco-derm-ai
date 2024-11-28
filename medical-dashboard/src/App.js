@@ -12,7 +12,7 @@ function App() {
 
   const handleAnalyze = async (selectedFile, navigate) => {
     if (!selectedFile) {
-      setError("Please upload an image before analyzing.");
+      setError({"message": "Please upload an image before analyzing."});
       navigate("/error");
       return;
     }

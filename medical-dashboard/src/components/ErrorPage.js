@@ -30,6 +30,16 @@ function ErrorPage({ error }) {
         </>
       )
     }
+    else if (error.message === "Please upload an image before analyzing.") {
+      return (
+        <>
+          <p className="error-message">No Image Uploaded</p>
+          <p className="error-detail">
+            Please upload an image before analyzing.
+          </p>
+        </>
+      )
+    }
     else if (error.status == 500) {
       return (
         <>
