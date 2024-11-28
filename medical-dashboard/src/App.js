@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UploadPage from "./components/UploadPage";
 import PredictionsPage from "./components/PredictionsPage";
 import ErrorPage from "./components/ErrorPage"; // Import the ErrorPage component
+import Base64ToImage from "./components/Base64toImage"; // Import the Base64ToImage component
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         <Route path="/predictions" element={<PredictionsPage />} />
         {/* Fallback error page for undefined routes */}
         <Route path="/error" element={<ErrorPage />} />
+        <Route path="/image" element={<Base64ToImage />} />
       </Routes>
+
     </Router>
   );
 }
