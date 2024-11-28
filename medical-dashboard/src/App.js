@@ -31,8 +31,7 @@ function App() {
       setError(""); // Clear any errors
       navigate("/predictions"); // Navigate to predictions page on success
     } catch (error) {
-      setError("An error occurred during the analysis. Please try again.");
-      console.error("Error:", error.response ? error.response.data : error.message);
+      setError(error);
       navigate("/error");
     }
   };
