@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/e1c713166f59417ca3e5a7cbe5507843/artifacts
+end_time: 1732260627104
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e1c713166f59417ca3e5a7cbe5507843
+run_name: bustling-gnat-572
+run_uuid: e1c713166f59417ca3e5a7cbe5507843
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732260618581
+status: 3
+tags: []
+user_id: saimadhavang

@@ -17,6 +17,10 @@ inference_sample:
   type: pillow.ImageDataset
   filepath: data/01_raw/inference_sample.png
 
+inference.inference_sample:
+  type: pillow.ImageDataset
+  filepath: data/01_raw/inference_sample.png
+
 pre-processed_train_data:
   type: pickle.PickleDataset
   filepath: data/02_intermediate/pre-processed_train_data.pkl
@@ -27,9 +31,11 @@ pre-processed_val_data:
   filepath: data/02_intermediate/pre-processed_val_data.pkl
   versioned: true
 
+resized_img:
+  type: MemoryDataset
+
 normalized_img:
-  type: pickle.PickleDataset
-  filepath: data/02_intermediate/normalized_img.pkl
+  type: MemoryDataset
 
 image_classification_model:
   type: pickle.PickleDataset
@@ -59,13 +65,25 @@ best_model_uri:
   type: text.TextDataset
   filepath: data/06_models/best_model_uri.txt
 
-prediction:
+best_model:
   type: pickle.PickleDataset
-  filepath: data/07_model_output/prediction.pkl
+  filepath: data/06_models/best_model.pkl
+
+prediction:
+  type: MemoryDataset
 
 conformal_prediction:
+  type: MemoryDataset
+
+integrated_gradients:
+  type: MemoryDataset
+
+predictions:
+  type: MemoryDataset
+
+inference.predictions:
   type: pickle.PickleDataset
-  filepath: data/07_model_output/conformal_prediction.pkl
+  filepath: data/07_model_output/predictions.pkl
 
 model_metrics:
   type: json.JSONDataset

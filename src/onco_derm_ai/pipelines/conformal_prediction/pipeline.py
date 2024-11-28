@@ -16,6 +16,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                 inputs=["params:img_size", "params:normal_mean", "params:normal_std"],
                 outputs=["calibration_set", "test_set"],
                 name="cp_data_prep_node",
+                tags=["model_retrained"],
             ),
             node(
                 func=calibrate_predictor,
@@ -28,12 +29,14 @@ def create_pipeline(**kwargs) -> Pipeline:
                 ],
                 outputs="cp_predictor",
                 name="cp_calibrate_predictor_node",
+                tags=["model_retrained"],
             ),
             node(
                 func=evaluate_predictor,
                 inputs=["cp_predictor", "test_set", "params:batch_size"],
                 outputs="cp_metrics",
                 name="cp_evaluate_predictor_node",
+                tags=["model_retrained"],
             ),
         ]
     )
