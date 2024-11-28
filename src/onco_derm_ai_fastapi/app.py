@@ -3,6 +3,7 @@ import os
 from io import BytesIO
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, RedirectResponse
 from kedro_boot.app.booter import boot_package
 from kedro_boot.framework.compiler.specs import CompilationSpec
@@ -28,6 +29,16 @@ session = boot_package(
 )
 
 app = FastAPI(title="Onco Derm AI - Skin Cancer Detection")
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class PredictionResponse(BaseModel):
