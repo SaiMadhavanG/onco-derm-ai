@@ -2,11 +2,11 @@
 
 ```python
 model_finetune(
-    train_dataset
-    val_dataset
-    model_name
-    train_params
-    device='cpu'
+    train_dataset,
+    val_dataset,
+    model_name,
+    train_params,
+    device='cpu',
 )
 ```
 
