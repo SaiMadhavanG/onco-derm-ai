@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Define the file to monitor
 MONITOR_FILE="data/monitoring/current.pkl"
 

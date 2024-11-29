@@ -2,11 +2,11 @@
 
 ```python
 integrated_gradients(
-    best_model,
-    input_processed_img,
-    input_img,
-    predictions,
-    show=False,
+    best_model
+    input_processed_img
+    input_img
+    predictions
+    show=False
 )
 ```
 
