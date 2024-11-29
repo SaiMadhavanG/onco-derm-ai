@@ -11,6 +11,8 @@ website:
         text: Cards
       - href: reference/index.qmd
         text: Reference
+      - href: docs/reports/report.ipynb
+        text: Reports
 
 quartodoc:
   style: pkgdown
