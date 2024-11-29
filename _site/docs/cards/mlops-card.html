@@ -208,6 +208,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
   <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
   </ul></li>
+  <li><a href="#ood-detection-pipeline" id="toc-ood-detection-pipeline" class="nav-link" data-scroll-target="#ood-detection-pipeline">OOD Detection Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#overview-7" id="toc-overview-7" class="nav-link" data-scroll-target="#overview-7">Overview</a></li>
+  <li><a href="#key-functions-1" id="toc-key-functions-1" class="nav-link" data-scroll-target="#key-functions-1">Key Functions</a></li>
+  <li><a href="#data-flow-1" id="toc-data-flow-1" class="nav-link" data-scroll-target="#data-flow-1">Data Flow</a></li>
+  <li><a href="#how-to-run-1" id="toc-how-to-run-1" class="nav-link" data-scroll-target="#how-to-run-1">How to Run</a></li>
+  <li><a href="#challenges-and-considerations-1" id="toc-challenges-and-considerations-1" class="nav-link" data-scroll-target="#challenges-and-considerations-1">Challenges and Considerations</a></li>
+  <li><a href="#version-and-installation-5" id="toc-version-and-installation-5" class="nav-link" data-scroll-target="#version-and-installation-5">Version and Installation</a></li>
+  </ul></li>
+  <li><a href="#conformal-prediction-pipeline" id="toc-conformal-prediction-pipeline" class="nav-link" data-scroll-target="#conformal-prediction-pipeline">Conformal Prediction Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#overview-8" id="toc-overview-8" class="nav-link" data-scroll-target="#overview-8">Overview</a></li>
+  <li><a href="#key-functions-2" id="toc-key-functions-2" class="nav-link" data-scroll-target="#key-functions-2">Key Functions</a></li>
+  <li><a href="#data-flow-2" id="toc-data-flow-2" class="nav-link" data-scroll-target="#data-flow-2">Data Flow</a></li>
+  <li><a href="#how-to-run-2" id="toc-how-to-run-2" class="nav-link" data-scroll-target="#how-to-run-2">How to Run</a></li>
+  <li><a href="#challenges-and-considerations-2" id="toc-challenges-and-considerations-2" class="nav-link" data-scroll-target="#challenges-and-considerations-2">Challenges and Considerations</a></li>
+  <li><a href="#version-and-installation-6" id="toc-version-and-installation-6" class="nav-link" data-scroll-target="#version-and-installation-6">Version and Installation</a></li>
+  </ul></li>
+  <li><a href="#inference-data-preprocessing-pipeline" id="toc-inference-data-preprocessing-pipeline" class="nav-link" data-scroll-target="#inference-data-preprocessing-pipeline">Inference Data Preprocessing Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#overview-9" id="toc-overview-9" class="nav-link" data-scroll-target="#overview-9">Overview</a></li>
+  <li><a href="#key-functions-3" id="toc-key-functions-3" class="nav-link" data-scroll-target="#key-functions-3">Key Functions</a></li>
+  <li><a href="#data-flow-3" id="toc-data-flow-3" class="nav-link" data-scroll-target="#data-flow-3">Data Flow</a></li>
+  <li><a href="#hyperparameters" id="toc-hyperparameters" class="nav-link" data-scroll-target="#hyperparameters">Hyperparameters:</a></li>
+  </ul></li>
+  <li><a href="#model-inference-pipeline" id="toc-model-inference-pipeline" class="nav-link" data-scroll-target="#model-inference-pipeline">Model Inference Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#overview-10" id="toc-overview-10" class="nav-link" data-scroll-target="#overview-10">Overview</a></li>
+  <li><a href="#key-functions-4" id="toc-key-functions-4" class="nav-link" data-scroll-target="#key-functions-4">Key Functions</a></li>
+  <li><a href="#data-flow-4" id="toc-data-flow-4" class="nav-link" data-scroll-target="#data-flow-4">Data Flow</a></li>
+  </ul></li>
+  <li><a href="#inference-post-processing-pipeline" id="toc-inference-post-processing-pipeline" class="nav-link" data-scroll-target="#inference-post-processing-pipeline">Inference Post-Processing Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#overview-11" id="toc-overview-11" class="nav-link" data-scroll-target="#overview-11">Overview</a></li>
+  <li><a href="#key-functions-5" id="toc-key-functions-5" class="nav-link" data-scroll-target="#key-functions-5">Key Functions</a></li>
+  <li><a href="#data-flow-5" id="toc-data-flow-5" class="nav-link" data-scroll-target="#data-flow-5">Data Flow</a></li>
+  <li><a href="#version-and-installation-7" id="toc-version-and-installation-7" class="nav-link" data-scroll-target="#version-and-installation-7">Version and Installation</a></li>
+  </ul></li>
+  <li><a href="#inference-api-deployment" id="toc-inference-api-deployment" class="nav-link" data-scroll-target="#inference-api-deployment">Inference API Deployment</a>
+  <ul class="collapse">
+  <li><a href="#overview-12" id="toc-overview-12" class="nav-link" data-scroll-target="#overview-12">Overview</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -310,7 +352,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="pytest-integration-with-kedro" class="level3">
 <h3 class="anchored" data-anchor-id="pytest-integration-with-kedro">Pytest Integration with Kedro</h3>
-<p>Kedro’s structure makes it easier to write modular tests: - Testing isolated nodes by mocking inputs and outputs.</p>
+<p>Kedro’s structure makes it easier to write modular tests:</p>
+<ul>
+<li>Testing isolated nodes by mocking inputs and outputs.</li>
+</ul>
 </section>
 <section id="challenges-1" class="level3">
 <h3 class="anchored" data-anchor-id="challenges-1">Challenges</h3>
@@ -344,13 +389,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="implementation-2" class="level3">
 <h3 class="anchored" data-anchor-id="implementation-2">Implementation</h3>
 <ol type="1">
-<li><strong>Quartodoc</strong>:
+<li><p><strong>Quartodoc</strong>:</p>
 <ul>
 <li>Used to extract docstrings from our codebase and generate API documentation.</li>
 <li>Ensured consistency and minimized the manual effort of documenting changes in the code.</li>
 <li>Simplified navigation through the project’s functions, classes, and modules.</li>
 </ul></li>
-<li><strong>Quarto</strong>:
+<li><p><strong>Quarto</strong>:</p>
 <ul>
 <li>Served as the publishing tool for creating documentation in a variety of formats (e.g., HTML, PDF).</li>
 <li>Enabled the integration of Quartodoc-generated API docs with explanatory text, diagrams, and project details.</li>
@@ -461,8 +506,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="resources-3">Resources</h3>
 <ul>
 <li><a href="https://docs.astral.sh/ruff/">Ruff Documentation</a></li>
-<li><a href="https://docs.kedro.org/en/0.19.6/development/linting.html">Kedro Linting Guide</a> ___</li>
+<li><a href="https://docs.kedro.org/en/0.19.6/development/linting.html">Kedro Linting Guide</a></li>
 </ul>
+<hr>
 </section>
 </section>
 <section id="data-preprocessing-pipeline" class="level2">
@@ -480,22 +526,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="key-functions" class="level3">
 <h3 class="anchored" data-anchor-id="key-functions">Key Functions</h3>
 <ol type="1">
-<li><strong>Class Imbalance with SMOTE</strong>:
+<li><p><strong>Class Imbalance with SMOTE</strong>:</p>
 <ul>
 <li>The function <code>class_imbalance</code> uses the SMOTE technique to oversample the minority class in the dataset, which helps improve model performance when training on imbalanced data.</li>
 <li><strong>Package Used</strong>: <code>imblearn</code> (SMOTE)</li>
 </ul></li>
-<li><strong>Data Augmentation</strong>:
+<li><p><strong>Data Augmentation</strong>:</p>
 <ul>
 <li>Augmentations such as horizontal and vertical flips, rotations, and color jitter are applied using the <code>torchvision.transforms</code> module.</li>
 <li><strong>Package Used</strong>: <code>torchvision</code></li>
 <li>The <code>data_aug</code> function generates new samples for the dataset by applying these transformations multiple times to each image.</li>
 </ul></li>
-<li><strong>Normalization</strong>:
+<li><p><strong>Normalization</strong>:</p>
 <ul>
 <li>The pixel values of the images are normalized to the range [0, 1] using the <code>normalizing_images</code> function.</li>
 </ul></li>
-<li><strong>Resizing and Tensor Conversion</strong>:
+<li><p><strong>Resizing and Tensor Conversion</strong>:</p>
 <ul>
 <li>Images are resized to a fixed size (28x28) and converted to tensors using <code>tensoring_resizing</code> to ensure that they are in the correct format for model input.</li>
 </ul></li>
@@ -532,19 +578,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="version-and-installation-4" class="level3">
 <h3 class="anchored" data-anchor-id="version-and-installation-4">Version and Installation</h3>
 <ul>
-<li><strong>SMOTE (imblearn)</strong>:
+<li><p><strong>SMOTE (imblearn)</strong>:</p>
 <ul>
 <li><p>Version: <code>0.12.4</code></p></li>
 <li><p>Installation:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install imbalanced-learn==0.12.4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
-<li><strong>Torchvision</strong>:
+<li><p><strong>Torchvision</strong>:</p>
 <ul>
 <li><p>Version: <code>0.20.1</code></p></li>
 <li><p>Installation:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torchvision==0.20.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
-<li><strong>PIL (Pillow)</strong>:
+<li><p><strong>PIL (Pillow)</strong>:</p>
 <ul>
 <li><p>Version: <code>11.0.0</code></p></li>
 <li><p>Installation:</p>
@@ -626,27 +672,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pipeline-nodes" class="level3">
 <h3 class="anchored" data-anchor-id="pipeline-nodes">Pipeline Nodes</h3>
 <ol type="1">
-<li><strong>Preprocess Data Input</strong>
+<li><p><strong>Preprocess Data Input</strong></p>
 <ul>
 <li>Input: <code>pre-processed_train_data</code>, <code>pre-processed_val_data</code>.</li>
 <li>Output: <code>train_dataset</code>, <code>val_dataset</code>.</li>
 </ul></li>
-<li><strong>Model Fine-tuning</strong>
+<li><p><strong>Model Fine-tuning</strong></p>
 <ul>
 <li>Input: Preprocessed datasets, model name, training parameters, device.</li>
 <li>Output: Fine-tuned model weights, training loss plot.</li>
 </ul></li>
-<li><strong>Evaluate Model</strong>
+<li><p><strong>Evaluate Model</strong></p>
 <ul>
 <li>Input: Model name, weights, test dataset, batch size, device.</li>
 <li>Output: Performance metrics dictionary.</li>
 </ul></li>
-<li><strong>Log Model</strong>
+<li><p><strong>Log Model</strong></p>
 <ul>
 <li>Input: Model name, weights, hyperparameters, metrics, training loss plot.</li>
 <li>Output: MLFlow URI.</li>
 </ul></li>
-<li><strong>Set Best Model URI</strong>
+<li><p><strong>Set Best Model URI</strong></p>
 <ul>
 <li>Input: Model name, MLFlow URI.</li>
 <li>Output: Best model URI, loaded model.</li>
@@ -657,11 +703,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tools-and-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="tools-and-libraries">Tools and Libraries</h3>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 22%">
-<col style="width: 65%">
-<col style="width: 11%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>Library</th>
@@ -706,6 +747,407 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+</section>
+<section id="ood-detection-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="ood-detection-pipeline">OOD Detection Pipeline</h2>
+<section id="overview-7" class="level3">
+<h3 class="anchored" data-anchor-id="overview-7">Overview</h3>
+<p>The Out-of-Distribution (OOD) detection pipeline is essential for ensuring that a trained model can accurately classify data, even when it comes from different distributions than the training data. This pipeline incorporates various OOD detection methods, which help the model identify when incoming data differs significantly from the distribution on which it was trained. The main steps in the pipeline include:</p>
+<ol type="1">
+<li><strong>Data Preparation</strong>: Loading both in-distribution and out-of-distribution datasets.</li>
+<li><strong>Model Training</strong>: Training a WideResNet model on the in-distribution data.</li>
+<li><strong>OOD Detection</strong> using multiple techniques, including:
+<ul>
+<li>Multi-Mahalanobis Distance (Multi-Mahalanobis)</li>
+<li>Maximum Softmax Probability (MSP)</li>
+<li>Relative Mahalanobis Distance (RMD)</li>
+</ul></li>
+</ol>
+</section>
+<section id="key-functions-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-functions-1">Key Functions</h3>
+<ol type="1">
+<li><p><strong>Data Preparation</strong>:</p>
+<ul>
+<li>The <code>prepare_data</code> function loads the in-distribution dataset (e.g., Dermamnist) and the out-of-distribution dataset (e.g., CIFAR-10) for testing the OOD detection methods.</li>
+<li><strong>Package Used</strong>: <code>medmnist</code>, <code>torchvision</code></li>
+<li>The function splits the datasets into training, validation, and test sets, preparing them for model training and evaluation.</li>
+</ul></li>
+<li><p><strong>Model Training (WideResNet)</strong>:</p>
+<ul>
+<li>The function <code>train_wide_resnet</code> trains a WideResNet model on the in-distribution dataset using standard image classification techniques.</li>
+<li><strong>Package Used</strong>: <code>torch</code>, <code>torchvision</code></li>
+<li>This function ensures the model is well-optimized before applying the OOD detection methods.</li>
+</ul></li>
+<li><p><strong>Multi-Mahalanobis Detector</strong>:</p>
+<ul>
+<li>The <code>multi_mahalanobis_detector</code> function uses the Multi-Mahalanobis distance method to detect OOD data. It calculates the Mahalanobis distance at multiple layers of the WideResNet model.</li>
+<li><strong>Package Used</strong>: <code>pytorch-ood</code></li>
+<li>This method identifies OOD samples by measuring the distance from each sample to the distribution of the in-distribution data.</li>
+</ul></li>
+</ol>
+</section>
+<section id="data-flow-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-flow-1">Data Flow</h3>
+<ol type="1">
+<li><strong>Input Data</strong>: The raw in-distribution and out-of-distribution datasets (e.g., Dermamnist and CIFAR-10) are loaded.</li>
+<li><strong>Nodes</strong>:
+<ul>
+<li><strong>Data Preparation</strong>: The <code>prepare_data</code> function loads and splits the datasets into training and testing sets.</li>
+<li><strong>Model Training</strong>: The WideResNet model is trained using the <code>train_wide_resnet</code> function.</li>
+<li><strong>OOD Detection</strong>: The <code>multi_mahalanobis_detector</code> function evaluates the model’s ability to detect out-of-distribution samples.</li>
+</ul></li>
+<li><strong>Outputs</strong>:
+<ul>
+<li>The final outputs include the model (<code>wide_resnet_model</code>) and the OOD detection metrics (<code>ood_detection_metrics</code>), which indicate how well the model distinguishes between in-distribution and out-of-distribution data.</li>
+</ul></li>
+</ol>
+</section>
+<section id="how-to-run-1" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-run-1">How to Run</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kedro</span> run <span class="at">--pipeline</span> ood_detection</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="challenges-and-considerations-1" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-and-considerations-1">Challenges and Considerations</h3>
+<ul>
+<li><strong>Dataset Choice</strong>: The choice of in-distribution (Dermamnist) and out-of-distribution (CIFAR-10) datasets is crucial. If the datasets differ significantly from the real-world data, the OOD detection methods might not generalize well.</li>
+</ul>
+</section>
+<section id="version-and-installation-5" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation-5">Version and Installation</h3>
+<ul>
+<li><strong>Pytorch-OOD</strong>:
+<ul>
+<li><p>Version: <code>0.2.0</code></p></li>
+<li><p>Installation:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a> <span class="ex">pip</span> install pytorch-ood==0.2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+</ul>
+<div id="cell-12" class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+<figure class="figure">
+<p><img src="mlops-card_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="conformal-prediction-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="conformal-prediction-pipeline">Conformal Prediction Pipeline</h2>
+<section id="overview-8" class="level3">
+<h3 class="anchored" data-anchor-id="overview-8">Overview</h3>
+<p>The <strong>Conformal Prediction (CP)</strong> pipeline is used to generate predictive uncertainty estimates by constructing prediction regions for model outputs. In this project, the pipeline leverages a <strong>SplitPredictor</strong> and a <strong>RAPS score</strong> function for model calibration and evaluation. The key steps in the pipeline include:</p>
+<ol type="1">
+<li><strong>Data Preparation</strong>: Preprocessing the calibration and test sets by resizing and normalizing the data.</li>
+<li><strong>Model Calibration</strong>: Calibrating the predictor model using a SplitPredictor, which adjusts predictions based on the provided calibration set.</li>
+<li><strong>Model Evaluation</strong>: Evaluating the calibrated model on the test set to assess the performance and the reliability of the predictions.</li>
+</ol>
+</section>
+<section id="key-functions-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-functions-2">Key Functions</h3>
+<ol type="1">
+<li><strong>Data Preparation</strong>:
+<ul>
+<li>The <code>data_prep</code> function prepares the calibration and test datasets by applying necessary transformations like resizing, tensor conversion, and normalization using <code>Compose</code>, <code>Resize</code>, <code>Normalize</code>, and <code>ToTensor</code> from <code>torchvision</code>.</li>
+<li><strong>Package Used</strong>: <code>medmnist</code>, <code>torchvision</code></li>
+</ul></li>
+<li><strong>Model Calibration</strong>:
+<ul>
+<li>The <code>calibrate_predictor</code> function takes in the calibration dataset, loads the best model from <code>MLflow</code>, and calibrates the SplitPredictor using the RAPS score function with specified significance and penalty parameters.</li>
+<li><strong>Package Used</strong>: <code>mlflow</code>, <code>torchcp</code></li>
+</ul></li>
+<li><strong>Model Evaluation</strong>:
+<ul>
+<li>The <code>evaluate_predictor</code> function evaluates the calibrated SplitPredictor on the test dataset and returns a set of metrics (e.g., accuracy, confidence).</li>
+<li><strong>Package Used</strong>: <code>torchcp</code></li>
+</ul></li>
+</ol>
+</section>
+<section id="data-flow-2" class="level3">
+<h3 class="anchored" data-anchor-id="data-flow-2">Data Flow</h3>
+<ol type="1">
+<li><strong>Input Data</strong>:
+<ul>
+<li>Raw calibration (<code>calibration_set</code>) and test (<code>test_set</code>) data are loaded and preprocessed using the <code>data_prep</code> function.</li>
+</ul></li>
+<li><strong>Nodes</strong>:
+<ul>
+<li><strong>Data Preparation</strong>: The data is resized and normalized to a consistent format.</li>
+<li><strong>Model Calibration</strong>: The SplitPredictor is trained and calibrated with the provided calibration set.</li>
+<li><strong>Model Evaluation</strong>: The final model is evaluated on the test set to generate metrics.</li>
+</ul></li>
+<li><strong>Outputs</strong>:
+<ul>
+<li>The calibrated model (<code>cp_predictor</code>) and the evaluation metrics (<code>cp_metrics</code>) are generated as outputs of the pipeline.</li>
+</ul></li>
+</ol>
+</section>
+<section id="how-to-run-2" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-run-2">How to Run</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kedro</span> run <span class="at">--pipeline</span> conformal_prediction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="challenges-and-considerations-2" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-and-considerations-2">Challenges and Considerations</h3>
+<ul>
+<li><strong>Calibration</strong>: The calibration process requires careful selection of the calibration set. A poor calibration set can lead to misleading prediction intervals.</li>
+<li><strong>Significance Level (α)</strong>: The chosen value for α determines the confidence of the predictions, but too high of an α might make the model less confident, while too low could result in overly narrow intervals.</li>
+<li><strong>Penalization</strong>: The penalty parameter affects the RAPS score function. Too high a penalty might lead to overly conservative predictions, whereas too low could lead to less reliable predictions.</li>
+</ul>
+</section>
+<section id="version-and-installation-6" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation-6">Version and Installation</h3>
+<ul>
+<li><strong>TorchCP</strong>:
+<ul>
+<li><p>Version: <code>0.1.3</code></p></li>
+<li><p>Installation:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torchcp==0.1.3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+</ul>
+<div id="cell-14" class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+<figure class="figure">
+<p><img src="mlops-card_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="inference-data-preprocessing-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="inference-data-preprocessing-pipeline">Inference Data Preprocessing Pipeline</h2>
+<section id="overview-9" class="level3">
+<h3 class="anchored" data-anchor-id="overview-9">Overview</h3>
+<p>The inference data preprocessing pipeline prepares images for inference and out-of-distribution (OOD) detection. This involves several steps to resize, normalize, and detect whether an image falls outside the model’s distribution. The key steps in the pipeline include:</p>
+<ol type="1">
+<li><strong>Image Resizing</strong>: Resizes the image to a standard size.</li>
+<li><strong>Image Normalization</strong>: Normalizes the image using predefined mean and standard deviation values.</li>
+<li><strong>Preparing Data for OOD Detection</strong>: Transforms the image into a format suitable for OOD detection using the <code>WideResNet</code> model.</li>
+<li><strong>OOD Detection</strong>: Uses the <code>MultiMahalanobis</code> detector to compute an OOD score and raises an exception if the score exceeds a threshold.</li>
+</ol>
+</section>
+<section id="key-functions-3" class="level3">
+<h3 class="anchored" data-anchor-id="key-functions-3">Key Functions</h3>
+<ol type="1">
+<li><p><strong>Resize Image</strong>:</p>
+<ul>
+<li>The <code>resize_image</code> function resizes an image to the desired size and converts it into a tensor format.</li>
+<li><strong>Input</strong>: Image, target size.</li>
+<li><strong>Output</strong>: Resized image tensor.</li>
+</ul></li>
+<li><p><strong>Normalize Image</strong>:</p>
+<ul>
+<li>The <code>normalize_image</code> function normalizes an image using a given mean and standard deviation.</li>
+<li><strong>Input</strong>: Image tensor, mean and standard deviation.</li>
+<li><strong>Output</strong>: Normalized image tensor.</li>
+</ul></li>
+<li><p><strong>Prepare Data for OOD Detection</strong>:</p>
+<ul>
+<li>The <code>prepare_data_for_ood</code> function transforms the image for OOD detection based on the pre-defined <code>WideResNet</code> transformation for <code>cifar10-pt</code>.</li>
+<li><strong>Input</strong>: Image.</li>
+<li><strong>Output</strong>: Transformed image ready for OOD detection.</li>
+</ul></li>
+<li><p><strong>OOD Detection</strong>:</p>
+<ul>
+<li>The <code>ood_detection</code> function uses the <code>MultiMahalanobis</code> detector to compute an OOD score. If the score exceeds the threshold, an <code>OutOfDistributionError</code> is raised.</li>
+<li><strong>Input</strong>: Image tensor, OOD detector, threshold.</li>
+<li><strong>Output</strong>: OOD score or error if the threshold is exceeded.</li>
+</ul></li>
+</ol>
+</section>
+<section id="data-flow-3" class="level3">
+<h3 class="anchored" data-anchor-id="data-flow-3">Data Flow</h3>
+<ol type="1">
+<li><p><strong>Input Data</strong>:</p>
+<ul>
+<li>Raw image data passed for preprocessing (<code>inference_sample</code>).</li>
+</ul></li>
+<li><p><strong>Nodes</strong>:</p>
+<ul>
+<li><strong>Resize Image</strong>: Resizes the image.</li>
+<li><strong>Normalize Image</strong>: Normalizes the resized image.</li>
+<li><strong>Prepare Data for OOD Detection</strong>: Prepares the image for OOD detection.</li>
+<li><strong>OOD Detection</strong>: Detects if the image is OOD based on the computed score.</li>
+</ul></li>
+<li><p><strong>Outputs</strong>:</p>
+<ul>
+<li>The primary output is the normalized and resized image tensor</li>
+<li>The pipeline doesn’t produce output directly after OOD detection, but an exception is raised if an image is detected as OOD.</li>
+</ul></li>
+</ol>
+</section>
+<section id="hyperparameters" class="level3">
+<h3 class="anchored" data-anchor-id="hyperparameters">Hyperparameters:</h3>
+<ul>
+<li><strong>OOD Threshold</strong>: 0.07 (threshold above which an image is flagged as OOD)</li>
+</ul>
+<div id="cell-16" class="cell" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+<figure class="figure">
+<p><img src="mlops-card_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="model-inference-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="model-inference-pipeline">Model Inference Pipeline</h2>
+<section id="overview-10" class="level3">
+<h3 class="anchored" data-anchor-id="overview-10">Overview</h3>
+<p>The model inference pipeline handles the process of predicting the output for an input image using the trained model. It involves passing the preprocessed image through the best available model and returning the model’s output. The key steps include:</p>
+<ol type="1">
+<li><strong>Model Prediction</strong>: Using the trained model to predict the output for the given input image.</li>
+</ol>
+</section>
+<section id="key-functions-4" class="level3">
+<h3 class="anchored" data-anchor-id="key-functions-4">Key Functions</h3>
+<ol type="1">
+<li><strong>Predict</strong>:
+<ul>
+<li>The <code>predict</code> function takes an input image, sends it through the model, and returns the output tensor.</li>
+<li><strong>Input</strong>: Trained model, input image, and device.</li>
+<li><strong>Output</strong>: Prediction tensor, which is the model’s output for the input image.</li>
+</ul></li>
+</ol>
+</section>
+<section id="data-flow-4" class="level3">
+<h3 class="anchored" data-anchor-id="data-flow-4">Data Flow</h3>
+<ol type="1">
+<li><p><strong>Input Data</strong>:</p>
+<ul>
+<li>The preprocessed image (normalized) is passed into the model for inference (<code>normalized_img</code>).</li>
+</ul></li>
+<li><p><strong>Nodes</strong>:</p>
+<ul>
+<li><strong>Prediction</strong>: The image is passed through the trained model to generate a prediction.</li>
+</ul></li>
+<li><p><strong>Output</strong>:</p>
+<ul>
+<li>The model’s output, which is stored in the <code>prediction</code> variable.</li>
+</ul></li>
+</ol>
+<div id="cell-18" class="cell" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+<figure class="figure">
+<p><img src="mlops-card_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="inference-post-processing-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="inference-post-processing-pipeline">Inference Post-Processing Pipeline</h2>
+<section id="overview-11" class="level3">
+<h3 class="anchored" data-anchor-id="overview-11">Overview</h3>
+<p>The inference post-processing pipeline is responsible for performing additional steps after the model prediction to improve the understanding and interpretability of the predictions. This includes generating conformal predictions, visualizing the model’s decision-making using integrated gradients, and logging the prediction. The key steps include:</p>
+<ol type="1">
+<li><strong>Conformal Prediction</strong>: Refines the model’s predictions using a SplitPredictor to account for uncertainty.</li>
+<li><strong>Integrated Gradients</strong>: Visualizes the model’s decision-making by attributing importance scores to input features.</li>
+<li><strong>Logging Predictions</strong>: Logs the predictions for future analysis and debugging.</li>
+</ol>
+</section>
+<section id="key-functions-5" class="level3">
+<h3 class="anchored" data-anchor-id="key-functions-5">Key Functions</h3>
+<ol type="1">
+<li><strong>Conformal Prediction</strong>:
+<ul>
+<li>The <code>conformal_prediction</code> function refines the model’s output using conformal prediction, providing a confidence interval for the prediction.</li>
+<li><strong>Input</strong>: Model output tensor and a SplitPredictor.</li>
+<li><strong>Output</strong>: List of refined predictions.</li>
+</ul></li>
+<li><strong>Integrated Gradients</strong>:
+<ul>
+<li>The <code>integrated_gradients</code> function computes the feature attribution for the input image using the integrated gradients method, which highlights which parts of the image are most important for the model’s prediction.</li>
+<li><strong>Input</strong>: The model, processed image, raw image, and predictions.</li>
+<li><strong>Output</strong>: Visualizations of the integrated gradients for each prediction.</li>
+</ul></li>
+<li><strong>Log Prediction</strong>:
+<ul>
+<li>The <code>log_prediction</code> function logs the final prediction using the Python logging library, allowing for easy tracking of the predictions.</li>
+<li><strong>Input</strong>: The refined predictions.</li>
+<li><strong>Output</strong>: None (logs the prediction).</li>
+</ul></li>
+</ol>
+</section>
+<section id="data-flow-5" class="level3">
+<h3 class="anchored" data-anchor-id="data-flow-5">Data Flow</h3>
+<ol type="1">
+<li><strong>Input Data</strong>:
+<ul>
+<li>The <code>prediction</code> and <code>cp_predictor</code> are passed to the conformal prediction node.</li>
+<li>The <code>best_model</code>, <code>normalized_img</code>, <code>resized_img</code>, and <code>conformal_prediction</code> are passed to the integrated gradients node.</li>
+</ul></li>
+<li><strong>Nodes</strong>:
+<ul>
+<li><strong>Conformal Prediction</strong>: The model output is refined using the SplitPredictor.</li>
+<li><strong>Integrated Gradients</strong>: Visualizations are generated to show which parts of the image contributed to the prediction.</li>
+<li><strong>Logging</strong>: The final prediction is logged.</li>
+</ul></li>
+<li><strong>Output</strong>:
+<ul>
+<li>The post-processed prediction (<code>conformal_prediction</code>), the integrated gradients visualizations, and the final logged prediction.</li>
+</ul></li>
+</ol>
+</section>
+<section id="version-and-installation-7" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation-7">Version and Installation</h3>
+<ul>
+<li><strong>Captum</strong> (for Integrated Gradients):
+<ul>
+<li><p>Version: <code>0.7.0</code></p></li>
+<li><p>Installation:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install captum==0.7.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+</ul>
+<div id="cell-20" class="cell" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="9">
+<div>
+<figure class="figure">
+<p><img src="mlops-card_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="inference-api-deployment" class="level2">
+<h2 class="anchored" data-anchor-id="inference-api-deployment">Inference API Deployment</h2>
+<p>To operationalize the skin cancer detection model, we developed and deployed a RESTful API using <strong>FastAPI</strong> and <strong>Kedro</strong>, ensuring scalability, modularity, and ease of use. The deployment includes a containerized backend that processes images, runs inference pipelines, and returns predictions along with model interpretability outputs.</p>
+<section id="overview-12" class="level3">
+<h3 class="anchored" data-anchor-id="overview-12">Overview</h3>
+<ol type="1">
+<li><strong>Pipeline Orchestration</strong>:
+<ul>
+<li>The <strong>Kedro</strong> pipelines for inference preprocessing, model execution, and postprocessing are integrated into a single unified pipeline (<code>inference</code>).</li>
+<li>This modular approach ensures reusability and simplifies debugging.</li>
+<li>We use <code>kedro-boot</code> for converting this pipeline into a low latency API.</li>
+</ul></li>
+<li><strong>API Design</strong>:
+<ul>
+<li>The <strong>FastAPI</strong> application exposes a <code>/predict</code> endpoint that takes an image as input.</li>
+<li>The image undergoes preprocessing (resizing, normalization, and out-of-distribution detection), model inference, and postprocessing (conformal prediction and visualization).</li>
+</ul></li>
+<li><strong>Interpretability</strong>:
+<ul>
+<li>The API generates visual explanations using integrated gradients, highlighting the regions of the image that influenced the model’s prediction.</li>
+</ul></li>
+<li><strong>Error Handling</strong>:
+<ul>
+<li>Comprehensive error management ensures the API responds gracefully to invalid inputs, out-of-distribution data, and unexpected failures.</li>
+</ul></li>
+<li><strong>Containerization</strong>:
+<ul>
+<li>The application is <strong>Dockerized</strong>, enabling consistent deployment across environments and easy scalability.</li>
+</ul></li>
+</ol>
 
 
 </section>
