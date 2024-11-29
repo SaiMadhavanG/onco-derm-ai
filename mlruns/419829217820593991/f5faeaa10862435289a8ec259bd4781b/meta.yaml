@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Admin/Desktop/onco-derm-ai/mlruns/419829217820593991/f5faeaa10862435289a8ec259bd4781b/artifacts
+end_time: 1732773864307
+entry_point_name: ''
+experiment_id: '419829217820593991'
+lifecycle_stage: active
+run_id: f5faeaa10862435289a8ec259bd4781b
+run_name: inference
+run_uuid: f5faeaa10862435289a8ec259bd4781b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1732773864203
+status: 4
+tags: []
+user_id: Admin

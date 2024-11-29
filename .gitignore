@@ -13,6 +13,7 @@ data/**
 
 # except their sub-folders
 !data/08_reporting/**
+!data/08_reporting/
 
 # also keep all .gitkeep files
 !.gitkeep
@@ -149,7 +150,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-
+medical-dashboard/node_modules/*
 # quarto
 /.quarto/
 

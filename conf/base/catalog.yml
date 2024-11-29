@@ -94,6 +94,9 @@ model_metrics:
   filepath: data/08_reporting/model_metrics.json
   versioned: true
 
+new_dataset:
+  type: pickle.PickleDataset  
+  filepath: data/02_intermediate/new_dataset.pkl
 ood_detection_metrics:
   type: json.JSONDataset
   filepath: data/08_reporting/ood_detection_metrics.json
