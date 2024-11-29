@@ -332,7 +332,9 @@ def log_model(
     return model_uri
 
 
-def set_best_model_uri(model_name: str) -> Tuple[str, nn.Module]:
+def set_best_model_uri(
+    model_name: str, current_model_uri: str
+) -> Tuple[str, nn.Module]:
     """
     Set the best model URI based on the best f1 score.
 

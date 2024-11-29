@@ -1,17 +1,21 @@
 train_raw:
   type: pickle.PickleDataset
   filepath: data/01_raw/train.pkl
-  # versioned: true
+  versioned: true
 
 val_raw:
   type: pickle.PickleDataset
   filepath: data/01_raw/val.pkl
-  # versioned: true
+  versioned: true
 
 test_raw:
   type: pickle.PickleDataset
   filepath: data/01_raw/test.pkl
-  # versioned: true
+  versioned: true
+
+current:
+  type: pickle.PickleDataset
+  filepath: data/monitoring/current.pkl
 
 inference_sample:
   type: pillow.ImageDataset
