@@ -149,7 +149,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-
+medical-dashboard/node_modules/*
 # quarto
 /.quarto/
 

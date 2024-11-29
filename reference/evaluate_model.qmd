@@ -2,11 +2,11 @@
 
 ```python
 evaluate_model(
-    model_name,
-    model_state_dict,
-    test_dataset,
-    batch_size,
-    device='cpu',
+    model_name
+    model_state_dict
+    test_dataset
+    batch_size
+    device='cpu'
 )
 ```
 

@@ -1,0 +1,13 @@
+# This is a boilerplate parameters config generated for pipeline 'model_eval'
+# using Kedro 0.19.8.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.19.8/configuration/parameters.html
+model_name: ResNet18
+device: cuda
+# device: cuda
+train_params:
+  num_epochs: 20
+  batch_size: 128
+  lr: 0.001
+batch_size: 128
