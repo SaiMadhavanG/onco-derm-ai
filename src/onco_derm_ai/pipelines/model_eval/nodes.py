@@ -1,6 +1,6 @@
 """
 This is a boilerplate pipeline 'model_eval'
-generated using Kedro 0.19.8
+generated using Kedro 0.19.9
 """
 
 import datetime
@@ -14,7 +14,7 @@ from mlflow import MlflowClient
 from sklearn.metrics import classification_report
 from torch.utils.data import DataLoader
 
-from src.onco_derm_ai.pipelines.model_training.nodes import (
+from onco_derm_ai.pipelines.model_training.nodes import (
     DermaMNISTDataset,
     model_select,
 )

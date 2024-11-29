@@ -3,11 +3,11 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/0.19.8/configuration/parameters.html
-model_name: ResNet18
-device: cuda
+# model_name: ResNet18
 # device: cuda
-train_params:
-  num_epochs: 20
-  batch_size: 128
-  lr: 0.001
-batch_size: 128
+# # device: cuda
+# train_params:
+#   num_epochs: 20
+#   batch_size: 128
+#   lr: 0.001
+# batch_size: 128

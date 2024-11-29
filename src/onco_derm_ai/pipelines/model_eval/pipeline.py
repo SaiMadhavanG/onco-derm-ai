@@ -1,9 +1,8 @@
 """
 This is a boilerplate pipeline 'model_eval'
-generated using Kedro 0.19.8
+generated using Kedro 0.19.9
 """
 
-# from kedro.pipeline import Pipeline, pipeline
 from kedro.pipeline import Pipeline, node, pipeline
 
 from .nodes import compare_models, evaluate_model, log_model
