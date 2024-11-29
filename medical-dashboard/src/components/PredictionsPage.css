@@ -126,6 +126,38 @@ body {
   color: #ffffff;
 }
 
+.prediction-label {
+  cursor: pointer;
+  /* color: #00c4ff; */
+  text-decoration: underline;
+  position: relative;
+}
+
+.prediction-label:hover {
+  color: #009edc;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  max-width: 300px;
+  transform: translate(-50%, -100%);
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ig-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 
 /* Animations for fade-in and slide-up effects */
 @keyframes fadeIn {

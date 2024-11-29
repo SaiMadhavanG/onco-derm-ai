@@ -1,22 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PredictionsPage.css";
 
 function PredictionsPage({ predictions }) {
+  const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0 });
+
+
   if (!predictions) {
     return <p>No predictions available. Please upload an image to analyze.</p>;
   }
 
   const { predictions: predictionSet, integrated_gradients: igImages } = predictions;
 
-  const labels = [
-    "Actinic keratoses and intraepithelial carcinoma",
-    "Basal cell carcinoma",
-    "Benign keratosis-like lesions",
-    "Dermatofibroma",
-    "Melanoma",
-    "Melanocytic nevi",
-    "Vascular lesions",
+  // Disease details with brief descriptions and Wikipedia links
+  const diseaseInfo = [
+    {
+      label: "Actinic keratoses and intraepithelial carcinoma",
+      description: "A rough, scaly patch on your skin that develops from years of sun exposure.",
+      wikiLink: "https://en.wikipedia.org/wiki/Actinic_keratosis",
+    },
+    {
+      label: "Basal cell carcinoma",
+      description: "A common type of skin cancer that arises in the basal cells of the skin.",
+      wikiLink: "https://en.wikipedia.org/wiki/Basal-cell_carcinoma",
+    },
+    {
+      label: "Benign keratosis-like lesions",
+      description: "Non-cancerous skin growths resembling keratosis.",
+      wikiLink: "https://en.wikipedia.org/wiki/Seborrheic_keratosis",
+    },
+    {
+      label: "Dermatofibroma",
+      description: "A benign skin nodule often found on the lower legs.",
+      wikiLink: "https://en.wikipedia.org/wiki/Dermatofibroma",
+    },
+    {
+      label: "Melanoma",
+      description: "A serious form of skin cancer that begins in melanocytes.",
+      wikiLink: "https://en.wikipedia.org/wiki/Melanoma",
+    },
+    {
+      label: "Melanocytic nevi",
+      description: "Commonly referred to as moles, usually harmless growths on the skin.",
+      wikiLink: "https://en.wikipedia.org/wiki/Melanocytic_nevus",
+    },
+    {
+      label: "Vascular lesions",
+      description: "Abnormal blood vessels or lymph vessels, often appearing on the skin.",
+      wikiLink: "https://en.wikipedia.org/wiki/Vascular_anomaly",
+    },
   ];
+
+
+  const handleMouseEnter = (e, text) => {
+    const rect = e.target.getBoundingClientRect();
+    setTooltip({ visible: true, text, x: rect.left + rect.width / 2, y: rect.top - 10 });
+  };
+
+  const handleMouseLeave = () => {
+    setTooltip({ visible: false, text: "", x: 0, y: 0 });
+  };
 
   return (
     <div className="app-container">
@@ -27,17 +69,36 @@ function PredictionsPage({ predictions }) {
       <main className="app-main">
         <div className="predictions-section">
           <h2>Conformal Predictions</h2>
-          {predictionSet.map((prediction, index) => (
-            <div key={index} className="prediction-item">
-              <h3>{labels[prediction]}</h3>
-              <img
-                src={`data:image/png;base64,${igImages[index]}`}
-                alt={`Integrated Gradients Heatmap for ${labels[prediction]}`}
-                className="ig-image"
-              />
-            </div>
-          ))}
+          {predictionSet.map((prediction, index) => {
+            const disease = diseaseInfo[prediction];
+            return (
+              <div key={index} className="prediction-item">
+                <h3
+                  className="prediction-label"
+                  onMouseEnter={(e) => handleMouseEnter(e, disease.description)}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={() => window.open(disease.wikiLink, "_blank")}
+                >
+                  {disease.label}
+                </h3>
+                <img
+                  src={`data:image/png;base64,${igImages[index]}`}
+                  alt={`Integrated Gradients Heatmap for ${disease.label}`}
+                  className="ig-image"
+                />
+              </div>
+            );
+          })}
         </div>
+
+        {tooltip.visible && (
+          <div
+            className="tooltip"
+            style={{ top: `${tooltip.y}px`, left: `${tooltip.x}px` }}
+          >
+            {tooltip.text}
+          </div>
+        )}
 
         <div className="disclaimer-section">
           <h3>Disclaimer</h3>
