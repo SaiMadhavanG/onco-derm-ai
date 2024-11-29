@@ -332,7 +332,9 @@ def log_model(
     return model_uri
 
 
-def set_best_model_uri(model_name: str) -> str:
+def set_best_model_uri(
+    model_name: str, current_model_uri: str
+) -> Tuple[str, nn.Module]:
     """
     Set the best model URI based on the best f1 score.
 
@@ -341,7 +343,9 @@ def set_best_model_uri(model_name: str) -> str:
 
     Returns:
         str: The URI of the best model.
+        nn.Module: The best model.
     """
+    mlflow.set_tracking_uri("http://localhost:5000")
     client = MlflowClient()
     best_score = 0.0
     best_model_uri = ""
@@ -350,4 +354,5 @@ def set_best_model_uri(model_name: str) -> str:
         if run.data.metrics["f1"] > best_score:
             best_score = run.data.metrics["f1"]
             best_model_uri = mv.source
-    return best_model_uri
+    model = mlflow.pytorch.load_model(best_model_uri)
+    return best_model_uri, model

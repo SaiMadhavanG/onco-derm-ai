@@ -1,0 +1,15 @@
+# evaluate_predictor { #onco_derm_ai.evaluate_predictor }
+
+```python
+evaluate_predictor(predictor, test_set, batch_size)
+```
+
+Evaluate a SplitPredictor using the test set.
+
+Args:
+    predictor: The SplitPredictor to evaluate.
+    test_set: The test set.
+    batch_size: The batch size.
+
+Returns:
+    A dictionary containing the metrics.

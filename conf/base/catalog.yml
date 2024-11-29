@@ -1,17 +1,29 @@
 train_raw:
   type: pickle.PickleDataset
   filepath: data/01_raw/train.pkl
-  # versioned: true
+  versioned: true
 
 val_raw:
   type: pickle.PickleDataset
   filepath: data/01_raw/val.pkl
-  # versioned: true
+  versioned: true
 
 test_raw:
   type: pickle.PickleDataset
   filepath: data/01_raw/test.pkl
-  # versioned: true
+  versioned: true
+
+current:
+  type: pickle.PickleDataset
+  filepath: data/monitoring/current.pkl
+
+inference_sample:
+  type: pillow.ImageDataset
+  filepath: data/01_raw/inference_sample.png
+
+inference.inference_sample:
+  type: pillow.ImageDataset
+  filepath: data/01_raw/inference_sample.png
 
 pre-processed_train_data:
   type: pickle.PickleDataset
@@ -23,6 +35,12 @@ pre-processed_val_data:
   filepath: data/02_intermediate/pre-processed_val_data.pkl
   versioned: true
 
+resized_img:
+  type: MemoryDataset
+
+normalized_img:
+  type: MemoryDataset
+
 image_classification_model:
   type: pickle.PickleDataset
   filepath: data/06_models/image_classification_model.pkl
@@ -30,6 +48,18 @@ image_classification_model:
 model_finetuned:
   type: pickle.PickleDataset
   filepath: data/06_models/model_fintuned.pkl
+
+wide_resnet_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/wide_resnet_model.pkl
+
+ood_detector:
+  type: pickle.PickleDataset
+  filepath: data/06_models/ood_detector.pkl
+
+cp_predictor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/cp_predictor.pkl
 
 mlflow_uri:
   type: text.TextDataset
@@ -39,6 +69,26 @@ best_model_uri:
   type: text.TextDataset
   filepath: data/06_models/best_model_uri.txt
 
+best_model:
+  type: pickle.PickleDataset
+  filepath: data/06_models/best_model.pkl
+
+prediction:
+  type: MemoryDataset
+
+conformal_prediction:
+  type: MemoryDataset
+
+integrated_gradients:
+  type: MemoryDataset
+
+predictions:
+  type: MemoryDataset
+
+inference.predictions:
+  type: pickle.PickleDataset
+  filepath: data/07_model_output/predictions.pkl
+
 model_metrics:
   type: json.JSONDataset
   filepath: data/08_reporting/model_metrics.json
@@ -47,4 +97,12 @@ model_metrics:
 new_dataset:
   type: pickle.PickleDataset  
   filepath: data/02_intermediate/new_dataset.pkl
+ood_detection_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/ood_detection_metrics.json
+  versioned: true
+
+cp_metrics:
+  type: json.JSONDataset
+  filepath: data/08_reporting/cp_metrics.json
   versioned: true

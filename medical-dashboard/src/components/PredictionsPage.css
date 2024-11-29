@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/image.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ffffff;
+}
+
+.predictions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for text contrast */
+  padding: 20px;
+}
+
+.predictions-title {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.predictions-description {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.predictions-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.prediction-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: slideUp 1.5s ease-in-out;
+  width: 80%;
+  max-width: 600px;
+}
+
+.disease-name {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.explanation-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.explanation-img {
+  max-width: 100%;
+  max-height: 500px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.predictions-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prediction-item {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.ig-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+}
+
+.disclaimer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.disclaimer-section p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.prediction-label {
+  cursor: pointer;
+  /* color: #00c4ff; */
+  text-decoration: underline;
+  position: relative;
+}
+
+.prediction-label:hover {
+  color: #009edc;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  max-width: 300px;
+  transform: translate(-50%, -100%);
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ig-image {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Animations for fade-in and slide-up effects */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

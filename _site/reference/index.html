@@ -93,6 +93,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../docs/cards/index.html"> 
+<span class="menu-text">Cards</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link active" href="../reference/index.html" aria-current="page"> 
 <span class="menu-text">Reference</span></a>
   </li>  
@@ -116,6 +120,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#data_preprocessing" id="toc-data_preprocessing" class="nav-link" data-scroll-target="#data_preprocessing">data_preprocessing</a></li>
   <li><a href="#model_training" id="toc-model_training" class="nav-link" data-scroll-target="#model_training">model_training</a></li>
+  <li><a href="#ood_detection" id="toc-ood_detection" class="nav-link" data-scroll-target="#ood_detection">ood_detection</a></li>
+  <li><a href="#conformal_prediction" id="toc-conformal_prediction" class="nav-link" data-scroll-target="#conformal_prediction">conformal_prediction</a></li>
+  <li><a href="#inference" id="toc-inference" class="nav-link" data-scroll-target="#inference">inference</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -172,6 +179,86 @@ ul.task-list li input[type="checkbox"] {
 <tr class="even">
 <td><a href="../reference/log_model.html#onco_derm_ai.log_model">log_model</a></td>
 <td>Logs the model, hyperparameters, and metrics to MLFlow.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ood_detection" class="level2">
+<h2 class="anchored" data-anchor-id="ood_detection">ood_detection</h2>
+<p>Functions in the ood_detection pipeline</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/prepare_data.html#onco_derm_ai.prepare_data">prepare_data</a></td>
+<td>Prepare the data for the OOD detection pipeline.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/train_wide_resnet.html#onco_derm_ai.train_wide_resnet">train_wide_resnet</a></td>
+<td>Train a WideResNet model on the given datasets.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/multi_mahalanobis_detector.html#onco_derm_ai.multi_mahalanobis_detector">multi_mahalanobis_detector</a></td>
+<td>Run the Multi-Mahalanobis detector on the given datasets.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="conformal_prediction" class="level2">
+<h2 class="anchored" data-anchor-id="conformal_prediction">conformal_prediction</h2>
+<p>Functions in the conformal_prediction pipeline</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/data_prep.html#onco_derm_ai.data_prep">data_prep</a></td>
+<td>Prepare the calibration and test sets for the conformal prediction pipeline.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/calibrate_predictor.html#onco_derm_ai.calibrate_predictor">calibrate_predictor</a></td>
+<td>Calibrate a SplitPredictor using the calibration set.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/evaluate_predictor.html#onco_derm_ai.evaluate_predictor">evaluate_predictor</a></td>
+<td>Evaluate a SplitPredictor using the test set.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="inference" class="level2">
+<h2 class="anchored" data-anchor-id="inference">inference</h2>
+<p>Functions used in various inference pipelines</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../reference/resize_image.html#onco_derm_ai.resize_image">resize_image</a></td>
+<td>Resize image.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/normalize_image.html#onco_derm_ai.normalize_image">normalize_image</a></td>
+<td>Normalize image.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/prepare_data_for_ood.html#onco_derm_ai.prepare_data_for_ood">prepare_data_for_ood</a></td>
+<td>Prepare image for OOD detection.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/ood_detection.html#onco_derm_ai.ood_detection">ood_detection</a></td>
+<td>Detect out-of-distribution samples.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/predict.html#onco_derm_ai.predict">predict</a></td>
+<td>Predicts the output of the input image using the best model.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/conformal_prediction.html#onco_derm_ai.conformal_prediction">conformal_prediction</a></td>
+<td>Perform conformal prediction on the output tensor.</td>
+</tr>
+<tr class="odd">
+<td><a href="../reference/integrated_gradients.html#onco_derm_ai.integrated_gradients">integrated_gradients</a></td>
+<td>Perform integrated gradients on the input image.</td>
+</tr>
+<tr class="even">
+<td><a href="../reference/log_prediction.html#onco_derm_ai.log_prediction">log_prediction</a></td>
+<td>Log the prediction.</td>
 </tr>
 </tbody>
 </table>

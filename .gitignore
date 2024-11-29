@@ -12,7 +12,12 @@ conf/**/*credentials*
 data/**
 
 # except their sub-folders
-# !data/**/
+<<<<<<< Updated upstream
+!data/08_reporting/*
+=======
+!data/08_reporting/**
+!data/08_reporting/
+>>>>>>> Stashed changes
 
 # also keep all .gitkeep files
 !.gitkeep
@@ -157,3 +162,4 @@ Project Planning.md
 
 
 
+session_store.db

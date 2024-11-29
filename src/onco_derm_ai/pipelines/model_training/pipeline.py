@@ -63,8 +63,8 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=set_best_model_uri,
-                inputs="params:model_name",
-                outputs="best_model_uri",
+                inputs=["params:model_name", "mlflow_uri"],
+                outputs=["best_model_uri", "best_model"],
                 name="set_best_model_uri",
             ),
         ]

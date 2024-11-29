@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MLOps Card for OncoDerm AI – OncoDerm AI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../docs/styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">OncoDerm AI</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../docs/cards/index.html"> 
+<span class="menu-text">Cards</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../reference/index.html"> 
+<span class="menu-text">Reference</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><strong>Overview</strong></a></li>
+  <li><a href="#workflow-management-with-kedro" id="toc-workflow-management-with-kedro" class="nav-link" data-scroll-target="#workflow-management-with-kedro">Workflow Management with Kedro</a>
+  <ul class="collapse">
+  <li><a href="#overview-1" id="toc-overview-1" class="nav-link" data-scroll-target="#overview-1">Overview</a></li>
+  <li><a href="#features-of-kedro" id="toc-features-of-kedro" class="nav-link" data-scroll-target="#features-of-kedro">Features of Kedro</a></li>
+  <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
+  <li><a href="#challenges" id="toc-challenges" class="nav-link" data-scroll-target="#challenges">Challenges</a></li>
+  <li><a href="#version-and-installation" id="toc-version-and-installation" class="nav-link" data-scroll-target="#version-and-installation">Version and Installation</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul></li>
+  <li><a href="#testing-strategy" id="toc-testing-strategy" class="nav-link" data-scroll-target="#testing-strategy">Testing Strategy</a>
+  <ul class="collapse">
+  <li><a href="#overview-2" id="toc-overview-2" class="nav-link" data-scroll-target="#overview-2">Overview</a></li>
+  <li><a href="#implementation-1" id="toc-implementation-1" class="nav-link" data-scroll-target="#implementation-1">Implementation</a></li>
+  <li><a href="#pytest-integration-with-kedro" id="toc-pytest-integration-with-kedro" class="nav-link" data-scroll-target="#pytest-integration-with-kedro">Pytest Integration with Kedro</a></li>
+  <li><a href="#challenges-1" id="toc-challenges-1" class="nav-link" data-scroll-target="#challenges-1">Challenges</a></li>
+  <li><a href="#version-and-installation-1" id="toc-version-and-installation-1" class="nav-link" data-scroll-target="#version-and-installation-1">Version and Installation</a></li>
+  <li><a href="#resources-1" id="toc-resources-1" class="nav-link" data-scroll-target="#resources-1">Resources</a></li>
+  </ul></li>
+  <li><a href="#automated-documentation-generation" id="toc-automated-documentation-generation" class="nav-link" data-scroll-target="#automated-documentation-generation">Automated Documentation Generation</a>
+  <ul class="collapse">
+  <li><a href="#overview-3" id="toc-overview-3" class="nav-link" data-scroll-target="#overview-3">Overview</a></li>
+  <li><a href="#implementation-2" id="toc-implementation-2" class="nav-link" data-scroll-target="#implementation-2">Implementation</a></li>
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
+  <li><a href="#example-command" id="toc-example-command" class="nav-link" data-scroll-target="#example-command">Example Command</a></li>
+  <li><a href="#challenges-2" id="toc-challenges-2" class="nav-link" data-scroll-target="#challenges-2">Challenges</a></li>
+  <li><a href="#version-and-installation-2" id="toc-version-and-installation-2" class="nav-link" data-scroll-target="#version-and-installation-2">Version and Installation</a></li>
+  <li><a href="#resources-2" id="toc-resources-2" class="nav-link" data-scroll-target="#resources-2">Resources</a></li>
+  </ul></li>
+  <li><a href="#code-linting-with-ruff" id="toc-code-linting-with-ruff" class="nav-link" data-scroll-target="#code-linting-with-ruff">Code Linting with Ruff</a>
+  <ul class="collapse">
+  <li><a href="#overview-4" id="toc-overview-4" class="nav-link" data-scroll-target="#overview-4">Overview</a></li>
+  <li><a href="#key-benefits" id="toc-key-benefits" class="nav-link" data-scroll-target="#key-benefits">Key Benefits</a></li>
+  <li><a href="#implementation-3" id="toc-implementation-3" class="nav-link" data-scroll-target="#implementation-3">Implementation</a></li>
+  <li><a href="#example-commands" id="toc-example-commands" class="nav-link" data-scroll-target="#example-commands">Example Commands</a></li>
+  <li><a href="#challenges-3" id="toc-challenges-3" class="nav-link" data-scroll-target="#challenges-3">Challenges</a></li>
+  <li><a href="#version-and-installation-3" id="toc-version-and-installation-3" class="nav-link" data-scroll-target="#version-and-installation-3">Version and Installation</a></li>
+  <li><a href="#resources-3" id="toc-resources-3" class="nav-link" data-scroll-target="#resources-3">Resources</a></li>
+  </ul></li>
+  <li><a href="#data-preprocessing-pipeline" id="toc-data-preprocessing-pipeline" class="nav-link" data-scroll-target="#data-preprocessing-pipeline">Data Preprocessing Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#overview-5" id="toc-overview-5" class="nav-link" data-scroll-target="#overview-5">Overview</a></li>
+  <li><a href="#key-functions" id="toc-key-functions" class="nav-link" data-scroll-target="#key-functions">Key Functions</a></li>
+  <li><a href="#data-flow" id="toc-data-flow" class="nav-link" data-scroll-target="#data-flow">Data Flow</a></li>
+  <li><a href="#how-to-run" id="toc-how-to-run" class="nav-link" data-scroll-target="#how-to-run">How to Run</a></li>
+  <li><a href="#challenges-and-considerations" id="toc-challenges-and-considerations" class="nav-link" data-scroll-target="#challenges-and-considerations">Challenges and Considerations</a></li>
+  <li><a href="#version-and-installation-4" id="toc-version-and-installation-4" class="nav-link" data-scroll-target="#version-and-installation-4">Version and Installation</a></li>
+  </ul></li>
+  <li><a href="#model-training-pipeline" id="toc-model-training-pipeline" class="nav-link" data-scroll-target="#model-training-pipeline">Model Training Pipeline</a>
+  <ul class="collapse">
+  <li><a href="#overview-6" id="toc-overview-6" class="nav-link" data-scroll-target="#overview-6">Overview</a></li>
+  <li><a href="#key-components" id="toc-key-components" class="nav-link" data-scroll-target="#key-components">Key Components</a></li>
+  <li><a href="#pipeline-nodes" id="toc-pipeline-nodes" class="nav-link" data-scroll-target="#pipeline-nodes">Pipeline Nodes</a></li>
+  <li><a href="#tools-and-libraries" id="toc-tools-and-libraries" class="nav-link" data-scroll-target="#tools-and-libraries">Tools and Libraries</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">MLOps Card for OncoDerm AI</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<p><strong>Date</strong>: <code>2024-11-29</code><br>
+<strong>Author</strong>: <code>Sai Madhavan G</code><br>
+<strong>Version</strong>: <code>v1.0</code></p>
+<hr>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview"><strong>Overview</strong></h3>
+<p>This MLOps card serves as a comprehensive record of the tools, methodologies, and decision-making processes employed during the development and deployment of the OncoDerm AI project. The document aims to ensure transparency, reproducibility, and maintainability across the project’s lifecycle.</p>
+</section>
+<section id="workflow-management-with-kedro" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-management-with-kedro">Workflow Management with Kedro</h2>
+<section id="overview-1" class="level3">
+<h3 class="anchored" data-anchor-id="overview-1">Overview</h3>
+<p>We used <strong>Kedro</strong> to organize our workflow into modular, reusable components called <strong>nodes</strong> and <strong>pipelines</strong>. Kedro allows seamless integration of data engineering and machine learning tasks by clearly separating data, code, and configuration.</p>
+</section>
+<section id="features-of-kedro" class="level3">
+<h3 class="anchored" data-anchor-id="features-of-kedro">Features of Kedro</h3>
+<ul>
+<li><strong>Modular Workflow</strong>: Nodes encapsulate individual tasks, which are then assembled into pipelines.</li>
+<li><strong>Data Catalog</strong>: Facilitates streamlined handling of datasets.</li>
+<li><strong>Reproducibility</strong>: Enhances collaboration and ensures reproducibility of experiments.</li>
+<li><strong>Configuration Management</strong>: Centralized configuration for pipelines and datasets.</li>
+<li><strong>Visualization</strong>: Interactive pipeline visualization using Kedro-Viz.</li>
+</ul>
+</section>
+<section id="implementation" class="level3">
+<h3 class="anchored" data-anchor-id="implementation">Implementation</h3>
+<ul>
+<li><strong>Pipeline Design</strong>: Divided the classification task into stages—data preprocessing, model training, evaluation, and deployment.</li>
+<li><strong>Reusability</strong>: Nodes for data preprocessing can be reused across different datasets.</li>
+<li><strong>Flexibility</strong>: Easy to modify pipelines for different experiments without disrupting the overall workflow.</li>
+</ul>
+</section>
+<section id="challenges" class="level3">
+<h3 class="anchored" data-anchor-id="challenges">Challenges</h3>
+<ul>
+<li>Since all the pipelines are defined to be DAGs, we couldn’t realize use cases where we needed a circular dependency between nodes.</li>
+<li>The learning curve for Kedro was steep initially, but the documentation and community support were helpful.</li>
+<li>Converting kedro pipelines to inference pipelines for deployment was not straightforward.</li>
+</ul>
+</section>
+<section id="version-and-installation" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation">Version and Installation</h3>
+<ul>
+<li><p><strong>Version Used</strong>: <code>Kedro 0.19.9</code></p></li>
+<li><p><strong>Installation Command</strong>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install kedro==0.19.9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="resources" class="level3">
+<h3 class="anchored" data-anchor-id="resources">Resources</h3>
+<ul>
+<li><a href="https://docs.kedro.org/en/0.19.9/">Kedro Documentation</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="testing-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="testing-strategy">Testing Strategy</h2>
+<section id="overview-2" class="level3">
+<h3 class="anchored" data-anchor-id="overview-2">Overview</h3>
+<p>We adopted <strong>pytest</strong> as our primary testing framework, which integrates well with Kedro. The goal was to ensure that individual <strong>nodes</strong> and <strong>pipelines</strong> function as expected, enhancing the reliability of the workflow.</p>
+</section>
+<section id="implementation-1" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-1">Implementation</h3>
+<ul>
+<li><strong>Unit Tests</strong>: Unit tests were written for most nodes to validate their individual functionality. For example:
+<ul>
+<li>Testing data transformations in preprocessing nodes.</li>
+<li>Verifying model predictions in evaluation nodes.</li>
+</ul></li>
+<li><strong>Test Coverage</strong>: While many of nodes have been tested, some remain to be covered. These tests are planned to ensure full confidence in the pipeline’s robustness.</li>
+<li><strong>Continuous Integration (CI)</strong>: Integrated testing into CI pipelines to catch errors early in the development cycle using pre-commit hooks.</li>
+</ul>
+</section>
+<section id="pytest-integration-with-kedro" class="level3">
+<h3 class="anchored" data-anchor-id="pytest-integration-with-kedro">Pytest Integration with Kedro</h3>
+<p>Kedro’s structure makes it easier to write modular tests: - Testing isolated nodes by mocking inputs and outputs.</p>
+</section>
+<section id="challenges-1" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-1">Challenges</h3>
+<ul>
+<li>Some edge cases for untested nodes are still under review.</li>
+</ul>
+</section>
+<section id="version-and-installation-1" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation-1">Version and Installation</h3>
+<ul>
+<li><p><strong>Version Used</strong>: <code>pytest 8.3.3</code></p></li>
+<li><p><strong>Installation Command</strong>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install pytest==8.3.3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="resources-1" class="level3">
+<h3 class="anchored" data-anchor-id="resources-1">Resources</h3>
+<ul>
+<li><a href="https://docs.pytest.org/en/stable/">Pytest Documentation</a></li>
+<li><a href="https://docs.kedro.org/en/stable/development/automated_testing.html">Kedro Testing Guide</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="automated-documentation-generation" class="level2">
+<h2 class="anchored" data-anchor-id="automated-documentation-generation">Automated Documentation Generation</h2>
+<section id="overview-3" class="level3">
+<h3 class="anchored" data-anchor-id="overview-3">Overview</h3>
+<p>To maintain up-to-date and user-friendly documentation for the project, we utilized <strong>Quartodoc</strong> and <strong>Quarto</strong>. These tools helped automate the generation of clear and structured documentation for both developers and stakeholders.</p>
+</section>
+<section id="implementation-2" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-2">Implementation</h3>
+<ol type="1">
+<li><strong>Quartodoc</strong>:
+<ul>
+<li>Used to extract docstrings from our codebase and generate API documentation.</li>
+<li>Ensured consistency and minimized the manual effort of documenting changes in the code.</li>
+<li>Simplified navigation through the project’s functions, classes, and modules.</li>
+</ul></li>
+<li><strong>Quarto</strong>:
+<ul>
+<li>Served as the publishing tool for creating documentation in a variety of formats (e.g., HTML, PDF).</li>
+<li>Enabled the integration of Quartodoc-generated API docs with explanatory text, diagrams, and project details.</li>
+</ul></li>
+</ol>
+</section>
+<section id="features" class="level3">
+<h3 class="anchored" data-anchor-id="features">Features</h3>
+<ul>
+<li><strong>Dynamic API Updates</strong>: Whenever the codebase changes, documentation is regenerated to reflect the updates.</li>
+<li><strong>Markdown Integration</strong>: Allowed seamless embedding of markdown for customization.</li>
+</ul>
+</section>
+<section id="workflow" class="level3">
+<h3 class="anchored" data-anchor-id="workflow">Workflow</h3>
+<ul>
+<li><strong>Documentation Generation</strong>: The pipeline was integrated with the development process to trigger automatic documentation generation during builds using pre-commit hooks.</li>
+<li><strong>Integration with CI/CD</strong>: Documentation can be auto-deployed to a hosted platform for easy access.</li>
+</ul>
+</section>
+<section id="example-command" class="level3">
+<h3 class="anchored" data-anchor-id="example-command">Example Command</h3>
+<p>To generate documentation:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quartodoc</span> build</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="challenges-2" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-2">Challenges</h3>
+<ul>
+<li><strong>Custom Configurations</strong>: Initial setup required additional effort to configure Quartodoc for the project’s structure.</li>
+<li><strong>Consistency</strong>: Ensuring all code had properly formatted docstrings to maximize automation benefits.</li>
+<li><strong>Resources</strong>: Quartodoc didn’t have a lot of community resources for troubleshooting.</li>
+<li><strong>Parser Not Working</strong>: Some issues were faced with the parser not recognizing certain docstrings.</li>
+</ul>
+</section>
+<section id="version-and-installation-2" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation-2">Version and Installation</h3>
+<ul>
+<li><p><strong>Version Used</strong>: <code>Quartodoc 0.9.1</code>, <code>Quarto 1.2.57</code></p></li>
+<li><p><strong>Installation Command</strong>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install quartodoc==0.9.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><a href="https://quarto.org/docs/get-started/">Quarto installation guide</a></p></li>
+</ul>
+</section>
+<section id="resources-2" class="level3">
+<h3 class="anchored" data-anchor-id="resources-2">Resources</h3>
+<ul>
+<li><a href="https://machow.github.io/quartodoc/get-started/overview.html">Quartodoc Documentation</a></li>
+<li><a href="https://quarto.org/docs/guide/">Quarto Documentation</a></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="code-linting-with-ruff" class="level2">
+<h2 class="anchored" data-anchor-id="code-linting-with-ruff">Code Linting with Ruff</h2>
+<section id="overview-4" class="level3">
+<h3 class="anchored" data-anchor-id="overview-4">Overview</h3>
+<p>To ensure code quality, maintain consistent styling, and catch potential bugs early, we integrated <strong>Ruff</strong> as the primary linting tool. Ruff is a fast and flexible Python linter designed to handle large projects efficiently.</p>
+</section>
+<section id="key-benefits" class="level3">
+<h3 class="anchored" data-anchor-id="key-benefits">Key Benefits</h3>
+<ul>
+<li><strong>Performance</strong>: Processes codebases significantly faster than traditional linters.</li>
+<li><strong>Broad Rule Support</strong>: Implements rules from popular linting tools like Flake8, pylint, and pyupgrade.</li>
+<li><strong>Customizability</strong>: Allows fine-grained configuration for the project’s specific requirements.</li>
+</ul>
+</section>
+<section id="implementation-3" class="level3">
+<h3 class="anchored" data-anchor-id="implementation-3">Implementation</h3>
+<ol type="1">
+<li><strong>Setup</strong>:
+<ul>
+<li>A configuration file (<code>pyproject.toml</code>) was created to define project-specific rules and ignore patterns.</li>
+</ul></li>
+<li><strong>Pre-Commit Hook</strong>:
+<ul>
+<li>Integrated Ruff into the CI pipeline to enforce linting rules on every pull request.</li>
+</ul></li>
+<li><strong>Codebase-wide Audit</strong>:
+<ul>
+<li>Performed an initial pass with Ruff to identify and fix legacy code issues.</li>
+</ul></li>
+</ol>
+</section>
+<section id="example-commands" class="level3">
+<h3 class="anchored" data-anchor-id="example-commands">Example Commands</h3>
+<p>To lint the codebase:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> check .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To fix linting issues automatically:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> check <span class="at">--fix</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="challenges-3" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-3">Challenges</h3>
+<ul>
+<li><strong>Configuration Complexity</strong>: Understanding and fine-tuning the rules to match the project’s style guide.</li>
+<li><strong>False Positives</strong>: Some rules flagged issues that were acceptable in the project context.</li>
+</ul>
+</section>
+<section id="version-and-installation-3" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation-3">Version and Installation</h3>
+<ul>
+<li><p><strong>Version Used</strong>: <code>Ruff 0.7.2</code></p></li>
+<li><p><strong>Installation Command</strong>:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install ruff==0.7.2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="resources-3" class="level3">
+<h3 class="anchored" data-anchor-id="resources-3">Resources</h3>
+<ul>
+<li><a href="https://docs.astral.sh/ruff/">Ruff Documentation</a></li>
+<li><a href="https://docs.kedro.org/en/0.19.6/development/linting.html">Kedro Linting Guide</a> ___</li>
+</ul>
+</section>
+</section>
+<section id="data-preprocessing-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing-pipeline">Data Preprocessing Pipeline</h2>
+<section id="overview-5" class="level3">
+<h3 class="anchored" data-anchor-id="overview-5">Overview</h3>
+<p>The data preprocessing pipeline is a crucial step in preparing the dataset for training. In this project, the pipeline addresses several challenges like class imbalance, data augmentation, normalization, and conversion into tensors. The key steps in the pipeline are:</p>
+<ol type="1">
+<li><strong>Handling Class Imbalance</strong> using SMOTE (Synthetic Minority Over-sampling Technique).</li>
+<li><strong>Data Augmentation</strong> using random transformations like rotation, flipping, and color jitter.</li>
+<li><strong>Normalization</strong> of image pixel values.</li>
+<li><strong>Resizing and Tensor Conversion</strong> for consistency in input size and format.</li>
+</ol>
+</section>
+<section id="key-functions" class="level3">
+<h3 class="anchored" data-anchor-id="key-functions">Key Functions</h3>
+<ol type="1">
+<li><strong>Class Imbalance with SMOTE</strong>:
+<ul>
+<li>The function <code>class_imbalance</code> uses the SMOTE technique to oversample the minority class in the dataset, which helps improve model performance when training on imbalanced data.</li>
+<li><strong>Package Used</strong>: <code>imblearn</code> (SMOTE)</li>
+</ul></li>
+<li><strong>Data Augmentation</strong>:
+<ul>
+<li>Augmentations such as horizontal and vertical flips, rotations, and color jitter are applied using the <code>torchvision.transforms</code> module.</li>
+<li><strong>Package Used</strong>: <code>torchvision</code></li>
+<li>The <code>data_aug</code> function generates new samples for the dataset by applying these transformations multiple times to each image.</li>
+</ul></li>
+<li><strong>Normalization</strong>:
+<ul>
+<li>The pixel values of the images are normalized to the range [0, 1] using the <code>normalizing_images</code> function.</li>
+</ul></li>
+<li><strong>Resizing and Tensor Conversion</strong>:
+<ul>
+<li>Images are resized to a fixed size (28x28) and converted to tensors using <code>tensoring_resizing</code> to ensure that they are in the correct format for model input.</li>
+</ul></li>
+</ol>
+</section>
+<section id="data-flow" class="level3">
+<h3 class="anchored" data-anchor-id="data-flow">Data Flow</h3>
+<ol type="1">
+<li><strong>Input Data</strong>: The raw training and validation data (e.g., <code>train_raw</code>, <code>val_raw</code>) are passed through the pipeline.</li>
+<li><strong>Nodes</strong>:
+<ul>
+<li><strong>Class Imbalance</strong>: SMOTE is applied to the training data to address class imbalance.</li>
+<li><strong>Data Augmentation</strong>: Random augmentations are applied to the training data to increase its diversity.</li>
+<li><strong>Normalization and Resizing</strong>: The images are normalized and resized to ensure they are in the correct format.</li>
+</ul></li>
+<li><strong>Outputs</strong>:
+<ul>
+<li>The final outputs are pre-processed training (<code>pre-processed_train_data</code>) and validation (<code>pre-processed_val_data</code>) datasets, which are ready for model training.</li>
+</ul></li>
+</ol>
+</section>
+<section id="how-to-run" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-run">How to Run</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kedro</span> run <span class="at">--pipeline</span> data_preprocessing</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="challenges-and-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="challenges-and-considerations">Challenges and Considerations</h3>
+<ul>
+<li><strong>Class Imbalance</strong>: SMOTE is a powerful technique for balancing the dataset, but it may create synthetic samples that do not perfectly represent real-world data. This can sometimes affect the model’s generalization ability.</li>
+<li><strong>Augmentation</strong>: While data augmentation improves model robustness, it may also introduce noise. Care must be taken to select meaningful augmentations that mimic real-world variations.</li>
+<li><strong>Normalization</strong>: Proper normalization is essential for neural networks, especially when using pre-trained models, as it ensures consistency in input data.</li>
+</ul>
+</section>
+<section id="version-and-installation-4" class="level3">
+<h3 class="anchored" data-anchor-id="version-and-installation-4">Version and Installation</h3>
+<ul>
+<li><strong>SMOTE (imblearn)</strong>:
+<ul>
+<li><p>Version: <code>0.12.4</code></p></li>
+<li><p>Installation:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install imbalanced-learn==0.12.4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><strong>Torchvision</strong>:
+<ul>
+<li><p>Version: <code>0.20.1</code></p></li>
+<li><p>Installation:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torchvision==0.20.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><strong>PIL (Pillow)</strong>:
+<ul>
+<li><p>Version: <code>11.0.0</code></p></li>
+<li><p>Installation:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install Pillow==11.0.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+</ul>
+<div id="cell-8" class="cell">
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+<figure class="figure">
+<p><img src="mlops-card_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="model-training-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="model-training-pipeline">Model Training Pipeline</h2>
+<p>The <strong>Model Training Pipeline</strong> is responsible for preparing data, training a deep learning model, evaluating its performance, and logging the results for version control and reproducibility.</p>
+<section id="overview-6" class="level3">
+<h3 class="anchored" data-anchor-id="overview-6">Overview</h3>
+<p>This pipeline is built using <strong>Kedro 0.19.8</strong> and leverages <strong>PyTorch</strong>, <strong>MLFlow</strong>, and other utilities for efficient training and tracking. It includes the following stages:</p>
+<ol type="1">
+<li><strong>Data Preprocessing</strong>: Transforms raw input data into a suitable format for training.</li>
+<li><strong>Model Fine-tuning</strong>: Uses a pre-trained model (e.g., ResNet18) and fine-tunes it on the dataset.</li>
+<li><strong>Evaluation</strong>: Computes key metrics such as accuracy, F1-score, precision, and recall on validation/test datasets.</li>
+<li><strong>Logging</strong>: Records model metrics, hyperparameters, and artifacts into <strong>MLFlow</strong> for tracking and comparison.</li>
+<li><strong>Best Model Selection</strong>: Identifies the best model version based on performance metrics (e.g., F1-score).</li>
+</ol>
+<hr>
+</section>
+<section id="key-components" class="level3">
+<h3 class="anchored" data-anchor-id="key-components">Key Components</h3>
+<section id="preprocessing" class="level4">
+<h4 class="anchored" data-anchor-id="preprocessing">1. <strong>Preprocessing</strong></h4>
+<ul>
+<li>Resizes images to (224 ).</li>
+<li>Applies normalization with mean ([0.485, 0.456, 0.406]) and standard deviation ([0.229, 0.224, 0.225]).</li>
+<li>Converts image data to <strong>PyTorch Tensors</strong> for model compatibility.</li>
+</ul>
+</section>
+<section id="model-fine-tuning" class="level4">
+<h4 class="anchored" data-anchor-id="model-fine-tuning">2. <strong>Model Fine-tuning</strong></h4>
+<ul>
+<li>Supports ResNet18 with an updated fully connected layer for 7 output classes.</li>
+<li>Optimizer: <strong>Adam</strong>.</li>
+<li>Loss Function: <strong>CrossEntropyLoss</strong>.</li>
+<li>Tracks training and validation performance after each epoch using <strong>macro F1-score</strong>.</li>
+</ul>
+</section>
+<section id="evaluation" class="level4">
+<h4 class="anchored" data-anchor-id="evaluation">3. <strong>Evaluation</strong></h4>
+<ul>
+<li>Uses <strong>classification_report</strong> from Scikit-learn to compute detailed performance metrics.</li>
+<li>Outputs a dictionary summarizing accuracy, precision, recall, and F1-score.</li>
+</ul>
+</section>
+<section id="logging" class="level4">
+<h4 class="anchored" data-anchor-id="logging">4. <strong>Logging</strong></h4>
+<ul>
+<li>Logs model artifacts and metrics to <strong>MLFlow</strong>:
+<ul>
+<li>Model weights and architecture.</li>
+<li>Training/validation F1-score trends.</li>
+<li>Loss curves.</li>
+</ul></li>
+<li>Enables reproducibility with experiment tracking.</li>
+</ul>
+</section>
+<section id="best-model-selection" class="level4">
+<h4 class="anchored" data-anchor-id="best-model-selection">5. <strong>Best Model Selection</strong></h4>
+<ul>
+<li>Automatically identifies and selects the best-performing model version using MLFlow’s client API.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="pipeline-nodes" class="level3">
+<h3 class="anchored" data-anchor-id="pipeline-nodes">Pipeline Nodes</h3>
+<ol type="1">
+<li><strong>Preprocess Data Input</strong>
+<ul>
+<li>Input: <code>pre-processed_train_data</code>, <code>pre-processed_val_data</code>.</li>
+<li>Output: <code>train_dataset</code>, <code>val_dataset</code>.</li>
+</ul></li>
+<li><strong>Model Fine-tuning</strong>
+<ul>
+<li>Input: Preprocessed datasets, model name, training parameters, device.</li>
+<li>Output: Fine-tuned model weights, training loss plot.</li>
+</ul></li>
+<li><strong>Evaluate Model</strong>
+<ul>
+<li>Input: Model name, weights, test dataset, batch size, device.</li>
+<li>Output: Performance metrics dictionary.</li>
+</ul></li>
+<li><strong>Log Model</strong>
+<ul>
+<li>Input: Model name, weights, hyperparameters, metrics, training loss plot.</li>
+<li>Output: MLFlow URI.</li>
+</ul></li>
+<li><strong>Set Best Model URI</strong>
+<ul>
+<li>Input: Model name, MLFlow URI.</li>
+<li>Output: Best model URI, loaded model.</li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="tools-and-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="tools-and-libraries">Tools and Libraries</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 65%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Library</th>
+<th>Purpose</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PyTorch</strong></td>
+<td>Deep learning framework</td>
+<td>2.5.1</td>
+</tr>
+<tr class="even">
+<td><strong>MLFlow</strong></td>
+<td>Experiment tracking and artifact logging</td>
+<td>2.17.2</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="installation" class="level3">
+<h3 class="anchored" data-anchor-id="installation">Installation</h3>
+<p>Install all required packages using the following command:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torch matplotlib scikit-learn mlflow</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="outputs" class="level3">
+<h3 class="anchored" data-anchor-id="outputs">Outputs</h3>
+<ul>
+<li><strong>Fine-tuned Model</strong>: State dictionary (model_finetuned).</li>
+<li><strong>Performance Metrics</strong>: Accuracy, precision, recall, F1-score (model_metrics).</li>
+<li><strong>Visualization</strong>: Loss plots showing training and validation F1-scores.</li>
+<li><strong>Logged URI</strong>: MLFlow model artifact URI (mlflow_uri).</li>
+</ul>
+<div id="cell-10" class="cell">
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+<figure class="figure">
+<p><img src="mlops-card_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

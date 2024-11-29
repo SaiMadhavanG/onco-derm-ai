@@ -21,3 +21,38 @@ Functions in the model_training pipeline
 | [model_finetune](model_finetune.qmd#onco_derm_ai.model_finetune) | Finetunes a pre-trained model on the given training dataset. |
 | [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |
 | [log_model](log_model.qmd#onco_derm_ai.log_model) | Logs the model, hyperparameters, and metrics to MLFlow. |
+
+## ood_detection
+
+Functions in the ood_detection pipeline
+
+| | |
+| --- | --- |
+| [prepare_data](prepare_data.qmd#onco_derm_ai.prepare_data) | Prepare the data for the OOD detection pipeline. |
+| [train_wide_resnet](train_wide_resnet.qmd#onco_derm_ai.train_wide_resnet) | Train a WideResNet model on the given datasets. |
+| [multi_mahalanobis_detector](multi_mahalanobis_detector.qmd#onco_derm_ai.multi_mahalanobis_detector) | Run the Multi-Mahalanobis detector on the given datasets. |
+
+## conformal_prediction
+
+Functions in the conformal_prediction pipeline
+
+| | |
+| --- | --- |
+| [data_prep](data_prep.qmd#onco_derm_ai.data_prep) | Prepare the calibration and test sets for the conformal prediction pipeline. |
+| [calibrate_predictor](calibrate_predictor.qmd#onco_derm_ai.calibrate_predictor) | Calibrate a SplitPredictor using the calibration set. |
+| [evaluate_predictor](evaluate_predictor.qmd#onco_derm_ai.evaluate_predictor) | Evaluate a SplitPredictor using the test set. |
+
+## inference
+
+Functions used in various inference pipelines
+
+| | |
+| --- | --- |
+| [resize_image](resize_image.qmd#onco_derm_ai.resize_image) | Resize image. |
+| [normalize_image](normalize_image.qmd#onco_derm_ai.normalize_image) | Normalize image. |
+| [prepare_data_for_ood](prepare_data_for_ood.qmd#onco_derm_ai.prepare_data_for_ood) | Prepare image for OOD detection. |
+| [ood_detection](ood_detection.qmd#onco_derm_ai.ood_detection) | Detect out-of-distribution samples. |
+| [predict](predict.qmd#onco_derm_ai.predict) | Predicts the output of the input image using the best model. |
+| [conformal_prediction](conformal_prediction.qmd#onco_derm_ai.conformal_prediction) | Perform conformal prediction on the output tensor. |
+| [integrated_gradients](integrated_gradients.qmd#onco_derm_ai.integrated_gradients) | Perform integrated gradients on the input image. |
+| [log_prediction](log_prediction.qmd#onco_derm_ai.log_prediction) | Log the prediction. |

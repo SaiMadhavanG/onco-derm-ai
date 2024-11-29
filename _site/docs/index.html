@@ -93,6 +93,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../docs/cards/index.html"> 
+<span class="menu-text">Cards</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../reference/index.html"> 
 <span class="menu-text">Reference</span></a>
   </li>  
@@ -121,7 +125,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#evaluation-metrics" id="toc-evaluation-metrics" class="nav-link" data-scroll-target="#evaluation-metrics">Evaluation Metrics</a></li>
   <li><a href="#challenges-risks" id="toc-challenges-risks" class="nav-link" data-scroll-target="#challenges-risks">Challenges &amp; Risks</a></li>
   <li><a href="#mitigation-strategies" id="toc-mitigation-strategies" class="nav-link" data-scroll-target="#mitigation-strategies">Mitigation Strategies</a></li>
-  <li><a href="#future-enhancements" id="toc-future-enhancements" class="nav-link" data-scroll-target="#future-enhancements">Future Enhancements</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -152,11 +155,11 @@ ul.task-list li input[type="checkbox"] {
 <h1>Project Proposal</h1>
 <section id="executive-summary" class="level3">
 <h3 class="anchored" data-anchor-id="executive-summary">Executive Summary</h3>
-<p>We propose developing a machine learning-based skin cancer screening system utilizing dermatoscopic images. The system will assist medical professionals in preliminary skin lesion assessment while incorporating robust MLOps practices and responsible AI principles.</p>
+<p>We propose developing a machine learning-based skin cancer screening system utilizing dermatoscopic images. The system will assist medical professionals in preliminary skin lesion assessment while incorporating robust MLOps practices, responsible AI principles, and an interactive chatbot feature powered by a Large Language Model (LLM) for enhanced user engagement.</p>
 </section>
 <section id="problem-statement" class="level3">
 <h3 class="anchored" data-anchor-id="problem-statement">Problem Statement</h3>
-<p>Skin cancer diagnosis requires expert dermatological knowledge and careful image analysis. While machine learning can assist in this process, deploying such systems in clinical settings requires careful consideration of reliability, explainability, and operational excellence.</p>
+<p>Skin cancer diagnosis requires expert dermatological knowledge and careful image analysis. While machine learning can assist in this process, deploying such systems in clinical settings requires careful consideration of reliability, explainability, operational excellence, and ease of interaction for medical professionals.</p>
 </section>
 <section id="dataset" class="level3">
 <h3 class="anchored" data-anchor-id="dataset">Dataset</h3>
@@ -190,13 +193,13 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Base Architecture</strong>:
 <ul>
 <li>ResNet-18 or MobileNetV2 (modified for 28x28 input)</li>
-<li>Consideration for lightweight models due to smaller input size</li>
+<li>Lightweight models for compatibility with small input size</li>
 </ul></li>
 <li><strong>Training Pipeline</strong>:
 <ul>
 <li>Data augmentation (rotation, flipping, color jittering)</li>
 <li>Transfer learning with ImageNet weights</li>
-<li>Fine-tuning strategies for small image sizes</li>
+<li>Fine-tuning for small images</li>
 <li>Cross-validation for robust performance estimation</li>
 </ul></li>
 </ul>
@@ -235,10 +238,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="model-robustness-reliability" class="level5">
 <h5 class="anchored" data-anchor-id="model-robustness-reliability">Model Robustness &amp; Reliability</h5>
 <ul>
-<li><p><strong>Explainability</strong>:</p></li>
-<li><p><strong>Confidence Calibration</strong>:</p></li>
-<li><p><strong>Adversarial Robustness</strong>:</p></li>
-<li><p><strong>Out-of-Distribution Detection</strong>:</p></li>
+<li><strong>Explainability</strong></li>
+<li><strong>Confidence Calibration</strong></li>
+<li><strong>Adversarial Robustness</strong></li>
+<li><strong>Out-of-Distribution Detection</strong></li>
+</ul>
+</section>
+<section id="chatbot-integration-with-llm" class="level5">
+<h5 class="anchored" data-anchor-id="chatbot-integration-with-llm">Chatbot Integration with LLM</h5>
+<ul>
+<li><strong>Interactive Chatbot</strong>: We will integrate a chatbot powered by an LLM to enable natural language interactions with users.
+<ul>
+<li><strong>Functionality</strong>: The chatbot will provide explanations, clarifications, and further details about the model’s prediction, confidence score, and lesion category. Medical professionals can ask follow-up questions, discuss specific cases, and obtain interpretative guidance.</li>
+<li><strong>Implementation</strong>: All model outputs (prediction, confidence score, and explainability results) will be passed as inputs to the LLM, enabling contextual and conversational responses based on real-time model data.</li>
+<li><strong>Benefits</strong>: Allows users to interact in natural language, promoting accessibility and understanding, especially useful for non-technical users in clinical settings.</li>
+</ul></li>
 </ul>
 </section>
 <section id="clinical-integration" class="level5">
@@ -286,7 +300,7 @@ ul.task-list li input[type="checkbox"] {
 <li>False positive/negative rates</li>
 <li>Calibration error</li>
 <li>OOD detection accuracy</li>
-<li>Explanation quality (user feedback)</li>
+<li>Explanation quality (user feedback from chatbot interactions)</li>
 </ul>
 </section>
 </section>
@@ -317,13 +331,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Comprehensive Documentation</strong>: Usage guidelines and limitations</li>
 <li><strong>Regular Updates</strong>: Continuous model improvement</li>
 <li><strong>User Training</strong>: Proper system usage and interpretation</li>
-</ol>
-</section>
-<section id="future-enhancements" class="level3">
-<h3 class="anchored" data-anchor-id="future-enhancements">Future Enhancements</h3>
-<ol type="1">
-<li>VQA chatbot for assisting medical professionals</li>
-<li>Extension to other dermoscopic datasets</li>
 </ol>
 
 

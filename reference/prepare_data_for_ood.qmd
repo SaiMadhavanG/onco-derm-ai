@@ -1,0 +1,11 @@
+# prepare_data_for_ood { #onco_derm_ai.prepare_data_for_ood }
+
+```python
+prepare_data_for_ood(img)
+```
+
+Prepare image for OOD detection.
+Args:
+    img: Image to be prepared.
+Returns:
+    Image prepared for OOD detection

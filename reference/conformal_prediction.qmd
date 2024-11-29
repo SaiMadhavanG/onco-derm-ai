@@ -1,0 +1,14 @@
+# conformal_prediction { #onco_derm_ai.conformal_prediction }
+
+```python
+conformal_prediction(output, predictor)
+```
+
+Perform conformal prediction on the output tensor.
+
+Args:
+    output: The output tensor.
+    predictor: The SplitPredictor.
+
+Returns:
+    The prediction.

@@ -1,0 +1,17 @@
+# rmd_detector { #onco_derm_ai.rmd_detector }
+
+```python
+rmd_detector(best_model_uri, in_dataset, out_dataset, batch_size, device)
+```
+
+Run the Relative Mahalanobis Distance (RMD) detector on the given datasets.
+
+Args:
+    best_model_uri: The URI of the best model.
+    in_dataset: The in-distribution dataset.
+    out_dataset: The out-of-distribution dataset.
+    batch_size: The batch size to use.
+    device: The device to use.
+
+Returns:
+    The metrics of the detector and the detector itself.
