@@ -1,101 +1,132 @@
-# onco-derm-ai
+---
+title: "OncoDerm AI"
+---
 
-[![Powered by Kedro](https://img.shields.io/badge/powered_by-kedro-ffc900?logo=kedro)](https://kedro.org)
+# Project Proposal
 
-## Overview
+### Executive Summary
 
-This is your new Kedro project with Kedro-Viz setup, which was generated using `kedro 0.19.8`.
+We propose developing a machine learning-based skin cancer screening system utilizing dermatoscopic images. The system will assist medical professionals in preliminary skin lesion assessment while incorporating robust MLOps practices, responsible AI principles, and an interactive chatbot feature powered by a Large Language Model (LLM) for enhanced user engagement.
 
-Take a look at the [Kedro documentation](https://docs.kedro.org) to get started.
+### Problem Statement
 
-## Rules and guidelines
+Skin cancer diagnosis requires expert dermatological knowledge and careful image analysis. While machine learning can assist in this process, deploying such systems in clinical settings requires careful consideration of reliability, explainability, operational excellence, and ease of interaction for medical professionals.
 
-In order to get the best out of the template:
+### Dataset
 
-* Don't remove any lines from the `.gitignore` file we provide
-* Make sure your results can be reproduced by following a [data engineering convention](https://docs.kedro.org/en/stable/faq/faq.html#what-is-data-engineering-convention)
-* Don't commit data to your repository
-* Don't commit any credentials or your local configuration to your repository. Keep all your credentials and local configuration in `conf/local/`
+- **Source**: DermaMNIST (based on HAM10000)
+- **Classes**: 7 distinct skin lesion categories:
+  1. Actinic keratoses and intraepithelial carcinoma (akiec)
+  2. Basal cell carcinoma (bcc)
+  3. Benign keratosis-like lesions (bkl)
+  4. Dermatofibroma (df)
+  5. Melanoma (mel)
+  6. Melanocytic nevi (nv)
+  7. Vascular lesions (vasc)
+- **Characteristics**:
+  - 28x28 pixel dermatoscopic images
+  - 10,015 training images
+  - 1,268 validation images
+  - 2,239 test images
+- **Data Split**: Predefined splits provided by MedMNIST
 
-## How to install dependencies
+### Technical Architecture
 
-Declare any dependencies in `requirements.txt` for `pip` installation.
+#### 1. Model Development
 
-To install them, run:
+- **Base Architecture**:
+  - ResNet-18 or MobileNetV2 (modified for 28x28 input)
+  - Lightweight models for compatibility with small input size
+- **Training Pipeline**:
+  - Data augmentation (rotation, flipping, color jittering)
+  - Transfer learning with ImageNet weights
+  - Fine-tuning for small images
+  - Cross-validation for robust performance estimation
 
-```
-pip install -r requirements.txt
-```
+#### 2. MLOps Infrastructure
 
-## How to run your Kedro pipeline
+- **Data Pipeline**:
+  - Data ingestion and preprocessing
+  - Data versioning
+  - Data quality checks
+- **Experiment Tracking**:
+  - MLflow for model versioning and tracking
+  - Hyperparameter optimization
+  - Model performance visualization
+- **CI/CD Pipeline**:
+  - Automated testing (unit, integration, model performance)
+  - Automated model deployment
+  - Automated documentation generation
+- **Monitoring**:
+  - Model performance metrics
+  - Data drift detection
+  - Automatic retraining triggers
 
-You can run your Kedro project with:
+#### 3. Production Features
 
-```
-kedro run
-```
+##### Model Robustness & Reliability
 
-## How to test your Kedro project
+- **Explainability**
+- **Confidence Calibration**
+- **Adversarial Robustness**
+- **Out-of-Distribution Detection**
 
-Have a look at the files `src/tests/test_run.py` and `src/tests/pipelines/data_science/test_pipeline.py` for instructions on how to write your tests. Run the tests as follows:
+##### Chatbot Integration with LLM
 
-```
-pytest
-```
+- **Interactive Chatbot**: We will integrate a chatbot powered by an LLM to enable natural language interactions with users.
+  - **Functionality**: The chatbot will provide explanations, clarifications, and further details about the model's prediction, confidence score, and lesion category. Medical professionals can ask follow-up questions, discuss specific cases, and obtain interpretative guidance.
+  - **Implementation**: All model outputs (prediction, confidence score, and explainability results) will be passed as inputs to the LLM, enabling contextual and conversational responses based on real-time model data.
+  - **Benefits**: Allows users to interact in natural language, promoting accessibility and understanding, especially useful for non-technical users in clinical settings.
 
-To configure the coverage threshold, look at the `.coveragerc` file.
+##### Clinical Integration
 
-## Project dependencies
+- **Interactive Dashboard**:
+  - Real-time inference results
+  - Confidence scores and explanations
+  - Image preprocessing and quality checks
+  - Resolution handling and upscaling options
+- **Conformal Predictions**:
+  - Set-valued predictions with guaranteed coverage
+  - Calibrated confidence scores
 
-To see and update the dependency requirements for your project use `requirements.txt`. Install the project requirements with `pip install -r requirements.txt`.
+##### Data Privacy & Compliance
 
-[Further information about project dependencies](https://docs.kedro.org/en/stable/kedro_project_setup/dependencies.html#project-specific-dependencies)
+- **Right to Erasure**:
+  - Automated removal pipeline
 
-## How to work with Kedro and notebooks
+### Evaluation Metrics
 
-> Note: Using `kedro jupyter` or `kedro ipython` to run your notebook provides these variables in scope: `catalog`, `context`, `pipelines` and `session`.
->
-> Jupyter, JupyterLab, and IPython are already included in the project requirements by default, so once you have run `pip install -r requirements.txt` you will not need to take any extra steps before you use them.
+#### Technical Metrics
 
-### Jupyter
-To use Jupyter notebooks in your Kedro project, you need to install Jupyter:
+- Model accuracy
+- Precision, recall, F1-score per class
+- Inference latency
+- Data drift metrics
 
-```
-pip install jupyter
-```
+#### Clinical Metrics
 
-After installing Jupyter, you can start a local notebook server:
+- False positive/negative rates
+- Calibration error
+- OOD detection accuracy
+- Explanation quality (user feedback from chatbot interactions)
 
-```
-kedro jupyter notebook
-```
+### Challenges & Risks
 
-### JupyterLab
-To use JupyterLab, you need to install it:
+1. **Technical Risks**:
+   - Limited resolution impact on performance
+   - Model bias
+   - System scalability
+   - Integration challenges
+2. **Clinical Risks**:
+   - Over-reliance on system
+   - Misinterpretation of results
+   - Edge case handling
+   - Resolution limitations affecting diagnosis
 
-```
-pip install jupyterlab
-```
+### Mitigation Strategies
 
-You can also start JupyterLab:
-
-```
-kedro jupyter lab
-```
-
-### IPython
-And if you want to run an IPython session:
-
-```
-kedro ipython
-```
-
-### How to ignore notebook output cells in `git`
-To automatically strip out all output cell contents before committing to `git`, you can use tools like [`nbstripout`](https://github.com/kynan/nbstripout). For example, you can add a hook in `.git/config` with `nbstripout --install`. This will run `nbstripout` before anything is committed to `git`.
-
-> *Note:* Your output cells will be retained locally.
-
-[Further information about using notebooks for experiments within Kedro projects](https://docs.kedro.org/en/develop/notebooks_and_ipython/kedro_and_notebooks.html).
-## Package your Kedro project
-
-[Further information about building project documentation and packaging your project](https://docs.kedro.org/en/stable/tutorial/package_a_project.html).
+1. **Clear Disclaimer**: System is for screening assistance only
+2. **Resolution Warning**: Clear indication of image resolution limitations
+3. **Comprehensive Documentation**: Usage guidelines and limitations
+4. **Regular Updates**: Continuous model improvement
+5. **User Training**: Proper system usage and interpretation
