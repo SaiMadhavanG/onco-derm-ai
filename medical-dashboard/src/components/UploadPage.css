@@ -40,7 +40,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.2);
+    color: black;
+    background: rgba(255, 255, 255, 0.685);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -53,12 +54,13 @@ body {
   }
   
   .upload-input {
+    font-family: 'Montserrat', sans-serif;
     margin-top: 10px;
     padding: 10px;
-    border: 2px solid #ffffff;
+    border: 2px solid #000000;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    color: black;
     outline: none;
   }
   
@@ -67,12 +69,13 @@ body {
   }
   
   .submit-button {
+    font-family: 'Montserrat', sans-serif;
     margin-top: 15px;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     background: #00c4ff;
-    color: #ffffff;
+    color: #000000;
     cursor: pointer;
     transition: background 0.3s;
   }
@@ -104,13 +107,13 @@ body {
     width: 100%;
     max-width: 600px;
     text-align: left;
+    color: #000000;
   }
   
   .disclaimer-section h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #ffcc00;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    color: black;
   }
   
   .disclaimer-list {
@@ -122,7 +125,7 @@ body {
   .disclaimer-list li {
     margin-bottom: 10px;
     font-size: 1rem;
-    color: #ffffff;
+    color: #000000;
   }
   
   .disclaimer-list li a {
