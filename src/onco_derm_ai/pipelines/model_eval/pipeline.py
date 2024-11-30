@@ -37,10 +37,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=compare_models,
-                inputs=[
-                    "best_model_uri",
-                    "model_new_data_uri",
-                ],
+                inputs=["best_model_uri", "model_new_data_uri", "retrain_trigger"],
                 outputs=None,
                 name="compare_models_node",
             ),

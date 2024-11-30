@@ -103,7 +103,7 @@ def log_model(
         mlflow.log_metrics(new_metrics)
 
         # Log loss plot
-        mlflow.log_figure(loss_plot, f"{model_name}_loss_plot.png")
+        # mlflow.log_figure(loss_plot, f"{model_name}_loss_plot.png")
 
         # Get the URI of the logged model
         model_uri = mlflow.get_artifact_uri(model_name)
@@ -111,7 +111,7 @@ def log_model(
     return model_uri
 
 
-def compare_models(model1_uri: str, model2_uri: str) -> None:
+def compare_models(model1_uri: str, model2_uri: str, file_name: str) -> None:
     """
     Compares the performance of two models.
 
@@ -131,7 +131,7 @@ def compare_models(model1_uri: str, model2_uri: str) -> None:
     model2_f1 = model2.data.metrics["f1"]
     # model2_accuracy = model2.data.metrics["accuracy"]
     if model1_f1 < model2_f1:
-        with open("retrain_log.txt", "a") as f:
+        with open(file_name, "a") as f:
             f.write(
                 f"Retrain True, {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n"
             )
