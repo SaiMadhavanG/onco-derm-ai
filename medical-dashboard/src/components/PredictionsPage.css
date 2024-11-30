@@ -103,6 +103,7 @@ body {
 }
 
 .disclaimer-section {
+  color: black;
   margin-top: 30px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.2);
@@ -116,14 +117,13 @@ body {
 .disclaimer-section h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #ffffff;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: #000000;
 }
 
 .disclaimer-section p {
   font-size: 1rem;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .prediction-label {

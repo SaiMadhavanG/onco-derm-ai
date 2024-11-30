@@ -32,9 +32,9 @@ function UploadPage({ handleAnalyze, error }) {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1 className="app-title">AI-Powered Cancer Detection</h1>
+        <h1 className="app-title">OncoDerm AI</h1>
         <p className="app-subtitle">
-          Harness the power of Artificial Intelligence to support medical diagnoses.
+          Making skin cancer detection accessible with AI
         </p>
       </header>
 
