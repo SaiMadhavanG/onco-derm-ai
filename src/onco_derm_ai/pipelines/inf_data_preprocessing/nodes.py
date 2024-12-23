@@ -59,18 +59,23 @@ def prepare_data_for_ood(img: Image) -> torch.Tensor:
 
 
 def ood_detection(
-    img: torch.Tensor, detector: MultiMahalanobis, threshold: float
+    img: torch.Tensor, detector: MultiMahalanobis, threshold: float, device: str
 ) -> float:
     """
     Detect out-of-distribution samples.
     Args:
         img: Image to be detected.
         detector: MultiMahalanobis OOD detector.
+        threshold: Threshold for OOD detection.
+        device: Device.
     Returns:
         OOD score.
     """
     img = img.unsqueeze(0)
-    score = detector(img.to("cuda")).item()
+    detector.model = [model.to(device) for model in detector.model]
+    detector.mu = [mu.to(device) for mu in detector.mu]
+    detector.precision = [precision.to(device) for precision in detector.precision]
+    score = detector(img.to(device)).item()
     if score > threshold:
         raise OutOfDistributionError(
             f"Image detected as OOD with score {score} which is above threshold {threshold}"

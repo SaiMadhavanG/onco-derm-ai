@@ -1,12 +1,14 @@
 # ood_detection { #onco_derm_ai.ood_detection }
 
 ```python
-ood_detection(img, detector, threshold)
+ood_detection(img, detector, threshold, device)
 ```
 
 Detect out-of-distribution samples.
 Args:
     img: Image to be detected.
     detector: MultiMahalanobis OOD detector.
+    threshold: Threshold for OOD detection.
+    device: Device.
 Returns:
     OOD score.

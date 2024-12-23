@@ -43,7 +43,6 @@ def register_pipelines() -> Dict[str, Pipeline]:
         [inf_data_preprocessing_nodes, model_inference_nodes, inf_postprocessing_nodes],
         inputs=["cp_predictor", "best_model", "ood_detector"],
         parameters=[
-            "show_figures",
             "ood_threshold",
             "normal_mean",
             "normal_std",

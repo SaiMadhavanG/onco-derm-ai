@@ -32,7 +32,7 @@ def integrated_gradients(
     input_processed_img: torch.Tensor,
     input_img: torch.Tensor,
     predictions: List[int],
-    show: bool = False,
+    device: str,
 ) -> Tuple[List[plt.Figure], List[int]]:
     """
     Perform integrated gradients on the input image.
@@ -42,12 +42,12 @@ def integrated_gradients(
         input_processed_img: The processed input image.
         input_img: The input image.
         predictions: The predictions.
-        show: Whether to show the figures.
+        device: Device
 
     Returns:
         The visualizations.
     """
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
     model = best_model.to(device)
     model.eval()
     IMG_DIM = 3
@@ -68,7 +68,7 @@ def integrated_gradients(
             sign="all",
             show_colorbar=True,
             title="Overlayed Integrated Gradients",
-            use_pyplot=show,
+            use_pyplot=False,
         )
         visualizations.append(visualization[0])
         # if show:

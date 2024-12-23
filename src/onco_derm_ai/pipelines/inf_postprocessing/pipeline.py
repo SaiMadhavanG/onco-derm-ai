@@ -25,7 +25,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "normalized_img",
                     "resized_img",
                     "conformal_prediction",
-                    "params:show_figures",
+                    "params:device",
                 ],
                 outputs=["integrated_gradients", "predictions"],
                 name="integrated_gradients_node",

@@ -34,7 +34,12 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=ood_detection,
-                inputs=["img_for_ood", "ood_detector", "params:ood_threshold"],
+                inputs=[
+                    "img_for_ood",
+                    "ood_detector",
+                    "params:ood_threshold",
+                    "params:device",
+                ],
                 outputs=None,
                 name="ood_detection_node",
                 tags=["inference"],
