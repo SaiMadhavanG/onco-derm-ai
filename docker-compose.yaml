@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  oncoderm-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: python:3.9-slim
+        KEDRO_UID: 999
+        KEDRO_GID: 0
+    ports:
+      - "8000:8000"  # Map container port 8000 to host port 8000
+    environment:
+      - PROJECT_DIR=/home/kedro_docker
+
+  medical-dashboard:
+    build:
+      context: ./medical-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"  # Map container port 80 to host port 80

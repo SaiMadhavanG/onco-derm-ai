@@ -183,6 +183,11 @@ def multi_mahalanobis_detector(
     for x, y in test_loader:
         metrics.update(detector(x.to(device)), y)
 
+    detector.model = [model.to("cpu") for model in detector.model]
+    detector.mu = [mu.to("cpu") for mu in detector.mu]
+    detector.cov = [cov.to("cpu") for cov in detector.cov]
+    detector.precision = [precision.to("cpu") for precision in detector.precision]
+
     return metrics.compute(), detector
 
 
