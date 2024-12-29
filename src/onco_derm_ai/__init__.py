@@ -5,7 +5,7 @@ from .pipelines.conformal_prediction.nodes import (
     data_prep,
     evaluate_predictor,
 )
-from .pipelines.data_preprocessing.nodes import normalizing_images, tensoring_resizing
+from .pipelines.data_preprocessing.nodes import tensoring_resizing
 from .pipelines.inf_data_preprocessing.nodes import (
     normalize_image,
     ood_detection,
@@ -35,7 +35,6 @@ from .pipelines.ood_detection.nodes import (
 __version__ = "0.1"
 
 __all__ = [
-    "normalizing_images",
     "tensoring_resizing",
     "DermaMNISTDataset",
     "model_finetune",

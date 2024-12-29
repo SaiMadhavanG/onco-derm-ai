@@ -166,11 +166,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="onco_derm_ai.tensoring_resizing" class="level1">
 <h1>tensoring_resizing</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tensoring_resizing(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Applies a series of transformations to the ‘image’ column of a pandas DataFrame.</p>
-<p>The transformations include converting images to PIL format, resizing them to 28x28 pixels, and converting them to tensors. The transformed images are then permuted and converted back to numpy arrays.</p>
-<p>Args: data (pd.DataFrame): A pandas DataFrame containing an ‘image’ column with image data.</p>
-<p>Returns: pd.DataFrame: The input DataFrame with the ‘image’ column transformed.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tensoring_resizing(data, image_size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Applies resizing and tensor conversion to the dataset.</p>
+<p>Args: data (Dataset): The dataset to process, containing “image” and “label” fields. image_size (Tuple[int, int]): The target size (height, width) for resizing images.</p>
+<p>Returns: Dataset: The processed dataset with images resized and converted to tensors.</p>
 
 
 </section>

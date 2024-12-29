@@ -7,4 +7,4 @@
 
 class_imbalance: True
 data_augmentation: True
-num_augmented_per_image: 2
+num_augmented_per_image: 1

@@ -5,22 +5,22 @@ generated using Kedro 0.19.8
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import class_imbalance, data_aug, normalizing_images, tensoring_resizing
+from .nodes import data_aug, split_data, tensoring_resizing
 
 
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline(
         [
             node(
-                func=class_imbalance,
-                inputs=["train_raw", "params:class_imbalance"],
-                outputs="train_balanced",
-                name="making_sure_data_is_balanced",
+                func=split_data,
+                inputs="raw",
+                outputs=["train_raw", "val_raw", "test_raw"],
+                name="splitting_data",
             ),
             node(
                 func=data_aug,
                 inputs=[
-                    "train_balanced",
+                    "train_raw",
                     "params:data_augmentation",
                     "params:num_augmented_per_image",
                 ],
@@ -28,26 +28,14 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="data_augmentation_node",
             ),
             node(
-                func=normalizing_images,
-                inputs="train_augmented",
-                outputs="train_intermediate",
-                name="normalizing_train_image_node",
-            ),
-            node(
                 func=tensoring_resizing,
-                inputs="train_intermediate",
+                inputs=["train_augmented", "params:img_size"],
                 outputs="pre-processed_train_data",
                 name="tensoring_train_resizing_node",
             ),
             node(
-                func=normalizing_images,
-                inputs="val_raw",
-                outputs="val_intermediate",
-                name="normalizing_val_image_node",
-            ),
-            node(
                 func=tensoring_resizing,
-                inputs="val_intermediate",
+                inputs=["val_raw", "params:img_size"],
                 outputs="pre-processed_val_data",
                 name="tensoring_val_resizing_node",
             ),

@@ -23,7 +23,6 @@ quartodoc:
     - title: data_preprocessing
       desc: Functions in the data_preprocessing pipeline
       contents:
-        - normalizing_images
         - tensoring_resizing
     - title: model_training
       desc: Functions in the model_training pipeline

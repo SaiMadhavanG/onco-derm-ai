@@ -3,31 +3,52 @@ This is a boilerplate pipeline 'data_preprocessing'
 generated using Kedro 0.19.8
 """
 
+from typing import Tuple
+
 import numpy as np
-import pandas as pd
+from datasets import Dataset, DatasetDict, concatenate_datasets
 from imblearn.over_sampling import SMOTE
-from PIL import Image
 from torchvision import transforms
 
 
-def class_imbalance(data: pd.DataFrame, class_imbalance: bool) -> pd.DataFrame:
+def split_data(data: DatasetDict) -> Tuple[Dataset, Dataset, Dataset]:
+    """
+    Splits the dataset into training, validation, and test sets.
+
+    Args:
+        data (DatasetDict): A dictionary containing the dataset split into keys like "train",
+            "validation", and "test".
+
+    Returns:
+        Tuple[Dataset, Dataset, Dataset]: A tuple containing the training, validation, and test datasets.
+    """
+    return data["train"], data["validation"], data["test"]
+
+
+def class_imbalance(
+    data: Dataset, class_imbalance: bool, image_size: Tuple[int, int]
+) -> Dataset:
+    """
+    Handles class imbalance in the dataset using SMOTE (Synthetic Minority Oversampling Technique).
+
+    Args:
+        data (Dataset): The dataset to balance, containing "image" and "label" fields.
+        class_imbalance (bool): Flag to indicate whether to apply class balancing.
+        image_size (Tuple[int, int]): The size (height, width) to which images will be reshaped.
+
+    Returns:
+        Dataset: The balanced dataset with images and labels after oversampling, if applicable.
+    """
     if class_imbalance:
         train_images = np.stack(data["image"])
-        train_labels = data["label"].to_numpy(dtype="int32")
+        train_labels = np.array(data["label"], dtype=int)
         X = train_images.reshape(train_images.shape[0], -1)  # Flatten images
         y = train_labels
         smote = SMOTE(random_state=42)
         X_resampled, y_resampled = smote.fit_resample(X, y)
-        train_images = X_resampled.reshape(
-            -1, 28, 28, 3
-        )  # Replace 28, 28 with actual dimensions
+        train_images = X_resampled.reshape(-1, image_size[0], image_size[1], 3)
         train_labels = y_resampled
-        data.drop(data.index, inplace=True)
-        train_ids = [f"train_{i}" for i in range(train_images.shape[0])]
-        data["id"] = train_ids
-        data["image"] = list(train_images)
-        data["label"] = list(train_labels)
-        # data = pd.DataFrame([train_images, train_labels], columns=["image", "label"])
+        data = Dataset.from_dict({"image": train_images, "label": train_labels})
     return data
 
 
@@ -37,96 +58,66 @@ data_augmentation = transforms.Compose(
         transforms.RandomVerticalFlip(p=0.75),
         transforms.RandomRotation(degrees=30),
         transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.1),
-        transforms.ToTensor(),
     ]
 )
 
 
 def data_aug(
-    data: pd.DataFrame, data_augmentation_flg: bool, num_augmented_per_image: int
-) -> pd.DataFrame:
+    data: Dataset, data_augmentation_flg: bool, num_augmented_per_image: int
+) -> Dataset:
     """
-    Augments the images in the DataFrame and appends the augmented rows.
+    Applies data augmentation to the dataset.
 
     Args:
-        data (pd.DataFrame): Original DataFrame containing images and metadata.
-        augment_fn (callable): Augmentation function to apply.
-        num_augmented_per_image (int): Number of augmented images to create for each original image.
+        data (Dataset): The dataset to augment, containing "image" and "label" fields.
+        data_augmentation_flg (bool): Flag to indicate whether to apply data augmentation.
+        num_augmented_per_image (int): The number of augmented versions to generate per image.
 
     Returns:
-        pd.DataFrame: DataFrame with new augmented rows added.
+        Dataset: The augmented dataset containing the original and augmented samples.
     """
     if not data_augmentation_flg:
         return data
 
-    augmented_rows = []
+    def augment_generator(dataset):
+        for example in dataset:
+            augmented_image = data_augmentation(example["image"])
+            yield {"image": augmented_image, "label": example["label"]}
 
-    for idx, row in data.iterrows():
-        original_image = row["image"]
-        label = row["label"]
-        image_id = row["id"]
+    # Create an augmented dataset using the generator
+    augmented_datasets = []
 
-        # Convert image array to PIL Image
-        pil_image = Image.fromarray(np.array(original_image, dtype=np.uint8))
-
-        for i in range(num_augmented_per_image):
-            # Apply augmentations
-            augmented_image = data_augmentation(pil_image)
-            # Convert back to numpy array for storage
-            augmented_array = np.array(augmented_image.permute(1, 2, 0) * 255).astype(
-                np.uint8
+    for i in range(num_augmented_per_image):
+        augmented_datasets.append(
+            Dataset.from_generator(
+                lambda: augment_generator(data), features=data.features
             )
+        )
 
-            # Create a new unique ID for the augmented image
-            new_id = f"{image_id}_aug_{i}"
+    concatenated_ds = concatenate_datasets([data, *augmented_datasets])
 
-            # Add the new row
-            augmented_rows.append(
-                {"id": new_id, "image": augmented_array, "label": label}
-            )
-
-    # Convert augmented rows to a DataFrame
-    augmented_df = pd.DataFrame(augmented_rows)
-
-    # Append the augmented DataFrame to the original
-    return pd.concat([data, augmented_df], ignore_index=True)
+    return concatenated_ds
 
 
-def normalizing_images(data: pd.DataFrame) -> pd.DataFrame:
+def tensoring_resizing(data: Dataset, image_size: Tuple[int, int]) -> Dataset:
     """
-    Normalizes the pixel values of images in the given DataFrame.
-
-    This function takes a DataFrame containing image data and normalizes the pixel values
-    by dividing each pixel value by 255.0. The normalized pixel values will be in the range [0, 1].
+    Applies resizing and tensor conversion to the dataset.
 
     Args:
-        data (pd.DataFrame): A DataFrame containing image data. The DataFrame must have a column
-            named "image" where each entry is an image represented as a numerical array.
+        data (Dataset): The dataset to process, containing "image" and "label" fields.
+        image_size (Tuple[int, int]): The target size (height, width) for resizing images.
 
     Returns:
-        pd.DataFrame: A DataFrame with the same structure as the input, but with normalized image pixel values.
-    """
-    data["image"] = data["image"].apply(lambda x: x / 255.0)
-    return data
-
-
-def tensoring_resizing(data: pd.DataFrame) -> pd.DataFrame:
-    """
-    Applies a series of transformations to the 'image' column of a pandas DataFrame.
-
-    The transformations include converting images to PIL format, resizing them to 28x28 pixels,
-    and converting them to tensors. The transformed images are then permuted and converted back
-    to numpy arrays.
-
-    Args:
-        data (pd.DataFrame): A pandas DataFrame containing an 'image' column with image data.
-
-    Returns:
-        pd.DataFrame: The input DataFrame with the 'image' column transformed.
+        Dataset: The processed dataset with images resized and converted to tensors.
     """
     transform = transforms.Compose(
-        [transforms.ToPILImage(), transforms.Resize((28, 28)), transforms.ToTensor()]
+        [transforms.Resize(image_size), transforms.ToTensor()]
     )
 
-    data["image"] = data["image"].apply(lambda x: transform(x).permute(1, 2, 0).numpy())
+    def transforms_fn(example):
+        image = example["image"]
+        image = transform(image)
+        return {"image": image, "label": example["label"]}
+
+    data.map(transforms_fn, batched=False, writer_batch_size=200)
     return data

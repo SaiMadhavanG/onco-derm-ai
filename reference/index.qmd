@@ -6,8 +6,7 @@ Functions in the data_preprocessing pipeline
 
 | | |
 | --- | --- |
-| [normalizing_images](normalizing_images.qmd#onco_derm_ai.normalizing_images) | Normalizes the pixel values of images in the given DataFrame. |
-| [tensoring_resizing](tensoring_resizing.qmd#onco_derm_ai.tensoring_resizing) | Applies a series of transformations to the 'image' column of a pandas DataFrame. |
+| [tensoring_resizing](tensoring_resizing.qmd#onco_derm_ai.tensoring_resizing) | Applies resizing and tensor conversion to the dataset. |
 
 ## model_training
 
