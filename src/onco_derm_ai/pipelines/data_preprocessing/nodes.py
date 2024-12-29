@@ -119,5 +119,5 @@ def tensoring_resizing(data: Dataset, image_size: Tuple[int, int]) -> Dataset:
         image = transform(image)
         return {"image": image, "label": example["label"]}
 
-    data.map(transforms_fn, batched=False, writer_batch_size=200)
+    data = data.map(transforms_fn, batched=False, writer_batch_size=200)
     return data
