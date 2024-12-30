@@ -7,11 +7,8 @@ from typing import Tuple
 
 import numpy as np
 from datasets import (
-    Array3D,
-    ClassLabel,
     Dataset,
     DatasetDict,
-    Features,
     concatenate_datasets,
 )
 from imblearn.over_sampling import SMOTE
@@ -127,11 +124,5 @@ def tensoring_resizing(data: Dataset, image_size: Tuple[int, int]) -> Dataset:
         return {"image": image[:3, :, :], "label": example["label"]}
 
     data = data.map(transforms_fn, batched=False, writer_batch_size=200)
-    features = Features(
-        {
-            "image": Array3D(dtype="float32", shape=(3, 224, 224)),
-            "label": ClassLabel(num_classes=7),
-        }
-    )
-    data = data.cast(features)
+    data.set_format("torch", columns=["image", "label"])
     return data
