@@ -39,5 +39,11 @@ def create_pipeline(**kwargs) -> Pipeline:
                 outputs="pre-processed_val_data",
                 name="tensoring_val_resizing_node",
             ),
+            node(
+                func=tensoring_resizing,
+                inputs=["test_raw", "params:img_size"],
+                outputs="pre-processed_test_data",
+                name="tensoring_test_resizing_node",
+            ),
         ]
     )

@@ -166,7 +166,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="onco_derm_ai.calibrate_predictor" class="level1">
 <h1>calibrate_predictor</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>calibrate_predictor(calibration_set, best_model_uri, alpha, penalty, batch_size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>calibrate_predictor(calibration_set, best_model, alpha, penalty, batch_size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Calibrate a SplitPredictor using the calibration set.</p>
 <p>Args: calibration_set: The calibration set. best_model_uri: The URI of the best model. alpha: The significance level. penalty: The penalty parameter for the RAPS score. batch_size: The batch size.</p>
 <p>Returns: The calibrated SplitPredict</p>

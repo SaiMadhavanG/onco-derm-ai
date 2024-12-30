@@ -34,6 +34,10 @@ pre-processed_val_data:
   type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
   dataset_path: data/02_intermediate/pre-processed_val_data
 
+pre-processed_test_data:
+  type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
+  dataset_path: data/02_intermediate/pre-processed_test_data
+
 train_in_ds:
   type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
   dataset_path: data/02_intermediate/train_in_ds

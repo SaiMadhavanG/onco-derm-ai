@@ -5,27 +5,20 @@ generated using Kedro 0.19.9
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import calibrate_predictor, data_prep, evaluate_predictor
+from .nodes import calibrate_predictor, evaluate_predictor
 
 
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline(
         [
             node(
-                func=data_prep,
-                inputs=["params:img_size", "params:normal_mean", "params:normal_std"],
-                outputs=["calibration_set", "test_set"],
-                name="cp_data_prep_node",
-                tags=["model_retrained"],
-            ),
-            node(
                 func=calibrate_predictor,
                 inputs=[
-                    "calibration_set",
-                    "best_model_uri",
+                    "pre-processed_val_data",
+                    "best_model",
                     "params:alpha",
                     "params:penalty",
-                    "params:batch_size",
+                    "params:cp_batch_size",
                 ],
                 outputs="cp_predictor",
                 name="cp_calibrate_predictor_node",
@@ -33,7 +26,11 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=evaluate_predictor,
-                inputs=["cp_predictor", "test_set", "params:batch_size"],
+                inputs=[
+                    "cp_predictor",
+                    "pre-processed_val_data",
+                    "params:cp_batch_size",
+                ],
                 outputs="cp_metrics",
                 name="cp_evaluate_predictor_node",
                 tags=["model_retrained"],

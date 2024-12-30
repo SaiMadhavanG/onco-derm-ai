@@ -1,7 +1,7 @@
 # calibrate_predictor { #onco_derm_ai.calibrate_predictor }
 
 ```python
-calibrate_predictor(calibration_set, best_model_uri, alpha, penalty, batch_size)
+calibrate_predictor(calibration_set, best_model, alpha, penalty, batch_size)
 ```
 
 Calibrate a SplitPredictor using the calibration set.
