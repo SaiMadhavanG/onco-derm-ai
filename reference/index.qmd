@@ -14,8 +14,7 @@ Functions in the model_training pipeline
 
 | | |
 | --- | --- |
-| [DermaMNISTDataset](DermaMNISTDataset.qmd#onco_derm_ai.DermaMNISTDataset) | A custom Dataset class for the DermaMNIST dataset. |
-| [preprocess_data_input](preprocess_data_input.qmd#onco_derm_ai.preprocess_data_input) | Preprocesses the input training data for the DermaMNIST dataset. |
+| [preprocess_data_input](preprocess_data_input.qmd#onco_derm_ai.preprocess_data_input) |  |
 | [model_select](model_select.qmd#onco_derm_ai.model_select) | Selects and returns a pre-trained model based on the provided model name. |
 | [model_finetune](model_finetune.qmd#onco_derm_ai.model_finetune) | Finetunes a pre-trained model on the given training dataset. |
 | [evaluate_model](evaluate_model.qmd#onco_derm_ai.evaluate_model) | Evaluates a pre-trained model on the given test dataset. |

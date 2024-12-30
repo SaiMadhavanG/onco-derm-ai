@@ -27,7 +27,6 @@ quartodoc:
     - title: model_training
       desc: Functions in the model_training pipeline
       contents:
-        - DermaMNISTDataset
         - preprocess_data_input
         - model_select
         - model_finetune

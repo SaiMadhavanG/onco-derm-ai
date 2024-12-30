@@ -26,6 +26,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                 func=preprocess_data_input,
                 inputs="pre-processed_val_data",
                 outputs="val_dataset",
+                name="preprocess_val_data",
             ),
             node(
                 func=model_finetune,
@@ -48,6 +49,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "params:device",
                 ],
                 outputs="model_metrics",
+                name="evaluate_model",
             ),
             node(
                 func=log_model,

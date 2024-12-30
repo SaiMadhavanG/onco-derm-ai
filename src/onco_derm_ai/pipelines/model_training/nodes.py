@@ -10,83 +10,31 @@ import matplotlib.pyplot as plt
 import mlflow
 import mlflow.pytorch
 import numpy as np
-import pandas as pd
 import torch
+from datasets import Dataset
 from mlflow import MlflowClient
 from sklearn.metrics import classification_report, f1_score
 from torch import nn, optim
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 from torchvision import models, transforms
 from tqdm.auto import tqdm
 
 
-class DermaMNISTDataset(Dataset):
-    """
-    A custom Dataset class for the DermaMNIST dataset.
-
-    Args:
-        dataframe (pd.DataFrame): A pandas DataFrame containing the dataset.
-            It should have two columns: 'image' and 'label'. 'image' should
-            contain (28, 28, 3) numpy arrays.
-        transform (callable, optional): Optional transform to be applied on a sample.
-
-    Attributes:
-        dataframe (pd.DataFrame): The dataframe containing the dataset.
-        transform (callable): The transform to be applied on a sample.
-
-    Methods:
-        __len__(): Returns the length of the dataset.
-        __getitem__(idx): Returns the image and label at the given index.
-    """
-
-    def __init__(self, dataframe, transform=None):
-        self.dataframe = dataframe
-        self.transform = transform
-
-    def __len__(self):
-        return len(self.dataframe)
-
-    def __getitem__(self, idx):
-        image = self.dataframe["image"][idx]  # (28, 28, 3) numpy array
-        # image = (image * 255).astype(np.uint8)  # Convert to uint8 for transforms
-        label = torch.tensor(self.dataframe["label"][idx])
-
-        # Convert numpy image to PIL Image for applying transforms
-        image = transforms.ToPILImage()(image)
-        image = transforms.ToTensor()(image)
-        if self.transform:
-            image = self.transform(image)
-
-        # print(type(image))
-        return image, label
-
-
-def preprocess_data_input(train_data: pd.DataFrame) -> DermaMNISTDataset:
-    """
-    Preprocesses the input training data for the DermaMNIST dataset.
-
-    This function applies transformations, including resizing images to
-    224x224 pixels and normalizing them with specified mean and standard
-    deviation values.
-
-    Args:
-        train_data (pd.DataFrame): The input training data in the form of a
-            pandas DataFrame.
-
-    Returns:
-        DermaMNISTDataset: The preprocessed training dataset ready for model training.
-    """
+def preprocess_data_input(train_data: Dataset) -> Dataset:
     transform = transforms.Compose(
         [
-            transforms.Resize((224, 224)),  # Resize to 224x224
-            # transforms.ToTensor(),             # Convert to tensor
             transforms.Normalize(
                 mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
             ),  # Normalize
         ]
     )
-    train_dataset = DermaMNISTDataset(train_data, transform=transform)
-    return train_dataset
+
+    def transform_fn(x):
+        return {"image": transform(x["image"]), "label": x["label"]}
+
+    train_data = train_data.map(transform_fn, writer_batch_size=200)
+    train_data.set_format(type="torch", columns=["image", "label"])
+    return train_data
 
 
 def model_select(
@@ -143,8 +91,8 @@ def eval_after_every_epoch(
     with torch.no_grad():
         y_true = []
         y_pred = []
-        for imgs, labs in train_loader:
-            images, labels = imgs.to(device), labs.to(device)
+        for batch in train_loader:
+            images, labels = batch["image"].to(device), batch["label"].to(device)
             outputs = model(images)
             loss = criterion(outputs, labels.squeeze().long())
             train_loss += loss.item()
@@ -157,8 +105,8 @@ def eval_after_every_epoch(
 
         y_true = []
         y_pred = []
-        for imgs, labs in val_loader:
-            images, labels = imgs.to(device), labs.to(device)
+        for batch in val_loader:
+            images, labels = batch["image"].to(device), batch["label"].to(device)
             outputs = model(images)
             _, predicted = torch.max(outputs, 1)
             y_true.extend(labels.cpu().numpy())
@@ -170,8 +118,8 @@ def eval_after_every_epoch(
 
 
 def model_finetune(
-    train_dataset: DermaMNISTDataset,
-    val_dataset: DermaMNISTDataset,
+    train_dataset: Dataset,
+    val_dataset: Dataset,
     model_name: str,
     train_params: dict,
     device: str = "cpu",
@@ -180,7 +128,7 @@ def model_finetune(
     Finetunes a pre-trained model on the given training dataset.
 
     Args:
-        train_dataset (DermaMNISTDataset): The dataset to train the model on.
+        train_dataset (Dataset): The dataset to train the model on.
         model_name (str): The name of the model to finetune.
         train_params (dict): A dictionary containing the training parameters.
         device (str): The device to train the model on (e.g., "cpu" or "cuda").
@@ -203,8 +151,8 @@ def model_finetune(
     val_f1s = []
     for epoch in tqdm(range(train_params["num_epochs"])):
         model.train()
-        for i, lbs in train_loader:
-            images, labels = i.to(device), lbs.to(device)
+        for batch in train_loader:
+            images, labels = batch["image"].to(device), batch["label"].to(device)
 
             # Forward pass
             outputs = model(images)
@@ -241,7 +189,7 @@ def model_finetune(
 def evaluate_model(
     model_name: str,
     model_state_dict: dict,
-    test_dataset: DermaMNISTDataset,
+    test_dataset: Dataset,
     batch_size: int,
     device: str = "cpu",
 ) -> dict:
@@ -251,7 +199,7 @@ def evaluate_model(
     Args:
         model_name (str): The name of the model being evaluated.
         model_state_dict (dict): The state dictionary of the pre-trained model.
-        test_dataset (DermaMNISTDataset): The dataset to evaluate the model on.
+        test_dataset (Dataset): The dataset to evaluate the model on.
         batch_size (int): The batch size to use during evaluation.
         device (str): The device to evaluate the model on (e.g., "cpu" or "cuda").
 
@@ -265,8 +213,8 @@ def evaluate_model(
     model = model.to(device)
     y_true = []
     y_pred = []
-    for imgs, labs in test_loader:
-        images, labels = imgs.to(device), labs.to(device)
+    for batch in test_loader:
+        images, labels = batch["image"].to(device), batch["label"].to(device)
         outputs = model(images)
         _, predicted = torch.max(outputs, 1)
         y_true.extend(labels.cpu().numpy())

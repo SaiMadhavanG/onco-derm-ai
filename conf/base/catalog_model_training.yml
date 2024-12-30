@@ -1,5 +1,10 @@
 train_dataset:
-  type: MemoryDataset
+  type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
+  dataset_path: data/02_intermediate/train_dataset
+
+val_dataset:
+  type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
+  dataset_path: data/02_intermediate/val_dataset
 
 training_loss:
   type: pickle.PickleDataset

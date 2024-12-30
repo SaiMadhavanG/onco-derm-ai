@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    device<span class="op">=</span><span class="st">'cpu'</span>,</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Finetunes a pre-trained model on the given training dataset.</p>
-<p>Args: train_dataset (DermaMNISTDataset): The dataset to train the model on. model_name (str): The name of the model to finetune. train_params (dict): A dictionary containing the training parameters. device (str): The device to train the model on (e.g., “cpu” or “cuda”).</p>
+<p>Args: train_dataset (Dataset): The dataset to train the model on. model_name (str): The name of the model to finetune. train_params (dict): A dictionary containing the training parameters. device (str): The device to train the model on (e.g., “cpu” or “cuda”).</p>
 <p>Returns: dict: The state dictionary of the finetuned model.</p>
 
 

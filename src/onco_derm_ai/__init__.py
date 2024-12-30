@@ -19,7 +19,6 @@ from .pipelines.inf_postprocessing.nodes import (
 )
 from .pipelines.model_inference.nodes import predict
 from .pipelines.model_training.nodes import (
-    DermaMNISTDataset,
     evaluate_model,
     log_model,
     model_finetune,
@@ -36,7 +35,6 @@ __version__ = "0.1"
 
 __all__ = [
     "tensoring_resizing",
-    "DermaMNISTDataset",
     "model_finetune",
     "model_select",
     "preprocess_data_input",

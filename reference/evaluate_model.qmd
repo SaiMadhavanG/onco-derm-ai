@@ -15,7 +15,7 @@ Evaluates a pre-trained model on the given test dataset.
 Args:
     model_name (str): The name of the model being evaluated.
     model_state_dict (dict): The state dictionary of the pre-trained model.
-    test_dataset (DermaMNISTDataset): The dataset to evaluate the model on.
+    test_dataset (Dataset): The dataset to evaluate the model on.
     batch_size (int): The batch size to use during evaluation.
     device (str): The device to evaluate the model on (e.g., "cpu" or "cuda").
 

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/f93648b97b324946b0be5774a1240e1f/artifacts
+end_time: 1735541760389
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f93648b97b324946b0be5774a1240e1f
+run_name: thoughtful-dog-668
+run_uuid: f93648b97b324946b0be5774a1240e1f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1735541721376
+status: 3
+tags: []
+user_id: saimadhavang
