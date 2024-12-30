@@ -7,4 +7,4 @@
 wide_resnet_epochs: 15
 wide_resnet_batch_size: 128
 ood_detection_out_ds: cifar10
-batch_size: 128
+detector_batch_size: 128

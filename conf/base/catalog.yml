@@ -34,6 +34,18 @@ pre-processed_val_data:
   type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
   dataset_path: data/02_intermediate/pre-processed_val_data
 
+train_in_ds:
+  type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
+  dataset_path: data/02_intermediate/train_in_ds
+
+test_in_ds:
+  type: onco_derm_ai.datasets.hf_datasets.HFDatasetWrapper
+  dataset_path: data/02_intermediate/test_in_ds
+
+out_ds:
+  type: pickle.PickleDataset
+  filepath: data/02_intermediate/out_ds.pkl
+
 resized_img:
   type: MemoryDataset
 

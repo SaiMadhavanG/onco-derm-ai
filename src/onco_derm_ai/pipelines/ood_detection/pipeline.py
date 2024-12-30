@@ -17,9 +17,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         [
             node(
                 func=prepare_data,
-                inputs=[
-                    "params:ood_detection_out_ds",
-                ],
+                inputs=["raw", "params:ood_detection_out_ds"],
                 outputs=["train_in_ds", "test_in_ds", "out_ds"],
                 name="ood_prepare_data",
                 tags=["model_retrained"],
@@ -44,7 +42,7 @@ def create_pipeline(**kwargs) -> Pipeline:
                     "train_in_ds",
                     "test_in_ds",
                     "out_ds",
-                    "params:batch_size",
+                    "params:detector_batch_size",
                 ],
                 outputs=["ood_detection_metrics", "ood_detector"],
                 name="multi_mahalanobis_detector",

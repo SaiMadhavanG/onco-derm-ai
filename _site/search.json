@@ -228,7 +228,7 @@
     "href": "reference/index.html",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the data_preprocessing pipeline\n\n\n\ntensoring_resizing\nApplies resizing and tensor conversion to the dataset.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\npreprocess_data_input\n\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset.\n\n\nlog_model\nLogs the model, hyperparameters, and metrics to MLFlow.\n\n\n\n\n\n\nFunctions in the ood_detection pipeline\n\n\n\nprepare_data\nPrepare the data for the OOD detection pipeline.\n\n\ntrain_wide_resnet\nTrain a WideResNet model on the given datasets.\n\n\nmulti_mahalanobis_detector\nRun the Multi-Mahalanobis detector on the given datasets.\n\n\n\n\n\n\nFunctions in the conformal_prediction pipeline\n\n\n\ndata_prep\nPrepare the calibration and test sets for the conformal prediction pipeline.\n\n\ncalibrate_predictor\nCalibrate a SplitPredictor using the calibration set.\n\n\nevaluate_predictor\nEvaluate a SplitPredictor using the test set.\n\n\n\n\n\n\nFunctions used in various inference pipelines\n\n\n\nresize_image\nResize image.\n\n\nnormalize_image\nNormalize image.\n\n\nprepare_data_for_ood\nPrepare image for OOD detection.\n\n\nood_detection\nDetect out-of-distribution samples.\n\n\npredict\nPredicts the output of the input image using the best model.\n\n\nconformal_prediction\nPerform conformal prediction on the output tensor.\n\n\nintegrated_gradients\nPerform integrated gradients on the input image.\n\n\nlog_prediction\nLog the prediction."
+    "text": "Functions in the data_preprocessing pipeline\n\n\n\ntensoring_resizing\nApplies resizing and tensor conversion to the dataset.\n\n\n\n\n\n\nFunctions in the model_training pipeline\n\n\n\npreprocess_data_input\n\n\n\nmodel_select\nSelects and returns a pre-trained model based on the provided model name.\n\n\nmodel_finetune\nFinetunes a pre-trained model on the given training dataset.\n\n\nevaluate_model\nEvaluates a pre-trained model on the given test dataset.\n\n\nlog_model\nLogs the model, hyperparameters, and metrics to MLFlow.\n\n\n\n\n\n\nFunctions in the ood_detection pipeline\n\n\n\nprepare_data\n\n\n\ntrain_wide_resnet\nTrain a WideResNet model on the given datasets.\n\n\nmulti_mahalanobis_detector\nRun the Multi-Mahalanobis detector on the given datasets.\n\n\n\n\n\n\nFunctions in the conformal_prediction pipeline\n\n\n\ndata_prep\nPrepare the calibration and test sets for the conformal prediction pipeline.\n\n\ncalibrate_predictor\nCalibrate a SplitPredictor using the calibration set.\n\n\nevaluate_predictor\nEvaluate a SplitPredictor using the test set.\n\n\n\n\n\n\nFunctions used in various inference pipelines\n\n\n\nresize_image\nResize image.\n\n\nnormalize_image\nNormalize image.\n\n\nprepare_data_for_ood\nPrepare image for OOD detection.\n\n\nood_detection\nDetect out-of-distribution samples.\n\n\npredict\nPredicts the output of the input image using the best model.\n\n\nconformal_prediction\nPerform conformal prediction on the output tensor.\n\n\nintegrated_gradients\nPerform integrated gradients on the input image.\n\n\nlog_prediction\nLog the prediction."
   },
   {
     "objectID": "reference/index.html#data_preprocessing",
@@ -249,7 +249,7 @@
     "href": "reference/index.html#ood_detection",
     "title": "API Reference",
     "section": "",
-    "text": "Functions in the ood_detection pipeline\n\n\n\nprepare_data\nPrepare the data for the OOD detection pipeline.\n\n\ntrain_wide_resnet\nTrain a WideResNet model on the given datasets.\n\n\nmulti_mahalanobis_detector\nRun the Multi-Mahalanobis detector on the given datasets."
+    "text": "Functions in the ood_detection pipeline\n\n\n\nprepare_data\n\n\n\ntrain_wide_resnet\nTrain a WideResNet model on the given datasets.\n\n\nmulti_mahalanobis_detector\nRun the Multi-Mahalanobis detector on the given datasets."
   },
   {
     "objectID": "reference/index.html#conformal_prediction",
@@ -368,7 +368,7 @@
     "href": "reference/prepare_data.html",
     "title": "prepare_data",
     "section": "",
-    "text": "prepare_data\nprepare_data(out_ds)\nPrepare the data for the OOD detection pipeline.\nArgs: out_ds: The out-of-distribution dataset to use.\nReturns: The in-distribution dataset and the out-of-distribution dataset."
+    "text": "prepare_data\nprepare_data(raw_data, out_ds)"
   },
   {
     "objectID": "reference/DermaMNISTDataset.html",

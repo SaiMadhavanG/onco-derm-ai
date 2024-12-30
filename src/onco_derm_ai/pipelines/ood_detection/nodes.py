@@ -5,11 +5,10 @@ generated using Kedro 0.19.9
 
 from typing import Tuple
 
-import medmnist
 import mlflow
 import numpy as np
 import torch
-from medmnist import INFO
+from datasets import DatasetDict
 from pytorch_ood.detector import RMD, MaxSoftmax, MultiMahalanobis
 from pytorch_ood.model import WideResNet
 from pytorch_ood.utils import OODMetrics, ToUnknown
@@ -35,7 +34,15 @@ def custom_collate_fn(batch):
     """
     Custom collate function to squeeze the labels in the batch.
     """
-    data, targets = zip(*batch)  # Unpack batch into data and targets
+    data = []
+    targets = []
+    for row in batch:
+        if isinstance(row, dict):
+            data.append(row["image"])
+            targets.append(row["label"])
+        elif isinstance(row, tuple):
+            data.append(row[0])
+            targets.append(row[1])
     data = torch.stack(data)  # Combine data into a single tensor
     targets = list(targets)  # Convert targets to list
     targets = [np.array(t).squeeze() for t in targets]
@@ -45,25 +52,23 @@ def custom_collate_fn(batch):
 
 
 def prepare_data(
-    out_ds: str,
-) -> Tuple[torch.utils.data.Dataset, torch.utils.data.Dataset]:
-    """
-    Prepare the data for the OOD detection pipeline.
-
-    Args:
-        out_ds: The out-of-distribution dataset to use.
-
-    Returns:
-        The in-distribution dataset and the out-of-distribution dataset.
-    """
-
+    raw_data: DatasetDict, out_ds: str
+) -> Tuple[
+    torch.utils.data.Dataset, torch.utils.data.Dataset, torch.utils.data.Dataset
+]:
     transform = WideResNet.transform_for("cifar10-pt")
 
-    info = INFO["dermamnist"]
-    DataClass = getattr(medmnist, info["python_class"])
-    dataset_in_train = DataClass(split="train", download=True, transform=transform)
-    dataset_in_val = DataClass(split="val", download=True, transform=transform)
-    dataset_in_test = DataClass(split="test", download=True, transform=transform)
+    def transform_fn(x):
+        return {"image": transform(x["image"]), "label": x["label"]}
+
+    train_data = raw_data["train"]
+    val_data = raw_data["validation"]
+
+    train_data = train_data.map(transform_fn, writer_batch_size=200)
+    val_data = val_data.map(transform_fn, writer_batch_size=200)
+    train_data.set_format("torch", columns=["image", "label"])
+    val_data.set_format("torch", columns=["image", "label"])
+
     if out_ds == "cifar10":
         dataset_out_test = CIFAR10(
             root="~/.data",
@@ -74,9 +79,7 @@ def prepare_data(
     else:
         raise ValueError("Invalid out_ds")
 
-    in_dataset_test = ConcatDataset([dataset_in_val, dataset_in_test])
-
-    return dataset_in_train, in_dataset_test, dataset_out_test
+    return train_data, val_data, dataset_out_test
 
 
 def train_wide_resnet(
@@ -100,12 +103,8 @@ def train_wide_resnet(
         The trained model.
     """
 
-    in_loader = DataLoader(
-        in_dataset, batch_size=batch_size, shuffle=True, collate_fn=custom_collate_fn
-    )
-    test_loader = DataLoader(
-        test_dataset, batch_size=batch_size, shuffle=True, collate_fn=custom_collate_fn
-    )
+    in_loader = DataLoader(in_dataset, batch_size=batch_size, shuffle=True)
+    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=True)
     model = WideResNet(num_classes=7).to(device)
 
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
@@ -114,8 +113,8 @@ def train_wide_resnet(
     for epoch in range(n_epochs):
         model.train()
         running_loss = 0.0
-        for _x, _y in tqdm(in_loader):
-            x, y = _x.to(device), _y.to(device)
+        for batch in tqdm(in_loader):
+            x, y = batch["image"].to(device), batch["label"].to(device)
             optimizer.zero_grad()
             y_pred = model(x)
             loss = criterion(y_pred, y)
@@ -126,8 +125,8 @@ def train_wide_resnet(
         model.eval()
         with torch.no_grad():
             val_running_loss = 0.0
-            for _x, _y in tqdm(test_loader):
-                x, y = _x.to(device), _y.to(device)
+            for batch in tqdm(test_loader):
+                x, y = batch["image"].to(device), batch["label"].to(device)
                 y_pred = model(x)
                 loss = criterion(y_pred, y)
                 val_running_loss += loss.item()
