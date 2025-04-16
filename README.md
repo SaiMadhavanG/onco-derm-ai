@@ -35,10 +35,10 @@ Skin cancer diagnosis requires expert dermatological knowledge and careful image
 #### 1. Model Development
 
 - **Base Architecture**:
-  - ResNet-18 or MobileNetV2 (modified for 28x28 input)
+  - ResNet-18 (modified for 28x28 input)
   - Lightweight models for compatibility with small input size
 - **Training Pipeline**:
-  - Data augmentation (rotation, flipping, color jittering)
+  - Data augmentation (rotation, flipping)
   - Transfer learning with ImageNet weights
   - Fine-tuning for small images
   - Cross-validation for robust performance estimation
@@ -67,66 +67,16 @@ Skin cancer diagnosis requires expert dermatological knowledge and careful image
 ##### Model Robustness & Reliability
 
 - **Explainability**
-- **Confidence Calibration**
-- **Adversarial Robustness**
+- **Conformal Predictions**
 - **Out-of-Distribution Detection**
-
-##### Chatbot Integration with LLM
-
-- **Interactive Chatbot**: We will integrate a chatbot powered by an LLM to enable natural language interactions with users.
-  - **Functionality**: The chatbot will provide explanations, clarifications, and further details about the model's prediction, confidence score, and lesion category. Medical professionals can ask follow-up questions, discuss specific cases, and obtain interpretative guidance.
-  - **Implementation**: All model outputs (prediction, confidence score, and explainability results) will be passed as inputs to the LLM, enabling contextual and conversational responses based on real-time model data.
-  - **Benefits**: Allows users to interact in natural language, promoting accessibility and understanding, especially useful for non-technical users in clinical settings.
 
 ##### Clinical Integration
 
 - **Interactive Dashboard**:
   - Real-time inference results
-  - Confidence scores and explanations
+  - Explanations by visualizing integrated gradients
   - Image preprocessing and quality checks
-  - Resolution handling and upscaling options
+  - Resolution handling and upscaling/downscaling options
 - **Conformal Predictions**:
   - Set-valued predictions with guaranteed coverage
-  - Calibrated confidence scores
 
-##### Data Privacy & Compliance
-
-- **Right to Erasure**:
-  - Automated removal pipeline
-
-### Evaluation Metrics
-
-#### Technical Metrics
-
-- Model accuracy
-- Precision, recall, F1-score per class
-- Inference latency
-- Data drift metrics
-
-#### Clinical Metrics
-
-- False positive/negative rates
-- Calibration error
-- OOD detection accuracy
-- Explanation quality (user feedback from chatbot interactions)
-
-### Challenges & Risks
-
-1. **Technical Risks**:
-   - Limited resolution impact on performance
-   - Model bias
-   - System scalability
-   - Integration challenges
-2. **Clinical Risks**:
-   - Over-reliance on system
-   - Misinterpretation of results
-   - Edge case handling
-   - Resolution limitations affecting diagnosis
-
-### Mitigation Strategies
-
-1. **Clear Disclaimer**: System is for screening assistance only
-2. **Resolution Warning**: Clear indication of image resolution limitations
-3. **Comprehensive Documentation**: Usage guidelines and limitations
-4. **Regular Updates**: Continuous model improvement
-5. **User Training**: Proper system usage and interpretation
